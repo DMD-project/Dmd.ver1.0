@@ -13,16 +13,4 @@ public class DmdApplication {
 		
 		System.out.println("test");
 	}
-	
-
-	@Bean
-    public InternalResourceViewResolver setupViewResolver() {
-    
-           InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-    
-           resolver.setPrefix("/WEB-INF/jsp/");
-           resolver.setSuffix(".jsp");
-           return resolver;
-    }
-	
 }
