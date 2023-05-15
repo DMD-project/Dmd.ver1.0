@@ -1,13 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+ <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
 <div class="container" id="container">
   <div class="form-container sign-up-container">
     <form action="#">
@@ -54,6 +52,5 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
