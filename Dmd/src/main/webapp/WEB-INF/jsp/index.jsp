@@ -508,7 +508,17 @@ Alternatively if you want to just have a single hero
 						<p class="py-4">Lorem ipsum dolor sit amet, consectetur
 							adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id
 							erat. Suspendisse consectetur dapibus velit ut lacinia.</p>
+							
+							
+							<h3 class="font-bold text-gray-900">m²Dm</h3>
+						<p class="py-4">
+						서울특별시 성북구 화랑로13길 60
+						02-940-0000
+						wwww.m²Dm.com</p>
 					</div>
+					
+					
+					
 				</div>
 				<div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
 					<div class="px-3 md:px-0">
