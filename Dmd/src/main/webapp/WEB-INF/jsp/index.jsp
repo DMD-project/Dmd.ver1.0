@@ -3,25 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<!-- <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Spring Boot Application with JSP</title>
-</head>
-<body>
-    Hello, Spring Boot App
-</body>
-</html> -->
-<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Tailwind Starter Template - Nordic Shop: Tailwind Toolbox</title>
-<meta name="description"
-	content="Free open source Tailwind CSS Store template">
-<meta name="keywords"
-	content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
-
+<title>m²Dm - interior Shop:</title>
 <link rel="stylesheet"
 	href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 
@@ -83,19 +69,20 @@
 }
 </style>
 
-<!--  category-style --> 
-   <style>
-        #btn_group button{
-            border: 1px solid #F28C28;
-            background-color: rgba(0,0,0,0);
-            color: #F28C28;
-            padding: 20px;
-        }
-        #btn_group button:hover{
-            color:white;
-            background-color: #FFDEAD;
-        }
-    </style>
+<!--  category-style -->
+<style>
+#btn_group button {
+	border: 1px solid #F28C28;
+	background-color: rgba(0, 0, 0, 0);
+	color: #F28C28;
+	padding: 20px;
+}
+
+#btn_group button:hover {
+	color: white;
+	background-color: #FFDEAD;
+}
+</style>
 
 
 </head>
@@ -268,26 +255,6 @@
 		</div>
 	</div>
 
-	<!--	 
-
-Alternatively if you want to just have a single hero
-
-<section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
-
-	<div class="container mx-auto">
-
-		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
-			<h1 class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</h1>
-			<a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">products</a>
-
-		</div>
-
-	  </div>
-
-</section>
-
--->
-
 	<section class="bg-white py-8">
 
 		<div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
@@ -295,23 +262,23 @@ Alternatively if you want to just have a single hero
 			<nav id="store" class="w-full z-30 top-0 px-6 py-1">
 				<div
 					class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-					
+
 					<a
 						class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
 						href="#"> Store </a>
-						
-						
-						<!-- category -->
-						<div id="btn_group">
-					        <button id="cat_btn1">전체</button>
-					        <button id="cat_btn2">가구</button>
-					        <button id="cat_btn3">페브릭</button>
-					        <button id="cat_btn4">조명</button>
-					        <button id="cat_btn5">수납/정리</button>
-					        <button id="cat_btn6">소품</button>
-					        <button id="cat_btn7">식물</button>
-    					</div>
-						
+
+
+					<!-- category -->
+					<div id="btn_group">
+						<button id="cat_btn1">전체</button>
+						<button id="cat_btn2">가구</button>
+						<button id="cat_btn3">페브릭</button>
+						<button id="cat_btn4">조명</button>
+						<button id="cat_btn5">수납/정리</button>
+						<button id="cat_btn6">소품</button>
+						<button id="cat_btn7">식물</button>
+					</div>
+
 
 					<div class="flex items-center" id="store-nav-content">
 
@@ -468,8 +435,7 @@ Alternatively if you want to just have a single hero
 				href="#"> About </a>
 
 			<p class="mt-8 mb-8">
-				This template is inspired by the stunning nordic minamalist design -
-				in particular: <br> <a
+				공간의 가치를 좌우하는 것은 평수가 아닙니다. <br> <a
 					class="text-gray-800 underline hover:text-gray-900"
 					href="http://savoy.nordicmade.com/" target="_blank">Savoy Theme</a>
 				created by <a class="text-gray-800 underline hover:text-gray-900"
@@ -479,19 +445,9 @@ Alternatively if you want to just have a single hero
 			</p>
 
 			<p class="mb-8">
-				Lorem ipsum dolor sit amet, consectetur <a href="#">random link</a>
-				adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna aliqua. Vel risus commodo viverra maecenas accumsan
-				lacus vel facilisis volutpat. Vitae aliquet nec ullamcorper sit.
-				Nullam eget felis eget nunc lobortis mattis aliquam. In est ante in
-				nibh mauris. Egestas congue quisque egestas diam in. Facilisi nullam
-				vehicula ipsum a arcu. Nec nam aliquam sem et tortor consequat. Eget
-				mi proin sed libero enim sed faucibus turpis in. Hac habitasse
-				platea dictumst quisque. In aliquam sem fringilla ut. Gravida rutrum
-				quisque non tellus orci ac auctor augue mauris. Accumsan lacus vel
-				facilisis volutpat est velit egestas dui id. At tempor commodo
-				ullamcorper a. Volutpat commodo sed egestas egestas fringilla. Vitae
-				congue eu consequat ac.
+				<!-- 				Lorem ipsum dolor sit amet, consectetur <a href="#">random link</a> -->
+				기존의 라이프 스타일, 인테리어 어플과 사이트에서 더 나아가 사용자 간의 중고거래, 활발한 소통을 통해 셀프 인테리어를
+				보다 효율적이고 경제적으로 실행할 수 있게 도와드리겠습니다.
 			</p>
 
 		</div>
@@ -504,21 +460,15 @@ Alternatively if you want to just have a single hero
 			<div class="w-full mx-auto flex flex-wrap">
 				<div class="flex w-full lg:w-1/2 ">
 					<div class="px-3 md:px-0">
-						<h3 class="font-bold text-gray-900">About</h3>
+						<!-- 						<h3 class="font-bold text-gray-900">About</h3>
 						<p class="py-4">Lorem ipsum dolor sit amet, consectetur
 							adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id
-							erat. Suspendisse consectetur dapibus velit ut lacinia.</p>
-							
-							
-							<h3 class="font-bold text-gray-900">m²Dm</h3>
-						<p class="py-4">
-						서울특별시 성북구 화랑로13길 60
-						02-940-0000
-						wwww.m²Dm.com</p>
+							erat. Suspendisse consectetur dapibus velit ut lacinia.</p> -->
+
+
+						<h3 class="font-bold text-gray-900">m²Dm</h3>
+						<p class="py-4">서울특별시 성북구 화랑로13길 60 02-940-0000 wwww.m²Dm.com</p>
 					</div>
-					
-					
-					
 				</div>
 				<div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
 					<div class="px-3 md:px-0">
@@ -533,7 +483,5 @@ Alternatively if you want to just have a single hero
 			</div>
 		</div>
 	</footer>
-
 </body>
-
 </html>
