@@ -17,8 +17,11 @@
       </div>
       <span>or use your email for registration</span>
       <input type="text" placeholder="Name" />
+      <input type="text" placeholder="id" /> <button class="btnid" type="button">아이디 확인 </button>
       <input type="email" placeholder="Email" />
       <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Password check" />
+      
       <button>Sign Up</button>
     </form>
   </div>
