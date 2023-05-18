@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Order</title>
+
 <style>
 body {
 	margin: 0;
 }
 
 div {
-	width: 100vw;
-	height: 100vh;
+	
 	overflow: scroll;
 }
 
@@ -38,7 +38,7 @@ table {
 	color: grey;
 }
 
-#table2 td, th{
+#table2 td, th {
 	border-radius: 10px;
 	padding: 13px;
 	color: grey;
@@ -70,7 +70,7 @@ table {
 	color: grey;
 }
 
-#creditcard {
+#payment_card {
 	background-color: rgb(246, 240, 231);
 	border: 2px solid #FFD27F;
 	border-radius: 10px;
@@ -80,7 +80,7 @@ table {
 	font-size: 20px;
 }
 
-#creditcard:focus {
+#payment_card:focus {
 	background-color: #FFD27F;
 	border: 2px solid #FFD27F; 
 	border-radius: 10px;
@@ -118,6 +118,45 @@ table {
 	color: white;
 	font-size: 20px;
 }
+
+.creditcard {
+	background-color: orange;
+	border-radius: 8px;
+	width: 300px;
+	height: 180px;
+	margin: 20px;
+	padding: 20px;
+	color: white;
+	text-align: left;
+}
+
+#card_info {
+	float: left;
+	padding: 5px;
+	font-size: 13px;
+}
+
+input {
+	border: 1px solid lightgrey;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+} 
+
+select {
+	border: 1px solid lightgrey;
+	background-color: white;
+	color: grey;
+	height: 30px;
+}
+#months, #years {
+	width: 50px;
+}
+
+#banks {
+	width: 80px;
+}
+
 
 </style>
 </head>
@@ -164,11 +203,73 @@ table {
 			</tr>
 			<tr>
 				<td align = "center">
-					<button type="button" name = "creditcard" id = "creditcard">신용∙체크카드</button>
+					<button type="button" name = "creditcard" id = "payment_card" onclick="onDisplay()">신용∙체크카드</button>
+					
+					
+					<div class = "creditcard" id = "creditcard">
+						<div style='font-size:20px'>
+							<b>CREDIT CARD<p>
+						</div>
+						<div id="card_number" style='font-size:13px;'>
+							CARD NUMBER<br>
+							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/> &nbsp;
+							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/> &nbsp;
+							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/> &nbsp;
+							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/>
+							<p>
+	          				</div>
+						
+						<div>
+							<div id="card_info">
+								MM<br>
+								<select id="months">
+						        		<option value="">1</option>
+						            		<option value="">2</option>
+						            		<option value="">3</option>
+						            		<option value="">4</option>
+						            		<option value="">5</option>
+						            		<option value="">6</option>
+						            		<option value="">7</option>
+						            		<option value="">8</option>
+					                		<option value="">9</option>
+				   		            		<option value="">10</option>
+						            		<option value="">11</option>
+						            		<option value="">12</option>
+						          	</select>
+							</div>
+							<div id="card_info">
+									YY<br>
+								<select id="years">
+							    		<option value="">23</option>
+						            		<option value="">24</option>
+						            		<option value="">25</option>
+						            		<option value="">26</option>
+									<option value="">27</option>
+						            		<option value="">28</option>
+						            		<option value="">29</option>
+						            		<option value="">30</option>
+						        	</select>
+							</div>
+							<div id="card_info">
+								BANK<br>
+								<select id="banks">
+						        		<option value="">신한은행</option>
+									<option value="">우리은행</option>
+									<option value="">국민은행</option>
+									<option value="">하나은행</option>
+						            		<option value="">농협은행</option>
+						        	</select>
+							</div>
+						</div>
+					</div>
+					
+					
+					
 					<button type="button" name = "accounttransfer" id = "other_method" style = 'font-size: 15px'>계좌이체</button>
 					<button type="button" name = "deposit" id = "other_method" style = 'font-size: 15px;'>무통장 입금</button>
 				</td>
 			</tr>
+			
 		</table>
 	</div>
 	
