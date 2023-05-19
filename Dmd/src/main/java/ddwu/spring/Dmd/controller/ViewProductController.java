@@ -13,6 +13,7 @@ public class ViewProductController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewProd() {
+		
 		return "/shop/ViewProduct";
 	}
 	
