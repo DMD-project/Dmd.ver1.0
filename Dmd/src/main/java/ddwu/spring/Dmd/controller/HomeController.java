@@ -13,5 +13,10 @@ public class HomeController {
 		
 		System.out.println("home controller start");
         return "/index";
-    }    
+//		return "/product/ViewProduct";
+//		return "/product/AddHousePost";
+//		return "/product/test";
+    }
+	
+	
 }
