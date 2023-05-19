@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ddwu.spring.Dmd.dao.ProductDAO;
+import ddwu.spring.Dmd.domain.Product;
+import ddwu.spring.Dmd.service.ProductService;
+
 @Controller
 @RequestMapping("/shop/product")
 public class ViewProductController {
@@ -19,7 +23,7 @@ public class ViewProductController {
 	
 	
 //	private ProductService prodService;
-//
+
 //	@Autowired
 //	public void setPetStore(ProductService prodService) {
 //		this.prodService = prodService;
@@ -29,9 +33,9 @@ public class ViewProductController {
 //	public String handleRequest(@RequestParam("prodId") String prodId,
 //			ModelMap model) throws Exception {
 //		
-//		Product product = this.prodService.getItem(itemId);
+//		ProductDAO product = this.prodService.getProduct(prodId);
 //		
-//		model.put("product", product.getProduct());
+//		model.put("product", product);
 //		
 //		return "Product";
 //	}
