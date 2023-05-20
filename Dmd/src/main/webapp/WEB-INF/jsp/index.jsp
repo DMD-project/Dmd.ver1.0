@@ -113,7 +113,7 @@
 						class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-							href="#">Shop</a></li>
+							href="<c:url value="/shop/shopMain"></c:url>">Shop</a></li>
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
 							href="#">About</a></li>
@@ -265,8 +265,7 @@
 
 					<a
 						class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
-						href="#"> Store </a>
-
+						href="<c:url value="/shop/shopMain"></c:url>"> Store </a>
 
 					<!-- category -->
 					<div id="btn_group">
