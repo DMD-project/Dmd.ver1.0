@@ -174,12 +174,12 @@
 					<!-- category -->
 					<div id="btn_group">
 						<button id="cat_btn1" onclick="location.href='/shop/shopMain'">전체</button>
-						<button id="cat_btn2" onclick="location.href='<c:url value='/shop/shopMain'><c:param name='cateCode' value='101'/></c:url>'">가구</button>
-						<button id="cat_btn3" onclick="location.href='/shop/shopMain?cateCode=102'">페브릭</button>
-						<button id="cat_btn4" onclick="location.href='/shop/shopMain?cateCode=103'">조명</button>
-						<button id="cat_btn5" onclick="location.href='/shop/shopMain?cateCode=104'">수납/정리</button>
-						<button id="cat_btn6" onclick="location.href='/shop/shopMain?cateCode=105'">소품</button>
-						<button id="cat_btn7" onclick="location.href='/shop/shopMain?cateCode=106'">식물</button>
+						<button id="cat_btn2" onclick="location.href='<c:url value='/shop/shopMain'><c:param name='cateId' value='101'/></c:url>'">가구</button>
+						<button id="cat_btn3" onclick="location.href='/shop/shopMain?cateId=102'">페브릭</button>
+						<button id="cat_btn4" onclick="location.href='/shop/shopMain?cateId=103'">조명</button>
+						<button id="cat_btn5" onclick="location.href='/shop/shopMain?cateId=104'">수납/정리</button>
+						<button id="cat_btn6" onclick="location.href='/shop/shopMain?cateId=105'">소품</button>
+						<button id="cat_btn7" onclick="location.href='/shop/shopMain?cateId=106'">식물</button>
 					</div>
 					<div class="flex items-center" id="store-nav-content">
 
@@ -202,8 +202,16 @@
 					</div>
 				</div>
 			</nav>
+			<c:forEach var="product" items="${productList.pageList}">
+				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+					<a href="<c:url value="/shop/product" > <c:param name="prodId" value="${prod.prodId}"/></c:url>"> 
+						<font color="BLACK"><c:out value="${prod.prodId}"></c:out></font>
+					</a>
+				</div>		
+			</c:forEach>
+			
 
-			<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+			<%-- <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 				<a href="<c:url value="/shop/product" > <c:param name="prodId" value="${prod.prodId}"/></c:url>"> 
 				<img class="hover:grow hover:shadow-lg"
 					src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
@@ -217,7 +225,7 @@
 					</div>
 					<p class="pt-1 text-gray-900">£9.99</p>
 				</a>
-			</div>
+			</div> --%>
 		</div>
 	</section>
 

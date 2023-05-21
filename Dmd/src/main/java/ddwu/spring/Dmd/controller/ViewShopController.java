@@ -14,8 +14,12 @@ public class ViewShopController {
 		return "/shop/shopMain";
 	}
 	
+//	public String viewProdByCategory(String id) {
+//		
+//		System.out.println("category = " + id);
+//		
+//		return "/shop/shopMain/{}";
+//	}
 
-	
-	
 	
 }
