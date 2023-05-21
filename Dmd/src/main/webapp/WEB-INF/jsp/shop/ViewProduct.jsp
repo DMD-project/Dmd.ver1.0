@@ -1,13 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html lang="en-US" class="footer-sticky-1">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>m²Dm - interior Shop:</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-
+<link
+	href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap"
+	rel="stylesheet">
 
 <style type="text/css" class="nm-custom-styles">
 @media all and (max-width:1080px) {
@@ -18,6 +24,7 @@
 		background: #EEEEEE;
 	}
 }
+
 </style>
 
 
@@ -39,6 +46,14 @@
 	font-size: 16px;
 	background: #E89F71;
 }
+
+.qty-btn {
+	font-size: 25px;
+	font-weigth: bold;
+	color:#777777;
+}
+
+
 
 </style>
 
@@ -175,6 +190,7 @@
 																</ul> <a class="reset_variations" href="#">Clear</a>
 															</td>
 														</tr>
+									
 													</tbody>
 												</table>
 
@@ -186,20 +202,48 @@
 														<div class="nm-quantity-wrap  qty-show">
 															<label>Quantity</label> <label
 																class="nm-qty-label-abbrev">Qty</label>
-
+															
 															<div class="quantity">
-																<div class="nm-qty-minus">+</div>
+																<button type="button" id="qty-minus" class="qty-btn">-</button>
 																&nbsp;<input type="number" id="quantity_64284c2b3953a"
 																	class="input-text qty text" step="1" min="1" max=""
-																	name="quantity" value="1" size="4" placeholder=""
+																	name="quantity" value="1" size="4" readonly="readonly"
 																	pattern="[0-9]*" />&nbsp;
-																<div class="nm-qty-plus">-</div>
+																	
+																<button type="button" id="qty-plus" class="qty-btn">+</button>
 															</div>
 														</div>
+														
+														<script>
+															$("#qty-minus").click(function() {
+																var qty = $(".input-text qty text").val();
+																var minusQty = Number(qty) - 1;
+																
+																if(minusQty <= 0) {
+																	$(".input-text qty text").val(qty);
+																} else {
+																	$(".input-text qty text").val(minusQty);
+																}
+															});
+														
+															$("#qty-plus").click(function() {
+																var qty = $(".input-text qty text").val();
+																var plusQty = Number(qty) + 1;
+																
+																$(".input-text qty text").val(plusQty);
+															});
+														</script>
 
-														<div style="padding: 50px 10px;">
-															<button type="submit" id="cart" class="btn">Cart</button>
-															<button type="submit" id="buy" class="btn">Buy</button>
+
+														<div style="padding: 10px 10px;">
+															<button type="button" id="cart" class="btn">
+																<a href="<c:url value="/order/Cart" >
+																	<c:param name="prodId" value="${prod.prodId}"/>
+																	<c:param name="prodQty" value="${prod.qty}"/>
+																	</c:url>">
+																	Cart</a>
+															</button>
+															<button type="button" id="buy" class="btn">Buy</button>
 														</div>
 
 														<input type="hidden" name="add-to-cart" value="253" /> <input
@@ -403,6 +447,35 @@
 			</div>
 		</div>
 	</div>
+	
+	<footer
+		class="container mx-auto bg-white py-8 border-t border-gray-400">
+		<div class="container flex px-3 py-8 ">
+			<div class="w-full mx-auto flex flex-wrap">
+				<div class="flex w-full lg:w-1/2 ">
+					<div class="px-3 md:px-0">
+						<!-- 						<h3 class="font-bold text-gray-900">About</h3>
+						<p class="py-4">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id
+							erat. Suspendisse consectetur dapibus velit ut lacinia.</p> -->
 
+
+						<h3 class="font-bold text-gray-900">m<sup>2</sup>Dm</h3>
+						<p class="py-4">서울특별시 성북구 화랑로13길 60 02-940-0000 wwww.m²Dm.com</p>
+					</div>
+				</div>
+				<div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+					<div class="px-3 md:px-0">
+						<h3 class="font-bold text-gray-900">Social</h3>
+						<ul class="list-reset items-center pt-3">
+							<li><a
+								class="inline-block no-underline hover:text-black hover:underline py-1"
+								href="#">Add social links</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
