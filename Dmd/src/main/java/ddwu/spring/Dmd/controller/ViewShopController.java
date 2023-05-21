@@ -13,4 +13,9 @@ public class ViewShopController {
 		System.out.println("shop main controller start");
 		return "/shop/shopMain";
 	}
+	
+
+	
+	
+	
 }

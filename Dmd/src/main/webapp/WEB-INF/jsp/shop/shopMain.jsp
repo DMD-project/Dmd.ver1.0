@@ -113,7 +113,7 @@
 						class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-							href="#">Shop</a></li>
+							href="<c:url value="/shop/shopMain"></c:url>">Shop</a></li>
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
 							href="#">About</a></li>
@@ -168,21 +168,19 @@
 
 					<a
 						class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
-						href="#"> Store </a>
+						href="<c:url value="/shop/shopMain"></c:url>"> Store </a>
 
 
 					<!-- category -->
 					<div id="btn_group">
-						<button id="cat_btn1">전체</button>
-						<button id="cat_btn2">가구</button>
-						<button id="cat_btn3">페브릭</button>
-						<button id="cat_btn4">조명</button>
-						<button id="cat_btn5">수납/정리</button>
-						<button id="cat_btn6">소품</button>
-						<button id="cat_btn7">식물</button>
+						<button id="cat_btn1" onclick="location.href='/shop/shopMain'">전체</button>
+						<button id="cat_btn2" onclick="location.href='<c:url value='/shop/shopMain'><c:param name='cateCode' value='101'/></c:url>'">가구</button>
+						<button id="cat_btn3" onclick="location.href='/shop/shopMain?cateCode=102'">페브릭</button>
+						<button id="cat_btn4" onclick="location.href='/shop/shopMain?cateCode=103'">조명</button>
+						<button id="cat_btn5" onclick="location.href='/shop/shopMain?cateCode=104'">수납/정리</button>
+						<button id="cat_btn6" onclick="location.href='/shop/shopMain?cateCode=105'">소품</button>
+						<button id="cat_btn7" onclick="location.href='/shop/shopMain?cateCode=106'">식물</button>
 					</div>
-
-
 					<div class="flex items-center" id="store-nav-content">
 
 						<a class="pl-3 inline-block no-underline hover:text-black"
