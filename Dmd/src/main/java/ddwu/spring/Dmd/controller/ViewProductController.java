@@ -16,7 +16,11 @@ import ddwu.spring.Dmd.service.ProductService;
 public class ViewProductController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String viewProd() {
+	public String viewProd(@RequestParam("prodId") String prodId,
+			ModelMap model) {
+		
+		Product product = new Product("prod1", "cate1", "good chair", "brand1", 23200, 1, "content", "url");
+		model.put("product", product);
 		
 		return "/shop/ViewProduct";
 	}

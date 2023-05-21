@@ -86,8 +86,8 @@
 										itemprop="breadcrumb">
 										<a href="https://savoy.nordicmade.com">Shop</a><span
 											class="delimiter">/</span><a
-											href="https://savoy.nordicmade.com/product-category/interior/">Interior</a><span
-											class="delimiter">/</span>Modern Shell Chair
+											href="https://savoy.nordicmade.com/product-category/interior/">${product.cateID}</a><span
+											class="delimiter">/</span>${product.name}
 									</nav>
 								</div>
 							</div>
@@ -126,15 +126,15 @@
 									<div class="summary entry-summary">
 										<div
 											class="nm-product-summary-inner-col nm-product-summary-inner-col-1">
-											<h1 class="product_title entry-title">Modern Shell Chair</h1>
+											<h1 class="product_title entry-title">${product.name}</h1>
 											<p class="price has-sale-flash">
 												<del aria-hidden="true">
 													<span class="woocommerce-Price-amount amount"><bdi>
-														<span class="woocommerce-Price-currencySymbol">&#36;</span>234.00</bdi></span>
+														<span class="woocommerce-Price-currencySymbol">&#92;</span>234.00</bdi></span>
 												</del>
 												<ins>
 													<span class="woocommerce-Price-amount amount"><bdi>
-														<span class="woocommerce-Price-currencySymbol">&#36;</span>208.00</bdi></span>
+														<span class="woocommerce-Price-currencySymbol">&#92;</span>${product.price}</bdi></span>
 												</ins>
 												<span class="onsale"><span class="nm-onsale-before">-</span>11<span
 													class="nm-onsale-after">%</span></span>
@@ -238,8 +238,8 @@
 														<div style="padding: 10px 10px;">
 															<button type="button" id="cart" class="btn">
 																<a href="<c:url value="/order/Cart" >
-																	<c:param name="prodId" value="${prod.prodId}"/>
-																	<c:param name="prodQty" value="${prod.qty}"/>
+																	<c:param name="prodId" value="${product.id}"/>
+																	<c:param name="prodQty" value="${product.qty}"/>
 																	</c:url>">
 																	Cart</a>
 															</button>
