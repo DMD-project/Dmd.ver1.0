@@ -199,49 +199,53 @@
 													<div
 														class="woocommerce-variation-add-to-cart variations_button">
 
-														<form id="qtyForm">
+														
 														<div class="nm-quantity-wrap  qty-show">
 															<label>Quantity</label> <label
 																class="nm-qty-label-abbrev">Qty</label>
 															
 															<div class="quantity">
-																<button type="button" id="qty-minus" class="qty-btn">-</button>
-																&nbsp;<input type="number"
-																	class="input-text qty text" step="1" min="1" max=""
-																	name="prodQty" value="1" size="4" readonly="readonly"
-																	pattern="[0-9]*" />&nbsp;
+																<button type="button" id="qty-minus" class="qty-btn" onClick="qtyMinus()">-</button>
+																&nbsp;
+																<form id="qtyForm">
+																	<input type="number" id="qtyValue"
+																		class="input-text qty text" step="1" min="1" max=""
+																		name="prodQty" value="1" size="4" readonly="readonly"
+																		pattern="[0-9]*" />
+																	<input type="hidden" name="prodId" value="${product.id}" />
+																</form>&nbsp;
 																	
-																<button type="button" id="qty-plus" class="qty-btn">+</button>
+																<button type="button" id="qty-plus" class="qty-btn" onClick="qtyPlus()">+</button>
+														
 															</div>
 														</div>
-														
 														<script>
-															$("#qty-minus").click(function() {
-																var qty = $(".input-text qty text").val();
+															function qtyMinus() {
+																var qty = document.getElementById("qtyValue").value;
 																var minusQty = Number(qty) - 1;
 																
 																if(minusQty <= 0) {
-																	$(".input-text qty text").val(qty);
+																	document.getElementById("qtyValue").value = qty;
 																} else {
-																	$(".input-text qty text").val(minusQty);
+																	document.getElementById("qtyValue").value = minusQty;
 																}
-															});
+															}
 														
-															$("#qty-plus").click(function() {
-																var qty = $(".input-text qty text").val();
+															function qtyPlus() {
+																var qty = document.getElementById("qtyValue").value;
 																var plusQty = Number(qty) + 1;
 																
-																$(".input-text qty text").val(plusQty);
-															});
+																//alert(plusQty);
+																document.getElementById("qtyValue").value = plusQty;
+															};
 														</script>
 
-
 														<div style="padding: 10px 10px;">
-															<input type="hidden" name="prodId" value="${product.id}" />
 															<button type="submit" formaction="/order/Cart" id="cart" class="btn">Cart</button>															</button>
 															<button type="button" id="buy" class="btn">Buy</button>
 														</div>
-														</form>
+														
+							
 														<input type="hidden" name="add-to-cart" value="253" /> <input
 															type="hidden" name="product_id" value="253" /> <input
 															type="hidden" name="variation_id" class="variation_id"
@@ -250,6 +254,7 @@
 												</div>
 
 											</form>
+							
 										</div>
 									</div>
 								</div>
