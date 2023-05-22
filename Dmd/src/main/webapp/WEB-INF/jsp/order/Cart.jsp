@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+img {
+	height: 150px;
+	width: 150px;	
+}
+</style>
 </head>
 <body>
     <section class="cart">
@@ -27,6 +34,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                	<tr class="cart__list__detail">
+                		<p>${cart.prodID} ${cart.qty}
+     
+                	</tr>
                     <tr class="cart__list__detail">
                         <td><input type="checkbox"></td>
 <!--                         <td><img src="image/keyboard.jpg" alt="magic keyboard"></td> -->    

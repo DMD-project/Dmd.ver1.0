@@ -19,7 +19,7 @@ public class ViewProductController {
 	public String viewProd(@RequestParam("prodId") String prodId,
 			ModelMap model) {
 		
-		Product product = new Product("prod1", "cate1", "good chair", "brand1", 23200, 1, "content", "url");
+		Product product = new Product("prod1", "cate1", "good chair", "brand1", 23200, "content", "url");
 		model.put("product", product);
 		
 		return "/shop/ViewProduct";

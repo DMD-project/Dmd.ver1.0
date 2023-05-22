@@ -10,13 +10,12 @@ public class Product implements Serializable {
 	private String name;
 	private String brandID;
 	private int price;
-	private int qty; // DB 필드 추가 필요
 	private String content;
 	private String prodIMGUrl;
 	
 	
 	
-	public Product(String id, String cateID, String name, String brandID, int price, int qty, String content,
+	public Product(String id, String cateID, String name, String brandID, int price, String content,
 			String prodIMGUrl) {
 		super();
 		this.id = id;
@@ -24,7 +23,6 @@ public class Product implements Serializable {
 		this.name = name;
 		this.brandID = brandID;
 		this.price = price;
-		this.qty = qty;
 		this.content = content;
 		this.prodIMGUrl = prodIMGUrl;
 	}
@@ -65,13 +63,6 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 	
-	public int getQty() {
-		return qty;
-	}
-	public void setQty(int qty) {
-		this.qty = qty;
-	}
-	
 	public String getContent() {
 		return content;
 	}
@@ -90,7 +81,7 @@ public class Product implements Serializable {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", cateID=" + cateID + ", name=" + name + ", brandID=" + brandID + ", price="
-				+ price + ", qty=" + qty + ", content=" + content + ", prodIMGUrl=" + prodIMGUrl + "]";
+				+ price + ", content=" + content + ", prodIMGUrl=" + prodIMGUrl + "]";
 	}
 	
 }
