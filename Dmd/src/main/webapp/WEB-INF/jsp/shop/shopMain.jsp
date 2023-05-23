@@ -202,6 +202,13 @@
 					</div>
 				</div>
 			</nav>
+			
+			<div>
+				<a href="<c:url value="/shop/addProduct"></c:url>"> 
+					<font color="BLACK">추가</font>
+				</a>
+			</div>
+			
 			<c:forEach var="product" items="${productList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="/shop/product" > <c:param name="prodId" value="${prod.prodId}"/></c:url>"> 
