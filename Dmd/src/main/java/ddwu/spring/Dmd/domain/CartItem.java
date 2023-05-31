@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class CartItem implements Serializable {
-	private Item item;
+	private Product prod;
 	private String userID;
 	private String prodID;
 	private int qty;
@@ -19,12 +19,12 @@ public class CartItem implements Serializable {
 		this.ispurchase = ispurchase;
 	}
 	
-	public Item getItem() {
-		return item;
+	public Product getProd() {
+		return prod;
 	}
 
-	public void setItem(Item item) {
-		this.item = item;
+	public void setProd(Product prod) {
+		this.prod = prod;
 	}
 	
 	public String getUserID() {

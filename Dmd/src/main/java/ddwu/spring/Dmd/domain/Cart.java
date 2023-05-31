@@ -41,26 +41,26 @@ public class Cart implements Serializable {
 		return itemMap.containsKey(itemId);
 	}
 
-	public void addItem(Item item, boolean isInStock) {
-		CartItem cartItem = itemMap.get(item.getItemId());
+	public void addItem(Product prod, boolean isInStock) {
+		CartItem cartItem = itemMap.get(prod.getId());
 		if (cartItem == null) {
 			cartItem = new CartItem(null, null, 0, null);
 //			cartItem.setItem(item);
 //			cartItem.setQty(0);
 //			cartItem.setInStock(isInStock);
-			itemMap.put(item.getItemId(), cartItem);
+//			itemMap.put(prod.getId(), cartItem);
 			itemList.getSource().add(cartItem);
 		}
 		cartItem.incrementQuantity();
 	}
 
-	public Item removeItemById(int itemId) {
+	public Product removeItemById(int itemId) {
 		CartItem cartItem = itemMap.remove(itemId);
 		if (cartItem == null) {
 			return null;
 		} else {
 			itemList.getSource().remove(cartItem);
-			return cartItem.getItem();
+			return cartItem.getProd();
 		}
 	}
 
@@ -69,7 +69,7 @@ public class Cart implements Serializable {
 		cartItem.incrementQuantity();
 	}
 
-	public void setQuantityByItemId(int itemId, int quantity) {
+	public void setQuantityByItemId(String itemId, int quantity) {
 		CartItem cartItem = itemMap.get(itemId);
 		cartItem.setQty(quantity);
 	}
@@ -79,8 +79,8 @@ public class Cart implements Serializable {
 		Iterator<CartItem> items = getAllCartItems();
 		while (items.hasNext()) {
 			CartItem cartItem = (CartItem) items.next();
-			Item item = cartItem.getItem();
-			int listPrice = item.getUnitCost();
+			Product prod = cartItem.getProd();
+			int listPrice = prod.getPrice();
 			int quantity = cartItem.getQty();
 			subTotal += listPrice * quantity;
 		}
