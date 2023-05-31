@@ -73,22 +73,20 @@ div {
 					<form:errors path="name"/>
 				</td>
 			</tr>
-			<%-- <tr>
+			<tr>
 				<td>
 					카테고리
-					<form:input path = "category" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center'/>
-						<option>--카테고리--</option>
-					</select>
+					<form:select path="cateId" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center' items="${categoryType}"/>
+					<form:errors path="cateId"/>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					브랜드 &nbsp;&nbsp;
-					<select name = "brand" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center'>
-						<option>---브랜드---</option>
-					</select>
+					<form:select path="brandId" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center' items="${brandType}"/>
+					<form:errors path="brandId"/>
 				</td>
-			</tr> --%>
+			</tr>
 			<tr>
 				<td>
 					상품 가격

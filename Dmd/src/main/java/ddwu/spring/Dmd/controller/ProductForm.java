@@ -1,5 +1,7 @@
 package ddwu.spring.Dmd.controller;
 
+import ddwu.spring.Dmd.domain.Product;
+
 public class ProductForm {
 	
 	private String id;
@@ -9,6 +11,12 @@ public class ProductForm {
 	private int price;
 	private String content;
 	private String prodImgUrl;
+	
+	private Product product;
+	
+	public Product getProduct() {
+		return product;
+	}
 	public String getId() {
 		return id;
 	}
