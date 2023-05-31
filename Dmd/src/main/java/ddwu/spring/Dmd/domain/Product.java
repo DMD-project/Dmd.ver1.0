@@ -2,44 +2,40 @@ package ddwu.spring.Dmd.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @SuppressWarnings("serial")
+@Entity
+@Table(name="product")
 public class Product implements Serializable {
 	
-	private String id;
-	private String cateID;
+	@Id
+	private int id;
+	private int cateID;
+	private int brandID;
+	
 	private String name;
-	private String brandID;
 	private int price;
 	private String content;
 	private String prodIMGUrl;
 	
 	
-	
-	public Product(String id, String cateID, String name, String brandID, int price, String content,
-			String prodIMGUrl) {
-		super();
-		this.id = id;
-		this.cateID = cateID;
-		this.name = name;
-		this.brandID = brandID;
-		this.price = price;
-		this.content = content;
-		this.prodIMGUrl = prodIMGUrl;
-	}
-	
 	public Product() {}
 	
-	public String getId() {
+	/* JavaBeans Properties */
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public String getCateID() {
+	public int getCateID() {
 		return cateID;
 	}
-	public void setCateID(String cateID) {
+	public void setCateID(int cateID) {
 		this.cateID = cateID;
 	}
 	
@@ -50,10 +46,10 @@ public class Product implements Serializable {
 		this.name = name;
 	}
 	
-	public String getBrandID() {
+	public int getBrandID() {
 		return brandID;
 	}
-	public void setBrandID(String brandID) {
+	public void setBrandID(int brandID) {
 		this.brandID = brandID;
 	}
 	
