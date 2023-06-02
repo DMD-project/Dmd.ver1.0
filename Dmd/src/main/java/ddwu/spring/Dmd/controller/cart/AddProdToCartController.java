@@ -13,7 +13,7 @@ import ddwu.spring.Dmd.domain.CartItem;
 public class AddProdToCartController {
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String addProdToCart(@RequestParam(value="prodId") String id, 
+	public String addProdToCart(@RequestParam(value="prodId") int id, 
 								@RequestParam(value="prodQty", defaultValue="1") int qty,
 								ModelMap model) {
 		System.out.println("addProdToCart controller start");

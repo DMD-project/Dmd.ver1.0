@@ -6,12 +6,12 @@ import java.io.Serializable;
 public class CartItem implements Serializable {
 	private Product prod;
 	private String userID;
-	private String prodID;
+	private int prodID;
 	private int qty;
 	private boolean inStock;
 	private String ispurchase; //("n" / "y")
 	
-	public CartItem(String userID, String prodID, int qty, String ispurchase) {
+	public CartItem(String userID, int prodID, int qty, String ispurchase) {
 		super();
 		this.userID = userID;
 		this.prodID = prodID;
@@ -34,10 +34,10 @@ public class CartItem implements Serializable {
 		this.userID = userID;
 	}
 	
-	public String getProdID() {
+	public int getProdID() {
 		return prodID;
 	}
-	public void setProdID(String prodID) {
+	public void setProdID(int prodID) {
 		this.prodID = prodID;
 	}
 	
