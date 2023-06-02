@@ -9,8 +9,6 @@ import javax.persistence.Query;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.example.jpetstore.domain.Account;
-
 import ddwu.spring.Dmd.domain.Profile;
 
 @Repository

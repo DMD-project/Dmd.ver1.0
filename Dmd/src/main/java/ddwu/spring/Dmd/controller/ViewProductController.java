@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ddwu.spring.Dmd.dao.ProductDAO;
 import ddwu.spring.Dmd.domain.Product;
 import ddwu.spring.Dmd.service.ProductService;
 
@@ -19,7 +18,7 @@ public class ViewProductController {
 	public String viewProd(@RequestParam("prodId") String prodId,
 			ModelMap model) {
 		
-		Product product = new Product("prod1", "cate1", "good chair", "brand1", 23200, "content", "url");
+		Product product = new Product(100001, 1000002, "good chair", 1002342, 23200, "content", "url");
 		model.put("product", product);
 		
 		return "/shop/ViewProduct";
