@@ -1,8 +1,11 @@
 package ddwu.spring.Dmd.controller;
 
-import ddwu.spring.Dmd.domain.Product;
+import java.io.Serializable;
 
-public class ProductForm {
+import ddwu.spring.Dmd.domain.Product;
+import ddwu.spring.Dmd.domain.Profile;
+@SuppressWarnings("serial")
+public class ProductForm implements Serializable {
 	
 	private String id;
 	private String cateId;
@@ -13,6 +16,13 @@ public class ProductForm {
 	private String prodImgUrl;
 	
 	private Product product;
+	
+	public ProductForm() {
+		this.product = new Product();
+	}
+	public ProductForm(Product product) {
+		this.product = product;
+	}
 	
 	public Product getProduct() {
 		return product;

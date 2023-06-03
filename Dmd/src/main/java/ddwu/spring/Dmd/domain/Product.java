@@ -3,15 +3,28 @@ package ddwu.spring.Dmd.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
+@SequenceGenerator(
+		name = "prod_seq_generator",
+		sequenceName = "prod_seq",
+		initialValue = 1,
+		allocationSize = 1
+		)
 @Table(name="product")
 public class Product implements Serializable {
 	
 	@Id
+	@GeneratedValue(
+			strategy = GenerationType.SEQUENCE,
+			generator = "prod_seq_generator"
+			)
 	private int id;
 	private int cateID;
 	private int brandID;
@@ -20,9 +33,6 @@ public class Product implements Serializable {
 	private int price;
 	private String content;
 	private String prodIMGUrl;
-	
-	
-	public Product() {}
 	
 	public Product(int id, int cateID, String name, int brandID, int price, String content,
  			String prodIMGUrl) {
@@ -35,6 +45,14 @@ public class Product implements Serializable {
  		this.content = content;
  		this.prodIMGUrl = prodIMGUrl;
  	}
+	
+	public Product(int id) {
+		this.id = id;
+	}
+	
+	public Product() {}
+	
+	
 	
 	/* JavaBeans Properties */
 	public int getId() {
