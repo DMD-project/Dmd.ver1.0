@@ -12,17 +12,15 @@ public class OrderServiceImpl implements OrderService {
 	private OrderDao orderDao;
 	
 	public Order getOrder(int orderId) {
-		
 		return orderDao.getOrder(orderId);
 	}
 	
 	public List<Order> getOrdersByUserId(String userId) {
-		
-		return orderDao.getOrdersByUserId(userId);
+		return orderDao.findByUserId(userId);
 	}
 
 	public List<Order> getOrdersByUsername(String username) {
-		return orderDao.getOrdersByUsername(username);
+		return orderDao.findByUsername(username);
 	}
 
 }
