@@ -16,11 +16,13 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	public List<Order> getOrdersByUserId(String userId) {
-		return orderDao.findByUserId(userId);
+		return null;
 	}
 
+	@Override
 	public List<Order> getOrdersByUsername(String username) {
-		return orderDao.findByUsername(username);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
