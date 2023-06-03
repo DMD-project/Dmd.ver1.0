@@ -3,6 +3,7 @@ package ddwu.spring.Dmd.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -22,6 +23,26 @@ public class JpaProfileDao implements ProfileDao {
 		return em.find(Profile.class, id);
 	}
 
+	@Override
+	public Profile getProfile(String id, String pw) throws DataAccessException {
+		
+		Query q = em.createQuery("Select a from Profile p "
+								+ "where p.id=:id and p.pw=:pw", 
+								Profile.class);
+		q.setParameter("id", id);
+		q.setParameter("pw", pw);
+		
+		Profile profile = null;
+		try {
+			profile = (Profile) q.getSingleResult();
+			
+		} catch(NoResultException e) {
+			return null;
+		}
+		return profile;
+	}
+
+	
 	@Override
 	public void insertProfile(Profile profile) throws DataAccessException {
 		em.persist(profile);

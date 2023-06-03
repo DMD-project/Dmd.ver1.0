@@ -7,6 +7,8 @@ public interface ProfileFacade {
 	
 	Profile getProfile(String id);
 	
+	Profile getProfile(String id, String pw);
+	
 	void insertProfile(Profile profile);
 
 	void updateProfile(Profile profile);

@@ -22,6 +22,11 @@ public class ProfileImpl implements ProfileFacade {
 	public Profile getProfile(String id) {
 		return profileDao.getProfile(id);
 	}
+	
+	@Override
+	public Profile getProfile(String id, String pw) {
+		return profileDao.getProfile(id, pw);
+	}
 
 	@Override
 	public void insertProfile(Profile profile) {

@@ -1,8 +1,10 @@
 package ddwu.spring.Dmd.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -22,6 +24,7 @@ public class ProfileFormController {
 	
 	@Autowired
 	private ProfileFacade facade;
+	
 	public void setFacade(ProfileFacade facade) {
 		this.facade = facade;
 	}
@@ -45,8 +48,9 @@ public class ProfileFormController {
 	
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String submit(@ModelAttribute("profile") ProfileForm profileForm,
-			BindingResult result, SessionStatus status) {
+	public String submit(HttpServletRequest request, HttpSession session,
+			@ModelAttribute("profile") ProfileForm profileForm,
+			BindingResult result, SessionStatus status) throws Exception {
 		
 		System.out.println("in ProfileFormController > submit()");
 		
@@ -72,6 +76,15 @@ public class ProfileFormController {
 			return "profile/AddProfileForm"; 
 		}
 		*/
+		
+		UserSession userSession = new UserSession(
+				facade.getProfile(profileForm.getProfile().getId()));
+		/*PagedListHolder<Product> myList = new PagedListHolder<Product>(
+			petStore.getProductListByCategory(
+					accountForm.getAccount().getProfile().getFavouriteCategoryId()));
+		myList.setPageSize(4);
+		userSession.setMyList(myList);*/
+		session.setAttribute("userSession", userSession);
 		
 		status.setComplete();
 		return "profile/AddSuccess";

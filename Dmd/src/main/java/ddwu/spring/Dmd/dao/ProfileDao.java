@@ -8,6 +8,8 @@ public interface ProfileDao {
 	
 	Profile getProfile(String id) throws DataAccessException; 
 	
+	Profile getProfile(String id, String pw) throws DataAccessException; 
+	
 	void insertProfile(Profile profile) throws DataAccessException;
 	
 	void updateProfile(Profile profile) throws DataAccessException;
