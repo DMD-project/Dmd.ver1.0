@@ -1,6 +1,9 @@
 package ddwu.spring.Dmd.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,11 +64,20 @@ public class ProfileFormController {
 		
 		if(result.hasErrors()) 
 			return "profile/AddProfileForm";
+		
+		if(profileForm.isNewProfile()) {
+			System.out.println("new profile");
+			facade.insertProfile(profileForm.getProfile());
+		} else {
+			System.out.println("already exist profile");
+			
+			//facade.updateProfile(profileForm.getProfile());
+		}
 		/*
 		try {
 			if(profileForm.isNewProfile()) {
 				System.out.println("new profile");
-				//facade.insertProfile(profileForm.getProfile());
+				facade.insertProfile(profileForm.getProfile());
 			} else {
 				System.out.println("already exist profile");
 				//facade.updateProfile(profileForm.getProfile());

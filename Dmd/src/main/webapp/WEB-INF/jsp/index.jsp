@@ -134,7 +134,10 @@
 			</div>
 
 			<div class="order-2 md:order-3 flex items-center" id="nav-content">
-
+				<c:if test="${empty userSession.profile}" >
+					<a class="inline-block no-underline hover:text-black"
+							href="<c:url value="/profile/login" /> ">Login</a>
+				</c:if>
 				<a class="inline-block no-underline hover:text-black" 
 					href="<c:url value="/profile/add" /> ">
 					<svg class="fill-current hover:text-black"

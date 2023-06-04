@@ -26,14 +26,17 @@ public class LoginController {
 	
 	@RequestMapping("/profile/login")
 	public ModelAndView handleRequest(HttpServletRequest request,
-			@RequestParam("id") String id,
-			@RequestParam("pw") String pw,
+			@RequestParam(value="id", required=false) String id,
+			@RequestParam(value="pw", required=false) String pw,
 			@RequestParam(value="forwardAction", required=false) String forwardAction,
 			Model model) throws Exception {
 		
 		Profile profile = facade.getProfile(id, pw);
 		
 		if(profile == null) {
+			return new ModelAndView("Error", "message", 
+					"Invalid id or password.  login failed.");
+		} else {
 			UserSession userSession = new UserSession(profile);
 			
 			/*PagedListHolder<Product> myList = new PagedListHolder<Product>(
@@ -43,10 +46,6 @@ public class LoginController {
 			userSession.setMyList(myList);*/
 			
 			model.addAttribute("userSession", userSession);
-			
-			return new ModelAndView("Error", "message", 
-					"Invalid id or password.  login failed.");
-		} else {
 			if (forwardAction != null) 
 				return new ModelAndView("redirect:" + forwardAction);
 			else 
