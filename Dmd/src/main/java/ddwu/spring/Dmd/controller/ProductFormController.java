@@ -43,7 +43,7 @@ public class ProductFormController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String form() {
-		return "shop/AddProductForm";
+		return "product/AddProductForm";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
@@ -59,7 +59,7 @@ public class ProductFormController {
 		validator.validate(productForm, result);
 		
 		if(result.hasErrors())
-			return "shop/AddProductForm";
+			return "product/AddProductForm";
 		
 		//save
 		facade.addProduct(productForm.getProduct());

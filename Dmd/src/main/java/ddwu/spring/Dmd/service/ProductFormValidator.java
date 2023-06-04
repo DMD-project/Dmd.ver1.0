@@ -28,9 +28,9 @@ public class ProductFormValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "price", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "content", "required");
 		
-		if(prodForm.getContent().length() > 0 && prodForm.getContent().length() < 10) {
-			errors.rejectValue("content", "tooShortContent");
-		}
+//		if(prodForm.getContent().length() > 0 && prodForm.getContent().length() < 10) {
+//			errors.rejectValue("content", "tooShortContent");
+//		}
 		return;
 	}
 	
