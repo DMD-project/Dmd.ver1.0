@@ -16,11 +16,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	private HandlerInterceptor interceptor;
 
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/profile/loginForm").setViewName("loginForm");
+		registry.addViewController("/profile/loginForm").setViewName("/profile/LoginForm");
 	}
 	
 	public void addInterceptors(InterceptorRegistry registry) {
-//		registry.addInterceptor(interceptor).addPathPatterns("");
+//		registry.addInterceptor(interceptor).addPathPatterns("/profile/login");
 	
 	}
 }

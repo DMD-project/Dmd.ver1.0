@@ -16,15 +16,19 @@ public class LoginInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, 
 			HttpServletResponse response, Object handler) throws Exception {
 		
+		System.out.println("in LoginInterceptor");
+		
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		
 		if(userSession == null) {
 			String url = request.getRequestURL().toString(); 
 			String query = request.getQueryString();
-			ModelAndView modelAndView = new ModelAndView("LoginForm");
+			System.out.println(url +"\n"+ query);
+			ModelAndView modelAndView = new ModelAndView("/profile/LoginForm");
 			
 			if (query != null) {
+				System.out.println("query!=null => "+ query);
 				modelAndView.addObject("LoginForwardAction", url+"?"+query);
 			}
 			else {

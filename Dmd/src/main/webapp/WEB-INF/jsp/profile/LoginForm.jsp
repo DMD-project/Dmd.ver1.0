@@ -60,17 +60,15 @@ input {
 		<table>
 			<th>회원가입</th>
 			<tr>
-				<td>이름</td>
+				<td>아이디</td>
 				<td>
-					<form:input name="id" path="id" class="formStyle" /> 
-					<form:errors path="id" />
+					<input name="id" class="formStyle" /> 
 				</td>
 			</tr>
 			<tr>
-				<td>아이디</td>
+				<td>비밀번호</td>
 				<td>
-					<form:input type="password" path="pw" class="formStyle" /> 
-					<form:errors path="pw" />
+					<input type="password" name="pw" class="formStyle" /> 
 				</td>
 			</tr>
 	

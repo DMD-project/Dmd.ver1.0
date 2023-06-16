@@ -26,11 +26,13 @@ public class JpaProfileDao implements ProfileDao {
 	@Override
 	public Profile getProfile(String id, String pw) throws DataAccessException {
 		
-		Query q = em.createQuery("Select a from Profile p "
-								+ "where p.id=:id and p.pw=:pw", 
+		System.out.println("in JPA Profile DAO: " +id+ " / " +pw);
+		
+		Query q = em.createQuery("Select p from Profile p "
+								+ "where p.id=?1 and p.pw=?2", 
 								Profile.class);
-		q.setParameter("id", id);
-		q.setParameter("pw", pw);
+		q.setParameter(1, id);
+		q.setParameter(2, pw);
 		
 		Profile profile = null;
 		try {

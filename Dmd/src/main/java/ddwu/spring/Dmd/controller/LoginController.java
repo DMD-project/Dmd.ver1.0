@@ -26,10 +26,12 @@ public class LoginController {
 	
 	@RequestMapping("/profile/login")
 	public ModelAndView handleRequest(HttpServletRequest request,
-			@RequestParam(value="id", required=false) String id,
-			@RequestParam(value="pw", required=false) String pw,
+			@RequestParam(value="id") String id,
+			@RequestParam(value="pw") String pw,
 			@RequestParam(value="forwardAction", required=false) String forwardAction,
 			Model model) throws Exception {
+		
+		System.out.println("in loginController");
 		
 		Profile profile = facade.getProfile(id, pw);
 		
@@ -49,7 +51,7 @@ public class LoginController {
 			if (forwardAction != null) 
 				return new ModelAndView("redirect:" + forwardAction);
 			else 
-				return new ModelAndView("index");
+				return new ModelAndView("/index");
 		}
 	}
 }
