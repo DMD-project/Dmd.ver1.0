@@ -33,7 +33,7 @@ private ProfileFacade facade;
 			return new ModelAndView("/profile/mypage", "profile", profile);
 		}
 		else {
-			return new ModelAndView("index", "message", " ..... msg");
+			return new ModelAndView("index", "message", " ..... error msg");
 		}
 		
 	}
