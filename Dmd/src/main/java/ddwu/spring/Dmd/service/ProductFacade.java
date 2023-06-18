@@ -16,7 +16,7 @@ public interface ProductFacade {
 	
 	List<Product> searchProductList(String keywords);
 	
-	List<Product> getAllProducts();
+	List<Product> findAll();
 	
 
 }

@@ -5,9 +5,13 @@
 <html lang="en-US" class="footer-sticky-1">
 <head>
 <meta charset="UTF-8">
+<link rel="https://api.w.org/" href="https://savoy.nordicmade.com/wp-json/" /><link rel="alternate" type="application/json" href="https://savoy.nordicmade.com/wp-json/wp/v2/product/253" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://savoy.nordicmade.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://savoy.nordicmade.com/wp-includes/wlwmanifest.xml" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>m²Dm - interior Shop:</title>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
@@ -52,8 +56,6 @@
 	font-weigth: bold;
 	color:#777777;
 }
-
-
 
 </style>
 

@@ -41,7 +41,7 @@ public class ProductService implements ProductFacade{
 
 
 	@Override
-	public List<Product> getAllProducts() {
+	public List<Product> findAll() {
 		// TODO Auto-generated method stub
 		return (List<Product>) prodDao.findAll();
 	}
