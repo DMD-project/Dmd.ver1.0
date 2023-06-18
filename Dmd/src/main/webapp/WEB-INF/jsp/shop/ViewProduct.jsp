@@ -3,11 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en-US" class="footer-sticky-1">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html lang="en-US" class="footer-sticky-1">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,14 +53,17 @@
 	color: #777777;
 }
 </style>
+
 </head>
 
 <body data-rsssl=1
 	class="product-template-default single single-product postid-253 theme-savoy woocommerce woocommerce-page woocommerce-no-js nm-page-load-transition-0 nm-preload header-fixed header-mobile-default header-border-1 widget-panel-dark wpb-js-composer js-comp-ver-6.9.0 vc_responsive">
+
 <header id="nm-header"
 					class="nm-header centered resize-on-scroll clear">
 					<%@ include file="IncludeTop.jsp"%>
 				</header>
+				
 	<div style="margin:0px 200px 0px 200px; 
 	class="nm-page-overflow">
 		<div class="nm-page-wrap">
@@ -81,7 +79,8 @@
 					<div class="nm-single-product-bg clear">
 
 						<!-- product category -->
-						<div style="float:left;align-content:space-between;" class="nm-single-product-top"> <!-- float:left; style="float:left;"/*  */-->
+						<div style="float:left;align-content:space-between;"
+						class="nm-single-product-top">
 							<div class="nm-row">
 								<div class="col-xs-9">
 									<nav id="nm-breadcrumb" class="woocommerce-breadcrumb"
@@ -95,11 +94,10 @@
 							</div>
 						</div>
 
-						<!-- <div id="nm-shop-notices-wrap"></div> -->
+						<div id="nm-shop-notices-wrap"></div>
 						<div class="nm-single-product-showcase">
 							<div class="nm-single-product-summary-row nm-row">
 								<div class="nm-single-product-summary-col col-xs-12">
-
 									<div style="float:left;"
 										class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images lightbox-enabled pagination-enabled"
 										data-columns="4"
@@ -126,7 +124,7 @@
 
 									</div>
 
-									<div style="margin:0px 0px 300px 0px;"class="summary entry-summary"> <!--  -->
+									<div style="margin:0px 0px 300px 0px;" class="summary entry-summary">
 										<div
 											class="nm-product-summary-inner-col nm-product-summary-inner-col-1">
 											<h1 class="product_title entry-title">${product.name}</h1>
@@ -263,20 +261,19 @@
 															type="hidden" name="variation_id" class="variation_id"
 															value="0" />
 													</div>
-													<!-- float:left; -->
 												</div>
 
 											</form>
 
 										</div>
-									</div><!--  --> 
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--  Description-->
-				<div class="woocommerce-tabs wc-tabs-wrapper" >
+
+				<div class="woocommerce-tabs wc-tabs-wrapper">
 					<div class="nm-product-tabs-col">
 						<div class="nm-row">
 							<div class="col-xs-12">
@@ -461,7 +458,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<footer
 		class="container mx-auto bg-white py-8 border-t border-gray-400">
