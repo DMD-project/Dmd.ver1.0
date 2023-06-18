@@ -12,20 +12,21 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@SequenceGenerator(
-		name = "sh_seq_generator",
-		sequenceName = "sh_seq",
-		initialValue = 2000,
-		allocationSize = 1
-		)
+
 @Table(name="SECONDHAND")
 public class SecondHand implements Serializable {
 	
 	@Id
 	@Column(name="SECONDHANDID")
+	@SequenceGenerator(
+			name = "sh_seq_generator",
+			sequenceName = "sh_seq",
+			initialValue = 2000,
+			allocationSize = 1
+			)
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE,
-			generator = "prod_seq_generator"
+			generator = "sh_seq_generator"
 			)
 	private int id;
 	

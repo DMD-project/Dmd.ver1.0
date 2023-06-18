@@ -12,16 +12,17 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@SequenceGenerator(
-		name = "prod_seq_generator",
-		sequenceName = "prod_seq",
-		initialValue = 1,
-		allocationSize = 1
-		)
+
 @Table(name="product")
 public class Product implements Serializable {
 	
 	@Id
+	@SequenceGenerator(
+			name = "prod_seq_generator",
+			sequenceName = "prod_seq",
+			initialValue = 1,
+			allocationSize = 1
+			)
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE,
 			generator = "prod_seq_generator"
@@ -47,6 +48,15 @@ public class Product implements Serializable {
  		this.price = price;
  		this.content = content;
  		this.prodIMGUrl = prodIMGUrl;
+ 	}
+	public Product(int id, int cateID, String name, int brandID, int price, String content) {
+ 		super();
+ 		this.id = id;
+ 		this.cateID = cateID;
+ 		this.name = name;
+ 		this.brandID = brandID;
+ 		this.price = price;
+ 		this.content = content;
  	}
 	
 	public Product(int id) {
