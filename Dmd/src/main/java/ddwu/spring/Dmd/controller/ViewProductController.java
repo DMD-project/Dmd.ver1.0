@@ -8,20 +8,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ddwu.spring.Dmd.domain.Product;
+import ddwu.spring.Dmd.service.ProductFacade;
 import ddwu.spring.Dmd.service.ProductService;
 
 @Controller
 @RequestMapping("/shop/product")
 public class ViewProductController {
+	
+	private ProductFacade facade;
+	
+	@Autowired
+	public void setProductFacade(ProductFacade facade) {
+		this.facade = facade;
+	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String viewProd(@RequestParam("prodId") String prodId,
-			ModelMap model) {
+	public String viewProd(@RequestParam("prodId") int prodId,
+			ModelMap model) throws Exception {
 		
-		Product product = new Product(100001, 1000002, "good chair", 1002342, 23200, "content", "url");
+		//Product product = new Product(100001, 1000002, "good chair", 1002342, 23200, "content", "url");
+		//model.put("product", product);
+		
+		Product product = this.facade.getProduct(prodId);
 		model.put("product", product);
 		
-		return "/shop/ViewProduct";
+		
+		return "shop/ViewProduct";
 	}
 	
 	

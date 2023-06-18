@@ -1,6 +1,7 @@
 package ddwu.spring.Dmd.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,20 @@ public class ProductService implements ProductFacade{
 	public List<Product> findAll() {
 		// TODO Auto-generated method stub
 		return (List<Product>) prodDao.findAll();
+	}
+
+
+	@Override
+	public Product getProduct(int productId) throws Exception {
+		// TODO Auto-generated method stub
+		Optional<Product> result = prodDao.findById(productId);
+		if(result.isPresent()) {
+			Product product = result.get();
+			return product;
+		} else {
+			throw new Exception();
+		}
+		
 	}
 	
 	

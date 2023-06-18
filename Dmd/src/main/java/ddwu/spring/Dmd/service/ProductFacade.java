@@ -1,6 +1,7 @@
 package ddwu.spring.Dmd.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import ddwu.spring.Dmd.domain.Product;
 
@@ -18,5 +19,6 @@ public interface ProductFacade {
 	
 	List<Product> findAll();
 	
+	Product getProduct(int productId) throws Exception;
 
 }
