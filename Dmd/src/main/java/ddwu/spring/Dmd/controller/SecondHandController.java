@@ -32,7 +32,7 @@ public class SecondHandController {
 		PagedListHolder<SecondHand> shList = new PagedListHolder<SecondHand>(shFacade.findAll());
 		shList.setPageSize(4);
 		
-		System.out.println("in SecondHand Controller\n" +shList.getSource().get(0).getName());
+//		System.out.println("in SecondHand Controller\n" +shList.getSource().get(0).getName());
 		
 		model.put("secondHandList", shList);
 		model.put("userSession", userSession);
