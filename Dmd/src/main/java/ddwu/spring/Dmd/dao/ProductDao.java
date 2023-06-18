@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import ddwu.spring.Dmd.domain.Product;
 @Repository
-public interface ProductDao extends CrudRepository<Product, String>{
+public interface ProductDao extends CrudRepository<Product, Integer>{
 	//save, findById, count, delete
 	
 	List<Product> findByName(String name);

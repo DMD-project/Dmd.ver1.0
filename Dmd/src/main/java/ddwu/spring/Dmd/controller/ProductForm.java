@@ -7,10 +7,10 @@ import ddwu.spring.Dmd.domain.Profile;
 @SuppressWarnings("serial")
 public class ProductForm implements Serializable {
 	
-	private String id;
-	private String cateId;
+	private int id;
+	private int cateID;
 	private String name;
-	private String brandId;
+	private int brandID;
 	private int price;
 	private String content;
 	private String prodImgUrl;
@@ -18,7 +18,7 @@ public class ProductForm implements Serializable {
 	private Product product;
 	
 	public ProductForm() {
-		this.product = new Product();
+		this.product = new Product(id, cateID, name, brandID, price, content);
 	}
 	public ProductForm(Product product) {
 		this.product = product;
@@ -27,17 +27,17 @@ public class ProductForm implements Serializable {
 	public Product getProduct() {
 		return product;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCateId() {
-		return cateId;
+	public int getCateID() {
+		return cateID;
 	}
-	public void setCateId(String cateId) {
-		this.cateId = cateId;
+	public void setCateID(int cateID) {
+		this.cateID = cateID;
 	}
 	public String getName() {
 		return name;
@@ -45,11 +45,11 @@ public class ProductForm implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getBrandId() {
-		return brandId;
+	public int getBrandID() {
+		return brandID;
 	}
-	public void setBrandId(String brandId) {
-		this.brandId = brandId;
+	public void setBrandID(int brandID) {
+		this.brandID = brandID;
 	}
 	public int getPrice() {
 		return price;
@@ -72,7 +72,7 @@ public class ProductForm implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "ProductForm [id=" + id + ", cateId=" + cateId + ", name=" + name + ", brandId=" + brandId + ", price="
+		return "ProductForm [id=" + id + ", cateId=" + cateID + ", name=" + name + ", brandId=" + brandID + ", price="
 				+ price + ", content=" + content + ", prodImgUrl=" + prodImgUrl + "]";
 	}
 	

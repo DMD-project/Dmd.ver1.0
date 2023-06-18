@@ -69,37 +69,41 @@ div {
 			<tr>
 				<td>																	
 					상품명															
-					<form:input path="name" class="formStyle"/>
-					<form:errors path="name"/>
+					<form:input path="product.name" class="formStyle"/>
+					<form:errors path="product.name"/>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					카테고리
-					<form:select path="cateId" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center' items="${categoryType}"/>
-					<form:errors path="cateId"/>
+					<form:select path="product.cateID" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center'>
+					<form:options items="${cateCodes}" itemLabel="name" itemValue="cateCode"/>
+					</form:select>
+					<form:errors path="product.cateID"/>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					브랜드 &nbsp;&nbsp;
-					<form:select path="brandId" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center' items="${brandType}"/>
-					<form:errors path="brandId"/>
+					<form:select path="product.brandID" class = "formStyle" style = 'border: solid 1px; border-radius: 5px; width: 100px; color: rgb(139, 139, 139); text-align: center'>
+					<form:options items="${brandCodes}" itemLabel="name" itemValue="brandCode"/>
+					</form:select>
+					<form:errors path="product.brandID"/>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					상품 가격
-					<form:input path="price" class="formStyle"/>
-					<form:errors path="price"/>
+					<form:input path="product.price" class="formStyle"/>
+					<form:errors path="product.price"/>
 					
 				</td>
 			</tr>
 			<tr>
 				<td>
 					상품 설명
-					<form:input path="content" class="formStyle" style = 'width: 100%'/>
-					<form:errors path="name"/>
+					<form:input path="product.content" class="formStyle" style = 'width: 100%'/>
+					<form:errors path="product.content"/>
 					<%-- <form>
 						<textarea name = "content" rows = "20" cols = "50" class = "formStyle" style = 'width: 100%'></textarea>
 					</form> --%>
