@@ -15,7 +15,7 @@
 						src="https://i.ibb.co/Wv22GXY/2023-05-16-12-35-39.png">
 				</div>
 				<div class="grade">GOLD</div>
-				<div class="name">Jaden</div>
+				<div class="name">${profile.name}</div>
 			</div>
 			<div class="modify">i</div>
 		</div>

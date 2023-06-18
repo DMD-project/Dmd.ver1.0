@@ -1,5 +1,7 @@
 package ddwu.spring.Dmd.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +22,11 @@ private ProfileFacade facade;
 	@Autowired
 	public void setFacade(ProfileFacade facade) {
 		this.facade = facade;
+	}
+	
+	@ModelAttribute("profile")
+	public String formBacking(HttpServletRequest request) {
+		return "index";
 	}
 	
 	@RequestMapping("/profile/mypage")
