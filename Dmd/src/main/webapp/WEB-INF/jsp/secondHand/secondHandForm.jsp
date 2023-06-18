@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,27 +60,28 @@ div {
 </style>
 </head>
 <body>
+
+	<form:form modelAttribute="secondHand" method="post">
+	
 	<div id = "left" align = "center">
 		<table>
 			<th style = 'border: none; font-size: 20px'>중고거래 상품 등록하기</th>
 			<tr>
 				<td>
 					상품명
-					<input type = "text" name = "title" size = "50" class = "formStyle">
+					<form:input path="secondHand.name" size="50" class="formStyle" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 					상품 가격
-					<input type = "text" name = "title" size = "15" class = "formStyle"> 원
+					<form:input path="secondHand.price" size="15" class="formStyle" /> 원
 				</td>
 			</tr>
 			<tr>
 				<td>
 					상품 설명
-					<form>
-						<textarea name = "content" rows = "30" cols = "50" class = "formStyle" style = 'width: 100%'></textarea>
-					</form>
+					<form:textarea path="secondHand.content" rows="30" cols="50" class="formStyle" style='width: 100%'/>
 				</td>
 			</tr>
 		</table>
@@ -96,5 +100,6 @@ div {
 		<br>
 		<button type="submit" name = "submit" class = "button2">등록하기</button>
 	</div>
+	</form:form>
 </body>
 </html>
