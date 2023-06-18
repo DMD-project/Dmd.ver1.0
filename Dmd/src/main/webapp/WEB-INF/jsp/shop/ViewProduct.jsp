@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>m²Dm - interior Shop:</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
 <link
@@ -24,7 +25,6 @@
 		background: #EEEEEE;
 	}
 }
-
 </style>
 
 
@@ -50,28 +50,26 @@
 .qty-btn {
 	font-size: 25px;
 	font-weigth: bold;
-	color:#777777;
+	color: #777777;
 }
-
-
-
 </style>
 
 </head>
 
 <body data-rsssl=1
 	class="product-template-default single single-product postid-253 theme-savoy woocommerce woocommerce-page woocommerce-no-js nm-page-load-transition-0 nm-preload header-fixed header-mobile-default header-border-1 widget-panel-dark wpb-js-composer js-comp-ver-6.9.0 vc_responsive">
-
-	<div class="nm-page-overflow">
+<header id="nm-header"
+					class="nm-header centered resize-on-scroll clear">
+					<%@ include file="IncludeTop.jsp"%>
+				</header>
+	<div style="margin:0px 200px 0px 200px; 
+	class="nm-page-overflow">
 		<div class="nm-page-wrap">
 
 			<div class="nm-page-wrap-inner">
 				<div id="nm-header-placeholder" class="nm-header-placeholder"></div>
 
-				<header id="nm-header"
-					class="nm-header centered resize-on-scroll clear">
-					<%@ include file="IncludeTop.jsp"%>
-				</header>
+				
 
 				<div class="woocommerce-notices-wrapper"></div>
 				<div id="product-253"
@@ -79,7 +77,7 @@
 					<div class="nm-single-product-bg clear">
 
 						<!-- product category -->
-						<div class="nm-single-product-top">
+						<div style="float:left;align-content:space-between;" class="nm-single-product-top"> <!-- float:left; style="float:left;"/*  */-->
 							<div class="nm-row">
 								<div class="col-xs-9">
 									<nav id="nm-breadcrumb" class="woocommerce-breadcrumb"
@@ -93,11 +91,12 @@
 							</div>
 						</div>
 
-						<div id="nm-shop-notices-wrap"></div>
+						<!-- <div id="nm-shop-notices-wrap"></div> -->
 						<div class="nm-single-product-showcase">
 							<div class="nm-single-product-summary-row nm-row">
 								<div class="nm-single-product-summary-col col-xs-12">
-									<div
+
+									<div style="float:left;"
 										class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images lightbox-enabled pagination-enabled"
 										data-columns="4"
 										style="opacity: 0; transition: opacity .25s ease-in-out;">
@@ -123,7 +122,7 @@
 
 									</div>
 
-									<div class="summary entry-summary">
+									<div style="margin:0px 0px 300px 0px;"class="summary entry-summary"> <!--  -->
 										<div
 											class="nm-product-summary-inner-col nm-product-summary-inner-col-1">
 											<h1 class="product_title entry-title">${product.name}</h1>
@@ -145,7 +144,6 @@
 
 											<form id="nm-variations-form"
 												class="variations_form cart nm-no-select nm-variation-controls-tooltip tooltip-color tooltip-image"
-						
 												method="post" enctype='multipart/form-data'
 												data-product_id="253"
 												data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_color-variant&quot;:&quot;black&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:208,&quot;display_regular_price&quot;:234,&quot;image&quot;:{&quot;title&quot;:&quot;product-classic-chair&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-680x844.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-680x844.jpg 680w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-300x372.jpg 300w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-450x558.jpg 450w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-242x300.jpg 242w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-825x1024.jpg 825w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-700x868.jpg 700w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-220x273.jpg 220w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-140x174.jpg 140w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-940x1166.jpg 940w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair.jpg 1280w&quot;,&quot;sizes&quot;:&quot;(max-width: 680px) 100vw, 680px&quot;,&quot;full_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair.jpg&quot;,&quot;full_src_w&quot;:1280,&quot;full_src_h&quot;:1588,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2015\/08\/product-classic-chair-300x372.jpg&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:372,&quot;src_w&quot;:680,&quot;src_h&quot;:844},&quot;image_id&quot;:129,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;73253-55&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:3302,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color-variant&quot;:&quot;beige&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:208,&quot;display_regular_price&quot;:234,&quot;image&quot;:{&quot;title&quot;:&quot;product-classic-chair-beige&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-768x953.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-768x953.jpg 768w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-450x558.jpg 450w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-600x744.jpg 600w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-242x300.jpg 242w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-825x1024.jpg 825w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-1238x1536.jpg 1238w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige.jpg 1280w&quot;,&quot;sizes&quot;:&quot;(max-width: 680px) 100vw, 680px&quot;,&quot;full_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige.jpg&quot;,&quot;full_src_w&quot;:1280,&quot;full_src_h&quot;:1588,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-beige-450x558.jpg&quot;,&quot;thumb_src_w&quot;:350,&quot;thumb_src_h&quot;:434,&quot;src_w&quot;:680,&quot;src_h&quot;:844},&quot;image_id&quot;:3306,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;73253-55&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:3303,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color-variant&quot;:&quot;brown&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:208,&quot;display_regular_price&quot;:234,&quot;image&quot;:{&quot;title&quot;:&quot;product-classic-chair-brown&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-768x953.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-768x953.jpg 768w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-450x558.jpg 450w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-600x744.jpg 600w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-242x300.jpg 242w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-825x1024.jpg 825w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-1238x1536.jpg 1238w, https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown.jpg 1280w&quot;,&quot;sizes&quot;:&quot;(max-width: 680px) 100vw, 680px&quot;,&quot;full_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown.jpg&quot;,&quot;full_src_w&quot;:1280,&quot;full_src_h&quot;:1588,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/savoy.nordicmade.com\/wp-content\/uploads\/2020\/10\/product-classic-chair-brown-450x558.jpg&quot;,&quot;thumb_src_w&quot;:350,&quot;thumb_src_h&quot;:434,&quot;src_w&quot;:680,&quot;src_h&quot;:844},&quot;image_id&quot;:3307,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;73253-55&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:3304,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}]">
@@ -190,7 +188,7 @@
 																</ul> <a class="reset_variations" href="#">Clear</a>
 															</td>
 														</tr>
-									
+
 													</tbody>
 												</table>
 
@@ -199,71 +197,82 @@
 													<div
 														class="woocommerce-variation-add-to-cart variations_button">
 
-														
+
 														<div class="nm-quantity-wrap  qty-show">
 															<label>Quantity</label> <label
 																class="nm-qty-label-abbrev">Qty</label>
-															
+
 															<div class="quantity">
-																<button type="button" id="qty-minus" class="qty-btn" onClick="qtyMinus()">-</button>
+																<button type="button" id="qty-minus" class="qty-btn"
+																	onClick="qtyMinus()">-</button>
 																&nbsp;
 																<form id="qtyForm">
 																	<input type="number" id="qtyValue"
 																		class="input-text qty text" step="1" min="1" max=""
 																		name="prodQty" value="1" size="4" readonly="readonly"
-																		pattern="[0-9]*" />
-																	<input type="hidden" name="prodId" value="${product.id}" />
-																</form>&nbsp;
-																	
-																<button type="button" id="qty-plus" class="qty-btn" onClick="qtyPlus()">+</button>
-														
+																		pattern="[0-9]*" /> <input type="hidden"
+																		name="prodId" value="${product.id}" />
+																</form>
+																&nbsp;
+
+																<button type="button" id="qty-plus" class="qty-btn"
+																	onClick="qtyPlus()">+</button>
+
 															</div>
 														</div>
 														<script>
 															function qtyMinus() {
-																var qty = document.getElementById("qtyValue").value;
+																var qty = document
+																		.getElementById("qtyValue").value;
 																var minusQty = Number(qty) - 1;
-																
-																if(minusQty <= 0) {
-																	document.getElementById("qtyValue").value = qty;
+
+																if (minusQty <= 0) {
+																	document
+																			.getElementById("qtyValue").value = qty;
 																} else {
-																	document.getElementById("qtyValue").value = minusQty;
+																	document
+																			.getElementById("qtyValue").value = minusQty;
 																}
 															}
-														
+
 															function qtyPlus() {
-																var qty = document.getElementById("qtyValue").value;
+																var qty = document
+																		.getElementById("qtyValue").value;
 																var plusQty = Number(qty) + 1;
-																
+
 																//alert(plusQty);
-																document.getElementById("qtyValue").value = plusQty;
+																document
+																		.getElementById("qtyValue").value = plusQty;
 															};
 														</script>
 
 														<div style="padding: 10px 10px;">
-															<button type="submit" formaction="/order/Cart" id="cart" class="btn">Cart</button>															</button>
+															<button type="submit" formaction="/order/Cart" id="cart"
+																class="btn">Cart</button>
+															</button>
 															<button type="button" id="buy" class="btn">Buy</button>
 														</div>
-														
-							
+
+
 														<input type="hidden" name="add-to-cart" value="253" /> <input
 															type="hidden" name="product_id" value="253" /> <input
 															type="hidden" name="variation_id" class="variation_id"
 															value="0" />
 													</div>
+													<!-- float:left; -->
 												</div>
 
 											</form>
-							
+
 										</div>
-									</div>
+									</div><!--  --> 
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="woocommerce-tabs wc-tabs-wrapper">
+				<!--  Description-->
+				<div class="woocommerce-tabs wc-tabs-wrapper" >
 					<div class="nm-product-tabs-col">
 						<div class="nm-row">
 							<div class="col-xs-12">
@@ -448,7 +457,8 @@
 			</div>
 		</div>
 	</div>
-	
+
+
 	<footer
 		class="container mx-auto bg-white py-8 border-t border-gray-400">
 		<div class="container flex px-3 py-8 ">
@@ -461,7 +471,9 @@
 							erat. Suspendisse consectetur dapibus velit ut lacinia.</p> -->
 
 
-						<h3 class="font-bold text-gray-900">m<sup>2</sup>Dm</h3>
+						<h3 class="font-bold text-gray-900">
+							m<sup>2</sup>Dm
+						</h3>
 						<p class="py-4">서울특별시 성북구 화랑로13길 60 02-940-0000 wwww.m²Dm.com</p>
 					</div>
 				</div>
