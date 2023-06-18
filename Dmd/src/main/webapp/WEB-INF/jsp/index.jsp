@@ -116,6 +116,9 @@
 							href="<c:url value="/shop/shopMain"></c:url>">Shop</a></li>
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
+							href="/secondHand/list">중고거래</a></li>
+						<li><a
+							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
 							href="#">About</a></li>
 					</ul>
 				</nav>
@@ -139,7 +142,7 @@
 							href="<c:url value="/profile/loginForm" /> ">Login</a>
 				
 					<a class="inline-block no-underline hover:text-black" 
-					href="<c:url value="/profile/loginForm" /> ">
+					href="<c:url value="/profile/add" />">
 					<svg class="fill-current hover:text-black"
 						xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 						viewBox="0 0 24 24">

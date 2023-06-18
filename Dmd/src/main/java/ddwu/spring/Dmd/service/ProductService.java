@@ -38,6 +38,13 @@ public class ProductService implements ProductFacade{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@Override
+	public List<Product> findAll() {
+		// TODO Auto-generated method stub
+		return (List<Product>) prodDao.findAll();
+	}
 	
 	
 }
