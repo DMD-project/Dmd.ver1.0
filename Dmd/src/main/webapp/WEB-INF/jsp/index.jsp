@@ -139,7 +139,7 @@
 							href="<c:url value="/profile/loginForm" /> ">Login</a>
 				
 					<a class="inline-block no-underline hover:text-black" 
-					href="<c:url value="/profile/add" /> ">
+					href="<c:url value="/profile/add" />">
 					<svg class="fill-current hover:text-black"
 						xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 						viewBox="0 0 24 24">
