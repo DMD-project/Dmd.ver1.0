@@ -202,8 +202,7 @@
 					</a>
 				</c:if>
 			</div>
-			
-			<!-- 수정 -->
+			<br>
 			<c:forEach var="sh" items="${secondHandList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="/secondHand/viewSH" > <c:param name="id" value="${sh.id}"/></c:url>"> 

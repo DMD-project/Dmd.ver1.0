@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add SecondHand</title>
+<title>Update SecondHand</title>
 <style>
 body {
 	margin: 0;
@@ -66,23 +66,23 @@ div {
 	        		value='<c:url value="${shForwardAction}"/>' />
 	<div id = "left" align = "center">
 		<table>
-			<th style = 'border: none; font-size: 20px'>중고거래 상품 등록하기</th>
+			<th style = 'border: none; font-size: 20px'>중고거래 상품 수정하기</th>
 			<tr>
 				<td>
 					상품명
-					<form:input path="secondHand.name" size="50" class="formStyle" />
+					<form:input value="${sh.name}" path="secondHand.name" size="50" class="formStyle" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 					상품 가격
-					<form:input path="secondHand.price" size="15" class="formStyle" /> 원
+					<form:input value="${sh.price}" path="secondHand.price" size="15" class="formStyle" /> 원
 				</td>
 			</tr>
 			<tr>
 				<td>
 					상품 설명
-					<form:textarea path="secondHand.content" rows="30" cols="50" class="formStyle" style='width: 100%'/>
+					<form:textarea path="secondHand.content" rows="30" cols="50" class="formStyle" style='width: 100%' />
 				</td>
 			</tr>
 		</table>
@@ -99,7 +99,7 @@ div {
 			</tr>
 		</table>
 		<br>
-		<button type="submit" name = "submit" class = "button2">등록하기</button>
+		<button type="submit" name = "submit" class = "button2">수정하기</button>
 	</div>
 	</form:form>
 </body>

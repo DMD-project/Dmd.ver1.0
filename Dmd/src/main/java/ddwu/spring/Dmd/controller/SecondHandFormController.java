@@ -44,10 +44,23 @@ public class SecondHandFormController {
 		
 		System.out.println("in SecondHandForm Controller > submit()");
 		
+		String sellerID = "";
+		if(session.getAttribute("userSession") != null) {
+			UserSession userSession = (UserSession)session.getAttribute("userSession") ;
+	         if (userSession != null) {
+	            sellerID = userSession.getProfile().getId();
+	            System.out.println(sellerID);
+	            shForm.getSecondHand().setSellerID(sellerID);
+	            shForm.getSecondHand().setWantFlag('n');
+	            shForm.getSecondHand().setSellerFlag('n');
+	         }
+		}
+		
 		System.out.println(shForm.getSecondHand().getName());
 		
 		facade.addSecondHand(shForm.getSecondHand());
-		return "/secondHand/secondHand";
 		
+		status.setComplete();
+		return "redirect:/secondHand/list";
 	}
 }

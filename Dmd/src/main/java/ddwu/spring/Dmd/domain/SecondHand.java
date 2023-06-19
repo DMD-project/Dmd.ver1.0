@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-
 @Table(name="SECONDHAND")
 public class SecondHand implements Serializable {
 	
@@ -40,10 +39,10 @@ public class SecondHand implements Serializable {
 	private String sellerID;
 	
 	@Column(name="WANTFLAG")
-	private char wantFlag;
+	private char wantFlag; // 구매 원하는 사용자 존재 O(y) / X(n)
 	
 	@Column(name="SELLERFLAG")
-	private char sellerFlag; //판매 상태 (판매중 / 판매완료)
+	private char sellerFlag; //판매 상태 (판매중(y) / 판매완료(n))
 	
 	public SecondHand() {
 		
@@ -75,7 +74,7 @@ public class SecondHand implements Serializable {
 		return name;
 	}
 
-	public void setSHName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -135,4 +134,12 @@ public class SecondHand implements Serializable {
 		this.sellerFlag = sellerFlag;
 	}
 
+	@Override
+	public String toString() {
+		return "SecondHand [id=" + id + ", name=" + name + ", price=" + price + ", content=" + content + ", prodIMGUrl="
+				+ prodIMGUrl + ", buyerID=" + buyerID + ", sellerID=" + sellerID + ", wantFlag=" + wantFlag
+				+ ", sellerFlag=" + sellerFlag + "]";
+	}
+
+	
 }

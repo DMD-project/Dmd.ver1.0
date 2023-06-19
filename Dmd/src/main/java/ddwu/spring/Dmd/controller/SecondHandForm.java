@@ -12,7 +12,9 @@ public class SecondHandForm implements Serializable {
 	public SecondHandForm() {
 		this.secondHand = new SecondHand();
 	}
-
+	public SecondHandForm(SecondHand secondHand) {
+		this.secondHand = secondHand;
+	}
 	public SecondHand getSecondHand() {
 		return secondHand;
 	}
