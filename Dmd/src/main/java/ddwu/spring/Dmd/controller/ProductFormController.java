@@ -82,8 +82,6 @@ public class ProductFormController {
 		
 		System.out.println("productFormController submit");
 		
-		
-		
 		//productForm.getProduct();
 		
 //		validator.validate(productForm, result);
@@ -97,7 +95,9 @@ public class ProductFormController {
 		//save
 		facade.addProduct(productForm.getProduct());
 		
-		return "shop/shopMain";
+		status.setComplete();
+		
+		return "redirect:/shop/shopMain";
 		
 	}
 
