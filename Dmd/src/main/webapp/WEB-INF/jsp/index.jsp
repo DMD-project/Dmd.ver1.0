@@ -55,7 +55,7 @@
 							href="/secondHand/list">중고거래</a></li>
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-							href="#">About</a></li>
+							href="/groupPurchase/list">공동구매</a></li>
 					</ul>
 				</nav>
 			</div>

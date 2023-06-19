@@ -104,9 +104,6 @@ div {
 					상품 설명
 					<form:input path="product.content" class="formStyle" style = 'width: 100%'/>
 					<form:errors path="product.content"/>
-					<%-- <form>
-						<textarea name = "content" rows = "20" cols = "50" class = "formStyle" style = 'width: 100%'></textarea>
-					</form> --%>
 				</td>
 			</tr>
 		</table>
