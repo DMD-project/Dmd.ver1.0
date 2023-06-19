@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ddwu.spring.Dmd.dao.CategoryDao;
 import ddwu.spring.Dmd.dao.ProductDao;
+import ddwu.spring.Dmd.domain.Category;
 import ddwu.spring.Dmd.domain.Product;
 
 @Service
@@ -16,6 +18,12 @@ public class ProductService implements ProductFacade{
 	private ProductDao prodDao;
 	public void setProdDao(ProductDao prodDao) {
 		this.prodDao = prodDao;
+	}
+	
+	@Autowired
+	private CategoryDao cateDao;
+	public void setCateDao(CategoryDao cateDao) {
+		this.cateDao = cateDao;
 	}
 	
 	
@@ -28,11 +36,6 @@ public class ProductService implements ProductFacade{
 	public void updateProduct(Product product) {
 		// TODO Auto-generated method stub
 		
-	}
-	@Override
-	public List<Product> getProductListByCategory(String cateId) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	@Override
 	public List<Product> searchProductList(String keywords) {
@@ -60,6 +63,27 @@ public class ProductService implements ProductFacade{
 		}
 		
 	}
+
+
+	@Override
+	public List<Product> getProductListByCategory(int cateCode) {
+		// TODO Auto-generated method stub
+		return prodDao.findByCateID(cateCode);
+	}
+
+
+//	@Override
+//	public Category getCategory(int cateCode) {
+//		// TODO Auto-generated method stub
+//		Optional<Product> result = cateDao.findById(cateCode);
+//		if(result.isPresent()) {
+//			Product category = result.get();
+//			return category;
+//		} else {
+//			throw new Exception();
+//		}
+//
+//	}
 	
 	
 }

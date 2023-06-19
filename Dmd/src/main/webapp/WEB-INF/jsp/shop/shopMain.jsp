@@ -173,12 +173,12 @@
 					<!-- category -->
 					<div id="btn_group">
 						<button id="cat_btn1" onclick="location.href='/shop/shopMain'">전체</button>
-						<button id="cat_btn2" onclick="location.href='<c:url value='/shop/shopMain'><c:param name='cateId' value='101'/></c:url>'">가구</button>
-						<button id="cat_btn3" onclick="location.href='/shop/shopMain?cateId=102'">페브릭</button>
-						<button id="cat_btn4" onclick="location.href='/shop/shopMain?cateId=103'">조명</button>
-						<button id="cat_btn5" onclick="location.href='/shop/shopMain?cateId=104'">수납/정리</button>
-						<button id="cat_btn6" onclick="location.href='/shop/shopMain?cateId=105'">소품</button>
-						<button id="cat_btn7" onclick="location.href='/shop/shopMain?cateId=106'">식물</button>
+						<button id="cat_btn2" onclick="location.href='<c:url value='/shop/category'><c:param name='cateCode' value='9000'/></c:url>'">가구</button>
+						<button id="cat_btn3" onclick="location.href='<c:url value='/shop/category'><c:param name='cateCode' value='9001'/></c:url>'">페브릭</button>
+						<button id="cat_btn4" onclick="location.href='<c:url value='/shop/category'><c:param name='cateCode' value='9002'/></c:url>'">조명</button>
+						<button id="cat_btn5" onclick="location.href='<c:url value='/shop/category'><c:param name='cateCode' value='9003'/></c:url>'">수납/정리</button>
+						<button id="cat_btn6" onclick="location.href='<c:url value='/shop/category'><c:param name='cateCode' value='9004'/></c:url>'">소품</button>
+						<button id="cat_btn7" onclick="location.href='<c:url value='/shop/category'><c:param name='cateCode' value='9005'/></c:url>'">식물</button>
 					</div>
 					<div class="flex items-center" id="store-nav-content">
 
@@ -212,7 +212,8 @@
 			<c:forEach var="product" items="${productList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="/shop/product" > <c:param name="prodId" value="${product.id}"/></c:url>">
-						<font color="BLACK"><c:out value="${product.name}"></c:out></font>
+						<font color="BLACK"><c:out value="${product.name}"></c:out></font><br>
+						<font color="BLACK"><c:out value="${product.price}"></c:out></font>
 					</a>
 					<br>
 				</div>		
