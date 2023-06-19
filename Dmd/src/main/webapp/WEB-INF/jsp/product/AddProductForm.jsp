@@ -56,8 +56,10 @@ div {
 	padding: 10px 200px;
 	color: white;
 	font-size: 25px;
-}
+} 
 </style>
+
+<link rel="stylesheet" href="/css/AddProductForm.css" />
 
 </head>
 <body>

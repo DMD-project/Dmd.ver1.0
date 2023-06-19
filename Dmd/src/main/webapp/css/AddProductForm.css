@@ -1,0 +1,48 @@
+@charset "UTF-8";
+body {
+	margin: 0;
+}
+table {
+	border-spacing: 10px;
+	width: 600px;
+}
+th, td {
+	border: 1px solid rgb(195, 195, 195);
+	border-radius: 10px;
+	padding: 15px;
+	color: rgb(139, 139, 139);
+}
+div {
+	width: 100vw;
+	height: 100vh;
+}
+#left {
+	background-color: rgb(246, 240, 231);
+	width: 55%;
+	float: left;
+}
+#right{
+	background-color: rgb(251, 248, 243);
+	width: 45%;
+	float: left;
+}
+.formStyle {
+	background-color: rgb(246, 240, 231);
+	border: none;
+}
+.button1 {
+	background-color: rgb(251, 248, 243);
+	border: 1px solid rgb(213, 158, 115); 
+	border-radius: 10px;
+	padding: 10px 30px;
+	color: rgb(213, 158, 115);
+	font-size: 15px;
+}
+.button2 {
+	background-color: rgb(213, 158, 115);
+	border: none; 
+	border-radius: 10px;
+	padding: 10px 200px;
+	color: white;
+	font-size: 25px;
+}
