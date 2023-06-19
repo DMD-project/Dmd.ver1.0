@@ -15,75 +15,11 @@
 	href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap"
 	rel="stylesheet">
 
-<style>
-.work-sans {
-	font-family: 'Work Sans', sans-serif;
-}
+<link
+	href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap"
+	rel="stylesheet">
 
-#menu-toggle:checked+#menu {
-	display: block;
-}
-
-.hover\:grow {
-	transition: all 0.3s;
-	transform: scale(1);
-}
-
-.hover\:grow:hover {
-	transform: scale(1.02);
-}
-
-.carousel-open:checked+.carousel-item {
-	position: static;
-	opacity: 100;
-}
-
-.carousel-item {
-	-webkit-transition: opacity 0.6s ease-out;
-	transition: opacity 0.6s ease-out;
-}
-
-#carousel-1:checked ~ .control-1, #carousel-2:checked ~ .control-2,
-	#carousel-3:checked ~ .control-3 {
-	display: block;
-}
-
-.carousel-indicators {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	bottom: 2%;
-	left: 0;
-	right: 0;
-	text-align: center;
-	z-index: 10;
-}
-
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-	#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-	#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet
-	{
-	color: #000;
-	/*Set to match the Tailwind colour you want the active one to be */
-}
-</style>
-
-<!--  category-style -->
-<style>
-#btn_group button {
-	border: 1px solid #F28C28;
-	background-color: rgba(0, 0, 0, 0);
-	color: #F28C28;
-	padding: 20px;
-}
-
-#btn_group button:hover {
-	color: white;
-	background-color: #FFDEAD;
-}
-</style>
-
+<link rel="stylesheet" href="/css/index.css" />
 
 </head>
 
@@ -137,38 +73,38 @@
 			</div>
 
 			<div class="order-2 md:order-3 flex items-center" id="nav-content">
-				<c:if test="${empty userSession.profile}" >
+				<c:if test="${empty userSession.profile}">
 					<a class="inline-block no-underline hover:text-black"
-							href="<c:url value="/profile/loginForm" /> ">Login</a>
-				
-					<a class="inline-block no-underline hover:text-black" 
-					href="<c:url value="/profile/add" />">
-					<svg class="fill-current hover:text-black"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-						viewBox="0 0 24 24">
+						href="<c:url value="/profile/loginForm" /> ">Login</a>
+
+					<a class="inline-block no-underline hover:text-black"
+						href="<c:url value="/profile/add" />"> <svg
+							class="fill-current hover:text-black"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 24 24">
                         <circle fill="none" cx="12" cy="7" r="3" />
                         <path
-							d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
+								d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
                     </svg>
-				</a>
+					</a>
 				</c:if>
-				
-				<c:if test="${!empty userSession.profile}" >
+
+				<c:if test="${!empty userSession.profile}">
 					<a class="inline-block no-underline hover:text-black"
-							href="<c:url value="/profile/logout" /> ">Logout</a>
-				
-					<a class="inline-block no-underline hover:text-black" 
-					href='<c:url value="/profile/mypage" ><c:param  name="id" value="${userSession.profile.id}"/> </c:url> '>
-					<svg class="fill-current hover:text-black"
-						xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-						viewBox="0 0 24 24">
+						href="<c:url value="/profile/logout" /> ">Logout</a>
+
+					<a class="inline-block no-underline hover:text-black"
+						href='<c:url value="/profile/mypage" ><c:param  name="id" value="${userSession.profile.id}"/> </c:url> '>
+						<svg class="fill-current hover:text-black"
+							xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 24 24">
                         <circle fill="none" cx="12" cy="7" r="3" />
                         <path
-							d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
+								d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
                     </svg>
-					</a> 
+					</a>
 				</c:if>
-				<a class="pl-3 inline-block no-underline hover:text-black" href="#">
+				<a class="pl-3 inline-block no-underline hover:text-black" href='<c:url value="/order/Cart"></c:url>'>  				<!-- 장바구니  -->
 					<svg class="fill-current hover:text-black"
 						xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 						viewBox="0 0 24 24">
@@ -327,8 +263,9 @@
 			</nav>
 
 			<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-				<a href="<c:url value="/shop/product" > <c:param name="prodId" value="${prod.prodId}"/></c:url>"> 
-				<img class="hover:grow hover:shadow-lg"
+				<a
+					href="<c:url value="/shop/product" > <c:param name="prodId" value="${prod.prodId}"/></c:url>">
+					<img class="hover:grow hover:shadow-lg"
 					src="https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80">
 					<div class="pt-3 flex items-center justify-between">
 						<p class="">Product Name</p>
