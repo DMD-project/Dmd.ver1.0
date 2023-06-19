@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
+import ddwu.spring.Dmd.controller.UserSession;
 import ddwu.spring.Dmd.domain.Cart;
 
 @Controller
@@ -28,8 +29,8 @@ public class ViewCartController {
 			@RequestParam(value="page", required=false) String page,
 			@ModelAttribute("sessionCart") Cart cart) 
 			throws Exception {
-//		UserSession userSession = 
-//			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		UserSession userSession = 
+			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 //		handleRequest(page, cart, userSession);
 		return new ModelAndView("order/Cart", "cart", cart);
 	}
@@ -40,8 +41,8 @@ public class ViewCartController {
 			@RequestParam(value="page", required=false) String page,
 			@ModelAttribute("sessionCart") Cart cart) 
 			throws Exception {
-//		UserSession userSession = 
-//			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		UserSession userSession = 
+			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 //		handleRequest(page, cart, userSession);
 		return new ModelAndView("order/Checkout", "cart", cart);
 	}
