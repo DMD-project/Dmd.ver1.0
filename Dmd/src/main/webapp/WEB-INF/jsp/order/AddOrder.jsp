@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,116 +166,64 @@ select {
 </style>
 </head>
 <body>
-	<div id = "left" align = "center">
-		<table id = "table1">
-			<th colspan = "2" style = 'border: none; font-size: 20px'>결제 정보</th>
-			<tr>
-				<td id = "info" colspan = "2">
-					<b>주문자 정보
-				</td>
-			</tr>
-			<tr>
-				<td style = 'width: 20%'>
-					name 
-				</td>
-				<td>
-					김동덕
-				</td>
-			</tr>
-			<tr>
-				<td>
-					phone 
-				</td>
-				<td>
-					010-0000-1234
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Address
-				</td>
-				<td>
-					서울특별시 성북구 화랑로13길 60 (00000)
-				</td>
-			</tr>
-		</table>
-		
-		<table id = "table2">
-			<tr>
-				<td id = "payment">
-					<b>결제 방법
-				</td>
-			</tr>
-			<tr>
-				<td align = "center">
-					<button type="button" name = "creditcard" id = "payment_card" onclick="onDisplay()">신용∙체크카드</button>
-					
-					
-					<div class = "creditcard" id = "creditcard">
-						<div style='font-size:20px'>
-							<b>CREDIT CARD<p>
-						</div>
-						<div id="card_number" style='font-size:13px;'>
-							CARD NUMBER<br>
-							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/> &nbsp;
-							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/> &nbsp;
-							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/> &nbsp;
-							<input type="text" maxlength="4" id="card_number" placeholder="0000" required="required"/>
-							<p>
-	          				</div>
-						
-						<div>
-							<div id="card_info">
-								MM<br>
-								<select id="months">
-						        		<option value="">1</option>
-						            		<option value="">2</option>
-						            		<option value="">3</option>
-						            		<option value="">4</option>
-						            		<option value="">5</option>
-						            		<option value="">6</option>
-						            		<option value="">7</option>
-						            		<option value="">8</option>
-					                		<option value="">9</option>
-				   		            		<option value="">10</option>
-						            		<option value="">11</option>
-						            		<option value="">12</option>
-						          	</select>
-							</div>
-							<div id="card_info">
-									YY<br>
-								<select id="years">
-							    		<option value="">23</option>
-						            		<option value="">24</option>
-						            		<option value="">25</option>
-						            		<option value="">26</option>
-									<option value="">27</option>
-						            		<option value="">28</option>
-						            		<option value="">29</option>
-						            		<option value="">30</option>
-						        	</select>
-							</div>
-							<div id="card_info">
-								BANK<br>
-								<select id="banks">
-						        		<option value="">신한은행</option>
-									<option value="">우리은행</option>
-									<option value="">국민은행</option>
-									<option value="">하나은행</option>
-						            		<option value="">농협은행</option>
-						        	</select>
-							</div>
-						</div>
-					</div>
-					
-					
-					
-					<button type="button" name = "accounttransfer" id = "other_method" style = 'font-size: 15px'>계좌이체</button>
-					<button type="button" name = "deposit" id = "other_method" style = 'font-size: 15px;'>무통장 입금</button>
-				</td>
-			</tr>
-			
-		</table>
+
+<div id="left" align="center">
+		<form:form modelAttribute="orderForm" action="${targetUrl}" method="post">
+		  <form:errors cssClass="error" /> <br><br>
+		  
+		  <table class="n13">
+		  
+		  	<th colspan = "2" style = 'border: none; font-size: 20px'>결제 정보</th>
+		    <tr>
+		      <td colspan="2">
+		        <font color="green" size="4"><b>Payment Details</b></font></td>
+		    </tr>
+		    <tr>
+		      <td>Card Type:</td>
+		      <td><form:select path="order.cardType" items="${creditCardTypes}" />
+		        <form:errors path="order.cardType" /></td>
+		    </tr>
+		    <tr>
+		      <td>Card Number:</td>
+		      <td><form:input path="order.creditCard" /> 
+		        <font color="red" size="2">* Use a fake number!</font>
+		        <form:errors path="order.creditCard" /></td>
+		    </tr>
+		    <tr>
+		      <td>Expiry Date (MM/YYYY):</td>
+		      <td><form:input path="order.expiryDate" /> 
+		        <form:errors path="order.expiryDate" /></td>
+		    </tr>
+		     <th colspan = "2" style = 'border: none; font-size: 20px'>배송 정보</th>
+		    <tr>
+		      <td colspan="2">
+		        <font color="green" size="4"><b>Billing Address</b></font></td>
+		    </tr>
+		    <tr>
+		      <td>First name:</td>
+		      <td><form:input path="order.name" /> 
+		        <form:errors path="order.name" /></td>
+		    </tr>
+		    <tr>
+		      <td>Address:</td>
+		      <td><form:input path="order.addr" />
+		        <form:errors path="order.addr" /></td>
+		    </tr>
+		    <tr>
+		      <td>Zipcode:</td>
+		      <td><form:input path="order.zipcode" /> 
+		        <form:errors path="order.zipcode" /></td>
+		    </tr>
+		    <tr>
+		      <td colspan="2">
+		        <form:checkbox path="shippingAddressRequired"
+		          label="Ship to different address..." /></td>
+		    </tr>
+		  </table>
+		  <p>
+		    <input type="image" src="../images/button_submit.gif">
+		  </p>
+		</form:form>
 	</div>
 	
 	<div id = "right" align = "center">

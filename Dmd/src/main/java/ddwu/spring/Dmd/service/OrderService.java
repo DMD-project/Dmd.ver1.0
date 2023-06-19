@@ -5,11 +5,11 @@ import ddwu.spring.Dmd.domain.Order;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface OrderService {
+	
 	/*
 		@Autowired 
 		private OrderDao orderDao;
@@ -19,9 +19,6 @@ public interface OrderService {
 	*/
 	
 	Order getOrder(int orderId);
-	
-	public List<Order> getOrdersByUserId(String userId);
-	
 	public List<Order> getOrdersByUsername(String username);
 	
 }
