@@ -12,6 +12,7 @@ img {
 	width: 150px;	
 }
 </style>
+<link rel="stylesheet" href="/css/Cart.css" />
 </head>
 <body>
     <section class="cart">
