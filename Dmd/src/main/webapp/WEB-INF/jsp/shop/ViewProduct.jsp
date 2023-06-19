@@ -16,6 +16,10 @@
 	href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap"
 	rel="stylesheet">
 
+<link
+	href="/css/ViewProduct.css"
+	rel="stylesheet">
+
 <style type="text/css" class="nm-custom-styles">
 @media all and (max-width:1080px) {
 	.woocommerce-product-gallery__wrapper {
@@ -29,7 +33,7 @@
 
 
 <style>
-.woocommerce form .form-row .required {
+ .woocommerce form .form-row .required {
 	visibility: visible;
 }
 
@@ -51,7 +55,7 @@
 	font-size: 25px;
 	font-weigth: bold;
 	color: #777777;
-}
+} 
 </style>
 
 </head>
