@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 import ddwu.spring.Dmd.domain.Cart;
+import ddwu.spring.Dmd.domain.Product;
 import ddwu.spring.Dmd.domain.Profile;
 import ddwu.spring.Dmd.service.OrderFacade;
 import ddwu.spring.Dmd.service.OrderFormValidator;
@@ -32,6 +33,12 @@ import ddwu.spring.Dmd.service.SecondHandFacade;
 //@SessionAttributes({"sessionCart", "orderForm"})
 public class OrderFormController {
 	
+	private ProductFacade pFacade;
+	
+	public void setPFacade(ProductFacade pFacade) {
+		this.pFacade = pFacade;
+	}
+	
 //	OrderFacade orderFacade;
 //	public void setOrderFacade(OrderFacade orderFacade) {
 //		this.orderFacade = orderFacade;
@@ -43,12 +50,12 @@ public class OrderFormController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String form(@ModelAttribute("userSession") UserSession userSession,
-			ModelMap model) {
+	public String form(@ModelAttribute("id") int id,
+			ModelMap model) throws Exception {
 		
-//		System.out.println(userSession.getProfile().getId());
-//		
-//		model.put("profile", userSession.getProfile());
+		Product product = pFacade.getProduct(id);
+		model.put("product", product);
+
 		return "/order/AddOrder";
 	}
 	
