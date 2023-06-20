@@ -168,8 +168,8 @@ select {
 <body>
 
 <div id="left" align="center">
-		<form:form modelAttribute="orderForm" action="${targetUrl}" method="post">
-		  <form:errors cssClass="error" /> <br><br>
+		<form:form modelAttribute="orderForm" method="post">
+		 <br><br>
 		  
 		  <table class="n13">
 		  
@@ -214,11 +214,7 @@ select {
 		      <td><form:input path="order.zipcode" /> 
 		        <form:errors path="order.zipcode" /></td>
 		    </tr>
-		    <tr>
-		      <td colspan="2">
-		        <form:checkbox path="shippingAddressRequired"
-		          label="Ship to different address..." /></td>
-		    </tr>
+		   
 		  </table>
 		  <p>
 		    <input type="image" src="../images/button_submit.gif">
@@ -269,7 +265,7 @@ select {
 			</tr>
 			<tr>
 				<td colspan = "2" align = "center">		
-					<button type="button" name = "addImage" id = "checkout">결제하기</button>
+					<button type="submit" name = "submit" id = "checkout">결제하기</button>
 				</td>
 			</tr>
 
