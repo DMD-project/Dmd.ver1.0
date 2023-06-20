@@ -64,4 +64,9 @@ public class SecondHandService implements SecondHandFacade {
 		}
 	}
 
+	@Override
+	public List<SecondHand> findByBuyerID(String id) {
+		return (List<SecondHand>) shDao.findByBuyerID(id);
+	}
+
 }

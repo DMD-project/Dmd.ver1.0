@@ -44,11 +44,12 @@ public class Cart implements Serializable {
 	public void addItem(Product prod, boolean isInStock) {
 		CartItem cartItem = itemMap.get(prod.getId());
 		if (cartItem == null) {
-			cartItem = new CartItem(null, 0, 0, null);
-//			cartItem.setItem(item);
-//			cartItem.setQty(0);
+			cartItem = new CartItem();
+//			cartItem = new CartItem(null, 0, 0, null);
+			cartItem.setProd(prod);
+			cartItem.setQty(0);
 //			cartItem.setInStock(isInStock);
-//			itemMap.put(prod.getId(), cartItem);
+			itemMap.put(prod.getId(), cartItem);
 			itemList.getSource().add(cartItem);
 		}
 		cartItem.incrementQuantity();

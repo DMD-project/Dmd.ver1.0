@@ -7,6 +7,8 @@ public interface SecondHandFacade {
 
 	List<SecondHand> findAll();
 	
+	List<SecondHand> findByBuyerID(String id);
+	
 	SecondHand getSecondHand(int id);
 	
 	void updateSecondHand(SecondHand secondHand);

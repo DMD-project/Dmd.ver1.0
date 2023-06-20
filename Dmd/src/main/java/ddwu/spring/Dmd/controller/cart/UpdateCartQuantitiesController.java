@@ -15,7 +15,7 @@ import ddwu.spring.Dmd.domain.CartItem;
 @SessionAttributes("sessionCart")
 
 public class UpdateCartQuantitiesController {
-	@RequestMapping("/shop/updateCartQuantities.do")
+	@RequestMapping("/shop/updateCartQuantities")
 	public ModelAndView handleRequest(
 			HttpServletRequest request,	
 			@ModelAttribute("sessionCart") Cart cart) throws Exception {

@@ -63,6 +63,6 @@ public class UpdateSecondHandController {
 		
 		facade.updateSecondHand(newSH);
 		
-		return "redirect:/secondHand/list";
+		return "redirect:/secondHand/viewSH?id="+sh.getId();
 	}
 }
