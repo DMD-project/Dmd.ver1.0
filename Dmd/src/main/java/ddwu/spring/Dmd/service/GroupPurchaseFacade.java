@@ -15,9 +15,9 @@ public interface GroupPurchaseFacade {
 	
 	void updateBuyRequest(GroupPurchase gp);
 	
-	List<Profile> findByGroupPurchase(int id);
+	List<GPBuyer> findByGroupPurchase(int id);
 	
-	List<GroupPurchase> findByUserId(String id);
+	List<GPBuyer> findByUserId(String id);
 	
 	void addGPBuyer(GPBuyer gpb);
 	

@@ -67,13 +67,13 @@ public class GroupPurchaseService implements GroupPurchaseFacade{
 	}
 
 	@Override
-	public List<Profile> findByGroupPurchase(int id) {
+	public List<GPBuyer> findByGroupPurchase(int id) {
 		// TODO Auto-generated method stub
 		return gpbDao.findByGroupPurchase(id);
 	}
 
 	@Override
-	public List<GroupPurchase> findByUserId(String id) {
+	public List<GPBuyer> findByUserId(String id) {
 		// TODO Auto-generated method stub
 		return gpbDao.findByUserId(id);
 	}

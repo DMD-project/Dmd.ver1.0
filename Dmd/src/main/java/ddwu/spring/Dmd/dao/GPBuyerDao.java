@@ -13,6 +13,6 @@ import ddwu.spring.Dmd.domain.Profile;
 public interface GPBuyerDao extends CrudRepository<GPBuyer, Integer>{
 	//save, findById, count, delete
 	
-	List<GroupPurchase> findByUserId(String userId);
-	List<Profile> findByGroupPurchase(int gpId);
+	List<GPBuyer> findByUserId(String userId);
+	List<GPBuyer> findByGroupPurchase(int gpId);
 }

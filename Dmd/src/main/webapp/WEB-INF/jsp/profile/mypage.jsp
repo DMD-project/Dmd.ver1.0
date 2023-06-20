@@ -80,10 +80,14 @@
 				<div class="text">중고거래 목록 조회</div>
 				<div class="right">>
 				</div>
-			</a> <a href="#" class="item">
-				<div class="text">상품문의</div>
-				<div class="right">></div>
-			</a> <a href="#" class="item">
+			</a> 
+			<a class="item" href='<c:url value="/profile/mypage/groupPurchaseList"> 
+			<c:param name="id" value="${profile.id}" /></c:url>'>
+				<div class="text">공동구매 목록 조회</div>
+				<div class="right">>
+				</div>
+			</a> 
+			<a href="#" class="item">
 				<div class="text">단골상점</div>
 				<div class="right">></div>
 			</a> <a href="#" class="item">
