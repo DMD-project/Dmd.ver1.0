@@ -15,5 +15,7 @@ public interface SecondHandDao extends CrudRepository<SecondHand, String> {
 
 	Optional<SecondHand> findById(int id);
 	
+	List<SecondHand> findByBuyerID(String id);
+	
 //	s<S> S save(SecondHand secondHand);
 }
