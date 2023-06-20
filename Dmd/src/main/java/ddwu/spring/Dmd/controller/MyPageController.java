@@ -56,7 +56,7 @@ public class MyPageController {
 		if(userSession.getProfile().getId().equals(profile.getId())) {
 			
 			ArrayList<SecondHand> shList = getSecondHand(id);
-			System.out.println(shList.get(0).getName()+ " / " +shList.get(1).getName());
+//			System.out.println(shList.get(0).getName()+ " / " +shList.get(1).getName());
 			
 			return new ModelAndView("/profile/mypage", "profile", profile);
 		}

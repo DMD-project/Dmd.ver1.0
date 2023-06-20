@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,11 +99,21 @@
 			<nav id="store" class="w-full z-30 top-0 px-6 py-1">
 				<div
 					class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-
-					<a
+					<span>
+						<a
 						class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
 						href="<c:url value="/secondHand/list"></c:url>"> 중고거래 </a>
-						
+					</span>
+					<span>
+						<c:if test="${!empty userSession.profile}" >
+						<a href="<c:url value="/secondHand/add"></c:url>"> 
+							<font color="BLACK">등록하기</font>
+						</a>
+						</c:if>
+					</span>
+					<span></span>
+					<span></span>
+					<span></span>
 					<div class="flex items-center" id="store-nav-content">
 
 						<a class="pl-3 inline-block no-underline hover:text-black"
@@ -126,21 +137,18 @@
 			</nav>
 			
 			<div>
-				<c:if test="${!empty userSession.profile}" >
-					<a href="<c:url value="/secondHand/add"></c:url>"> 
-						<font color="BLACK">추가</font>
-					</a>
-				</c:if>
+				
 			</div>
 			<br>
 			<c:forEach var="sh" items="${secondHandList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="/secondHand/viewSH" > <c:param name="id" value="${sh.id}"/></c:url>"> 
 						<font color="BLACK"><c:out value="${sh.name}"></c:out></font><br>
-						<c:if test="${sh.name}">
+						<c:if test="${fn:contains(sh.sellerFlag, 'y')}">
 							<font color="BLACK"><c:out value="${sh.price}"></c:out></font>
 						</c:if>
-						<c:if>
+						<c:if test="${fn:contains(sh.sellerFlag, 'n')}">
+							<font color="BLACK"><c:out value="판매완료"></c:out></font>
 						</c:if>
 						
 					</a>

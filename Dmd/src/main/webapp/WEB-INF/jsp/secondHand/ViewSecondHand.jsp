@@ -152,7 +152,7 @@
 																	</c:when>
 																	<c:otherwise>
 																		<!-- 구매자 / 판매중 -->
-																		<c:if test="${fn:contains(secondHand.sellerFlag, 'n')}">
+																		<c:if test="${fn:contains(secondHand.sellerFlag, 'y')}">
 																			<c:choose>
 																				<c:when test="${userSession.profile.id != null}">
 																					<a href='<c:url value="/secondHand/buy">
@@ -168,7 +168,7 @@
 																			</c:choose>
 																		</c:if>
 																		<!-- 구매자 / 판매 완료 -->
-																		<c:if test="${fn:contains(secondHand.sellerFlag, 'y')}">
+																		<c:if test="${fn:contains(secondHand.sellerFlag, 'n')}">
 																			<button type="input" id="soldout" class="btn">판매완료</button>
 																		</c:if>
 																	</c:otherwise>

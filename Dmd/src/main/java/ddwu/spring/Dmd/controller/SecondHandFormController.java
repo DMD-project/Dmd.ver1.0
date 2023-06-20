@@ -52,7 +52,7 @@ public class SecondHandFormController {
 	            System.out.println(sellerID);
 	            shForm.getSecondHand().setSellerID(sellerID);
 	            shForm.getSecondHand().setWantFlag('n');
-	            shForm.getSecondHand().setSellerFlag('n');
+	            shForm.getSecondHand().setSellerFlag('y');
 	         }
 		}
 		
