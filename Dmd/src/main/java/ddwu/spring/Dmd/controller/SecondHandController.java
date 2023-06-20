@@ -32,7 +32,7 @@ public class SecondHandController {
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		PagedListHolder<SecondHand> shList = new PagedListHolder<SecondHand>(shFacade.findAll());
-		shList.setPageSize(4);
+		shList.setPageSize(16);
 		
 		if(shList.getPage() != 0) {
 			System.out.println("in SecondHand Controller\n" +shList.getSource().get(0).getContent());

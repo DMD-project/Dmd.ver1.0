@@ -10,9 +10,8 @@ import ddwu.spring.Dmd.domain.Product;
 public interface ProductDao extends CrudRepository<Product, Integer>{
 	//save, findById, count, delete
 	
-	List<Product> findByName(String name);
+	List<Product> findByNameContaining(String name);
 	List<Product> findByCateID(int cateID);
 	List<Product> findAll();
-	
 	
 }
