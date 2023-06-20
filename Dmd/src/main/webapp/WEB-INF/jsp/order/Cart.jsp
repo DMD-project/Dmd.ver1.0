@@ -36,8 +36,8 @@ img {
                 </thead>
                 <tbody>
                 	<tr class="cart__list__detail">
-                		<p>${cart.prodID} ${cart.qty}
-     
+<%--                 		<p>${cart.prodID} ${cart.qty}
+ --%>     
                 	</tr>
                     <tr class="cart__list__detail">
                         <td><input type="checkbox"></td>

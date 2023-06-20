@@ -18,8 +18,7 @@ import ddwu.spring.Dmd.domain.Product;
 import ddwu.spring.Dmd.service.ProductFacade;
 import ddwu.spring.Dmd.domain.Cart;
 
-//@Controller
-//@RequestMapping("/order/Cart")
+
 @Controller
 @SessionAttributes("sessionCart")
 public class AddProdToCartController {
@@ -44,15 +43,15 @@ private ProductFacade prodFacade;
 		if (cart.containsItemId(workingProdId)) {
 			cart.incrementQuantityByItemId(workingProdId);
 		}
-		else {
+//		else {
 			// isInStock is a "real-time" property that must be updated
 			// every time an item is added to the cart, even if other
 			// item details are cached.
-			System.out.println("workingItemId : " + workingProdId);
-			System.out.println("productId : " + productId);
+//			System.out.println("workingItemId : " + workingProdId);
+//			System.out.println("productId : " + productId);
 			
-			Product prod = null;
-			switch(productId) {
+//			Product prod = null;
+//			switch(productId) {
 //				case 0:
 //					prod = this.prodFacade.getGroupBuyingProd(workingItemId);
 //					break;
@@ -65,11 +64,11 @@ private ProductFacade prodFacade;
 //				case 3:
 //					prod = this.prodFacade.getHandMadeById(workingItemId);
 //					break;
-			}
+//			}
 			
 //			boolean isInStock = this.prodFacade.isItemInStock(workingProdId, prod.getProductId());
 //			cart.addItem(prod, isInStock);
-		}
+//		}
 		return new ModelAndView("order/Cart", "cart", cart);
 	}	
 //	@RequestMapping(method = RequestMethod.POST)
