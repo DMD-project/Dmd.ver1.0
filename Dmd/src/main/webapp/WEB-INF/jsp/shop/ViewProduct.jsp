@@ -206,12 +206,9 @@
 														</script>
 
 														<div style="padding: 10px 10px;">
-															<button type="submit" formaction="/order/Cart" id="cart"
-																class="btn">Cart</button><!--장바구니 -->
-																<a class="nav-link js-scroll-trigger" href="<c:url value="/shop/viewCart"/>"><font color="black">CART</font></a>
-															</button>
-															
-															<button type="button" id="buy" class="btn">Buy</button>
+															<button type="button" formaction="/order/Cart" id="cart"
+																class="btn" onclick="location.href='/shop/viewCart'">Cart</button><!--장바구니 -->
+															<button type="button" id="buy" class="btn">Buy</button>			
 														</div>
 
 
