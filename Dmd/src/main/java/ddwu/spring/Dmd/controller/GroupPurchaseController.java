@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.WebUtils;
 
+import ddwu.spring.Dmd.domain.GPBuyer;
 import ddwu.spring.Dmd.domain.GroupPurchase;
+import ddwu.spring.Dmd.domain.Profile;
 import ddwu.spring.Dmd.service.GroupPurchaseFacade;
+import ddwu.spring.Dmd.service.ProfileFacade;
 
 @Controller
 @RequestMapping("/groupPurchase")
@@ -21,9 +24,16 @@ public class GroupPurchaseController {
 	@Autowired
 	private GroupPurchaseFacade facade;
 	
+	@Autowired
+	private ProfileFacade pFacade;
+	
 	
 	public void setGPFacade(GroupPurchaseFacade facade) {
 		this.facade = facade;
+	}
+	
+	public void setProfileFacade(ProfileFacade pFacade) {
+		this.pFacade = pFacade;
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -61,8 +71,12 @@ public class GroupPurchaseController {
 		
 		facade.updateBuyRequest(gp);
 		//gpBuyer에 user 추가
-		
+//		Profile user = this.pFacade.getProfile(userId);
+		GPBuyer buyer = new GPBuyer(gp, userId);
+		this.facade.addGPBuyer(buyer);
+		System.out.println(buyer.toString());
 		model.put("groupPurchase", gp);
+		
 		//return "order/AddOrder";	
 		return "redirect:/groupPurchase/list";
 	}
