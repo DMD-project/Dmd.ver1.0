@@ -57,7 +57,7 @@
 	color: #777777;
 } 
 </style>
-
+</head>
 <body data-rsssl=1
 	class="product-template-default single single-product postid-253 theme-savoy woocommerce woocommerce-page woocommerce-no-js nm-page-load-transition-0 nm-preload header-fixed header-mobile-default header-border-1 widget-panel-dark wpb-js-composer js-comp-ver-6.9.0 vc_responsive">
 
@@ -239,6 +239,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<footer

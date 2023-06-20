@@ -65,7 +65,7 @@ public class GroupPurchaseController {
 		
 		model.put("groupPurchase", gp);
 		//return "order/AddOrder";	
-		return "groupPurchase/ViewGroupPurchase";
+		return "redirect:/groupPurchase/list";
 	}
 	
 }
