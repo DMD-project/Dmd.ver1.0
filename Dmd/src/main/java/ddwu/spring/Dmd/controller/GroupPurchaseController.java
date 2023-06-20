@@ -60,7 +60,6 @@ public class GroupPurchaseController {
 		gp.setSalesQty(gp.getSalesQty() - 1);
 		
 		facade.updateBuyRequest(gp);
-		
 		//gpBuyer에 user 추가
 		
 		model.put("groupPurchase", gp);
