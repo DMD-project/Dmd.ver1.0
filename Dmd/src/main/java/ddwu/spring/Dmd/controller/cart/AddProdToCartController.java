@@ -35,7 +35,7 @@ private ProductFacade prodFacade;
 		return new Cart();
 	}
 	
-	@RequestMapping("/shop/addItemToCart.do")
+	@RequestMapping("/shop/addItemToCart")
 	public ModelAndView handleRequest(
 			@RequestParam("workingItemId") int workingProdId,
 			@RequestParam("productId") int productId,

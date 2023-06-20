@@ -23,7 +23,7 @@ public class ViewCartController {
 		return cart;
 	}
 	
-	@RequestMapping("/shop/viewCart.do")
+	@RequestMapping("/shop/viewCart")
 	public ModelAndView viewCart(
 			HttpServletRequest request,
 			@RequestParam(value="page", required=false) String page,
@@ -35,7 +35,7 @@ public class ViewCartController {
 		return new ModelAndView("order/Cart", "cart", cart);
 	}
 
-	@RequestMapping("/shop/checkout.do")
+	@RequestMapping("/shop/checkout")
 	public ModelAndView checkout(
 			HttpServletRequest request,
 			@RequestParam(value="page", required=false) String page,
