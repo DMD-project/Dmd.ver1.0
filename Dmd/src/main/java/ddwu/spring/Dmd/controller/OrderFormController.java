@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ import ddwu.spring.Dmd.service.SecondHandFacade;
 
 @Controller
 @RequestMapping("/shop/order")
+@SessionAttributes("userSession")
 //@SessionAttributes({"sessionCart", "orderForm"})
 public class OrderFormController {
 	
@@ -41,7 +43,12 @@ public class OrderFormController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String form() {
+	public String form(@ModelAttribute("userSession") UserSession userSession,
+			ModelMap model) {
+		
+//		System.out.println(userSession.getProfile().getId());
+//		
+//		model.put("profile", userSession.getProfile());
 		return "/order/AddOrder";
 	}
 	

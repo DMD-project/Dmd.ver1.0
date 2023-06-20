@@ -201,8 +201,8 @@ select {
 		    </tr>
 		    <tr>
 		      <td>First name:</td>
-		      <td><form:input path="order.name" /> 
-		        <form:errors path="order.name" /></td>
+		      <td><form:input path="order.username" /> 
+		        <form:errors path="order.username" /></td>
 		    </tr>
 		    <tr>
 		      <td>Address:</td>
