@@ -16,7 +16,7 @@ import ddwu.spring.Dmd.service.SecondHandFacade;
 
 @Controller
 @RequestMapping("/secondHand/add")
-@SessionAttributes("secondHand")
+//@SessionAttributes("secondHand")
 public class SecondHandFormController {
 
 	@Autowired
@@ -26,7 +26,7 @@ public class SecondHandFormController {
 		this.facade = facade;
 	}
 	
-	@ModelAttribute("secondHand")
+	@ModelAttribute("secondHandForm")
 	public SecondHandForm formBacking(HttpServletRequest request) {
 		SecondHandForm shForm = new SecondHandForm();
 		return shForm;

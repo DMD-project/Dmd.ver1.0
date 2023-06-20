@@ -51,6 +51,6 @@ public class ViewSecondHandController {
 		
 		facade.deleteById(id);
 		
-		return "/secondHand/secondHand";
+		return "redirect:/secondHand/list";
 	}
 }

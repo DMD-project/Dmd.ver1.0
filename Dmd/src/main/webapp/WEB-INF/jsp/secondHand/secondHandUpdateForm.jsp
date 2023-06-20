@@ -61,7 +61,7 @@ div {
 </head>
 <body>
 
-	<form:form modelAttribute="secondHand" method="post">
+	<form:form modelAttribute="secondHandForm" method="post">
 		<input type="hidden" name="forwardAction"
 	        		value='<c:url value="${shForwardAction}"/>' />
 	<div id = "left" align = "center">
@@ -69,6 +69,7 @@ div {
 			<th style = 'border: none; font-size: 20px'>중고거래 상품 수정하기</th>
 			<tr>
 				<td>
+					<form:input type="hidden" value="${sh.id}" path="secondHand.id" />
 					상품명
 					<form:input value="${sh.name}" path="secondHand.name" size="50" class="formStyle" />
 				</td>
@@ -82,7 +83,7 @@ div {
 			<tr>
 				<td>
 					상품 설명
-					<form:textarea path="secondHand.content" rows="30" cols="50" class="formStyle" style='width: 100%' />
+					<form:textarea path="secondHand.content" rows="30" cols="50" class="formStyle" style='width: 100%'/>
 				</td>
 			</tr>
 		</table>

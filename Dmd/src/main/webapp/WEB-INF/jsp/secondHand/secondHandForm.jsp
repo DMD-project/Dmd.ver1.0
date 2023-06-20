@@ -61,12 +61,12 @@ div {
 </head>
 <body>
 
-	<form:form modelAttribute="secondHand" method="post">
+	<form:form modelAttribute="secondHandForm" method="post">
 		<input type="hidden" name="forwardAction"
 	        		value='<c:url value="${shForwardAction}"/>' />
 	<div id = "left" align = "center">
 		<table>
-			<th style = 'border: none; font-size: 20px'>중고거래 상품 등록하기</th>
+			<th style='border:none; font-size:20px'>중고거래 상품 등록하기</th>
 			<tr>
 				<td>
 					상품명
