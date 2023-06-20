@@ -205,7 +205,7 @@
 			<!-- 수정 -->
 			<c:forEach var="gp" items="${groupPurchaseList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-					<a href="<c:url value="groupPurchase/viewGP" > <c:param name="id" value="${gp.id}"/></c:url>"> 
+					<a href="<c:url value="groupPurchase/viewGP" > <c:param name="gpId" value="${gp.id}"/></c:url>"> 
 						<font color="BLACK"><c:out value="${gp.name}"></c:out></font>
 					</a>
 				</div>		

@@ -9,4 +9,8 @@ public interface GroupPurchaseFacade {
 	
 	void addGroupPurchase(GroupPurchase groupPurchase);
 	
+	GroupPurchase getProduct(int gpId) throws Exception;
+	
+	void updateBuyRequest(GroupPurchase gp);
+	
 }
