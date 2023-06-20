@@ -40,6 +40,11 @@ public class OrderFormController {
 		return new OrderForm();
 	}
 	
+	@RequestMapping(method = RequestMethod.GET)
+	public String form() {
+		return "/order/AddOrder";
+	}
+	
 	@ModelAttribute("creditCardTypes")
 	public List<String> referenceData() {
 		ArrayList<String> creditCardTypes = new ArrayList<String>();
