@@ -3,10 +3,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
@@ -23,7 +20,7 @@ public class ViewCartController {
 		return cart;
 	}
 	
-	@RequestMapping("/shop/viewCart")
+	@GetMapping("/shop/viewCart")
 	public ModelAndView viewCart(
 			HttpServletRequest request,
 			@RequestParam(value="page", required=false) String page,
@@ -31,7 +28,8 @@ public class ViewCartController {
 			throws Exception {
 		UserSession userSession = 
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-//		handleRequest(page, cart, userSession);
+		handleRequest(page, cart, userSession);
+//		System.out.print(cart);
 		return new ModelAndView("order/Cart", "cart", cart);
 	}
 
@@ -43,25 +41,25 @@ public class ViewCartController {
 			throws Exception {
 		UserSession userSession = 
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-//		handleRequest(page, cart, userSession);
+		handleRequest(page, cart, userSession);
 		return new ModelAndView("order/Checkout", "cart", cart);
 	}
 	
-//	private void handleRequest(String page, Cart cart, UserSession userSession)
-//			throws Exception {
-//		if (userSession != null) {
-//			if ("next".equals(page)) {
-//				userSession.getMyList().nextPage();
-//			}
-//			else if ("previous".equals(page)) {
-//				userSession.getMyList().previousPage();
-//			}
-//		}
-//		if ("nextCart".equals(page)) {
-//			cart.getCartItemList().nextPage();
-//		}
-//		else if ("previousCart".equals(page)) {
-//			cart.getCartItemList().previousPage();
-//		}
-//	}
+	private void handleRequest(String page, Cart cart, UserSession userSession)
+			throws Exception {
+		if (userSession != null) {
+			if ("next".equals(page)) {
+				userSession.getMyList().nextPage();
+			}
+			else if ("previous".equals(page)) {
+				userSession.getMyList().previousPage();
+			}
+		}
+		if ("nextCart".equals(page)) {
+			cart.getCartItemList().nextPage();
+		}
+		else if ("previousCart".equals(page)) {
+			cart.getCartItemList().previousPage();
+		}
+	}
 }
