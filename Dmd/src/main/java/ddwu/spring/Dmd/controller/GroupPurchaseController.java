@@ -74,6 +74,14 @@ public class GroupPurchaseController {
 //		Profile user = this.pFacade.getProfile(userId);
 		GPBuyer buyer = new GPBuyer(gp, userId);
 		this.facade.addGPBuyer(buyer);
+		
+		System.out.println(gp.getState());
+		
+		if (gp.getState().equals("N") && gp.getSalesQty() < 0) {
+			System.out.println("change state");
+			gp.setState("Y");
+			facade.changeGPState(gp);
+		}
 		System.out.println(buyer.toString());
 		model.put("groupPurchase", gp);
 		

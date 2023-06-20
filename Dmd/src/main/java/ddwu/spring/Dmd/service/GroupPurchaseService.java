@@ -83,5 +83,10 @@ public class GroupPurchaseService implements GroupPurchaseFacade{
 		// TODO Auto-generated method stub
 		gpbDao.save(gpb);
 	}
+	@Override
+	public void changeGPState(GroupPurchase gp) {
+		// TODO Auto-generated method stub
+		em.merge(gp);
+	}
 
 }

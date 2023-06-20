@@ -21,4 +21,6 @@ public interface GroupPurchaseFacade {
 	
 	void addGPBuyer(GPBuyer gpb);
 	
+	void changeGPState(GroupPurchase gp);
+	
 }

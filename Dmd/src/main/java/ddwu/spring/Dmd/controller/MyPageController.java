@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,16 +55,25 @@ public class MyPageController {
 		Profile profile = facade.getProfile(id);
 		
 		if(userSession.getProfile().getId().equals(profile.getId())) {
-			
-			ArrayList<SecondHand> shList = getSecondHand(id);
-//			System.out.println(shList.get(0).getName()+ " / " +shList.get(1).getName());
-			
 			return new ModelAndView("/profile/mypage", "profile", profile);
 		}
 		else {
 			return new ModelAndView("index", "message", " ..... error msg");
 		}
 		
+	}
+	
+	@RequestMapping("/profile/mypage/secondHandList")
+	public String secondHandRequest(
+			@ModelAttribute("userSession") UserSession userSession,
+			@RequestParam(value="id") String id,
+			ModelMap model) throws Exception {
+		
+		ArrayList<SecondHand> shList = getSecondHand(id);
+		
+//		System.out.println(shList.get(0).getName());
+		model.put("shList", shList);
+		return "/profile/SecondHandList";
 	}
 	
 	private ArrayList<SecondHand> getSecondHand(String id) {

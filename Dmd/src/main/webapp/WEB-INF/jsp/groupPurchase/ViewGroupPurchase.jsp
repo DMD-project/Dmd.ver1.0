@@ -107,7 +107,8 @@
 											<p class="price has-sale-flash">
 
 												<i> <span class="woocommerce-Price-amount amount">${groupPurchase.price}
-														원</span>
+														원</span><br>
+														<font size=2 class="woocommerce-Price-amount amount">discount : ${groupPurchase.discountRate}%</font>
 												</i>
 
 											</p>
@@ -159,6 +160,10 @@
 															</c:choose>
 														</div>
 													</div>
+													<br><br><br>
+													<font size=3 > 공동구매 기간</font><br>
+													<font size=2><c:out value="${groupPurchase.fromDate}" /> ~ <c:out value="${groupPurchase.toDate}" /></font>
+													
 												</div>
 											</div>
 										</div>
