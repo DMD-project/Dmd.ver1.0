@@ -38,7 +38,7 @@ public class ViewSecondHandController {
 		
 		sh.setBuyerID(buyerId);
 		sh.setWantFlag('y');
-		sh.setSellerFlag('y');
+		sh.setSellerFlag('n');
 		
 		facade.updateBuyRequest(sh);
 		model.put("secondHand", sh);

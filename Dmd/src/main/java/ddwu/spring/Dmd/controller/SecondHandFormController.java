@@ -51,8 +51,8 @@ public class SecondHandFormController {
 	            sellerID = userSession.getProfile().getId();
 	            System.out.println(sellerID);
 	            shForm.getSecondHand().setSellerID(sellerID);
-	            shForm.getSecondHand().setWantFlag('n');
-	            shForm.getSecondHand().setSellerFlag('y');
+	            shForm.getSecondHand().setWantFlag('y');
+	            shForm.getSecondHand().setSellerFlag('n');
 	         }
 		}
 		

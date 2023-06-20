@@ -94,7 +94,7 @@
 	<%@ include file="../common/includeTop.jsp" %>
 	<section class="bg-white py-8">
 
-		<div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+		<div align="left" class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
 			<nav id="store" class="w-full z-30 top-0 px-6 py-1">
 				<div
@@ -111,9 +111,14 @@
 						</a>
 						</c:if>
 					</span>
-					<span></span>
-					<span></span>
-					<span></span>
+					
+					<span></span><span></span><span></span><span></span><span></span><span></span>
+					<span></span><span></span><span></span><span></span><span></span><span></span>
+					<span></span><span></span><span></span><span></span><span></span><span></span>
+					<span></span><span></span><span></span><span></span><span></span><span></span>
+					<span></span><span></span><span></span><span></span><span></span><span></span>
+					
+					
 					<div class="flex items-center" id="store-nav-content">
 
 						<a class="pl-3 inline-block no-underline hover:text-black"
