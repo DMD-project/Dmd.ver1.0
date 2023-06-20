@@ -143,6 +143,7 @@
 						<c:if test="${ gp.state eq 'Y' }">
 							<i><font size=2 >진행 확정	</font></i>
 						</c:if>
+						
 					</a>
 				</div>		
 			</c:forEach>
