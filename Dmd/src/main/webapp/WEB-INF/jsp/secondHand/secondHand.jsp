@@ -136,8 +136,15 @@
 			<c:forEach var="sh" items="${secondHandList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="/secondHand/viewSH" > <c:param name="id" value="${sh.id}"/></c:url>"> 
-						<font color="BLACK"><c:out value="${sh.name}"></c:out></font>
+						<font color="BLACK"><c:out value="${sh.name}"></c:out></font><br>
+						<c:if test="${sh.name}">
+							<font color="BLACK"><c:out value="${sh.price}"></c:out></font>
+						</c:if>
+						<c:if>
+						</c:if>
+						
 					</a>
+					<br>
 				</div>		
 			</c:forEach>
 		</div>
