@@ -8,16 +8,10 @@ public class CartItem implements Serializable {
 	private String userID;
 	private int prodID;
 	private int qty;
-	private boolean inStock;
+//	private boolean inStock;
 	private String ispurchase; //("n" / "y")
 	
-	public CartItem(String userID, int prodID, int qty, String ispurchase) {
-		super();
-		this.userID = userID;
-		this.prodID = prodID;
-		this.qty = qty;
-		this.ispurchase = ispurchase;
-	}
+
 	
 	public Product getProd() {
 		return prod;
@@ -48,13 +42,13 @@ public class CartItem implements Serializable {
 		this.qty = qty;
 	}
 	
-	public boolean isInStock() {
-		return inStock;
-	}
-
-	public void setInStock(boolean inStock) {
-		this.inStock = inStock;
-	}
+//	public boolean isInStock() {
+//		return inStock;
+//	}
+//
+//	public void setInStock(boolean inStock) {
+//		this.inStock = inStock;
+//	}
 	
 	public String getIspurchase() {
 		return ispurchase;
