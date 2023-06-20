@@ -212,6 +212,7 @@
 															</button>
 															
 															<button type="button" id="buy" class="btn" href="<c:url value="/shop/order"/>">Buy</button>
+															<a href="<c:url value="/shop/order"></c:url>"> <font color="BLACK"> Buy </font>
 											
 														</div>
 
