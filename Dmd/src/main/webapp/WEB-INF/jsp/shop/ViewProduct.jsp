@@ -211,7 +211,8 @@
 																<a class="nav-link js-scroll-trigger" href="<c:url value="/shop/viewCart"/>"><font color="black">CART</font></a>
 															</button>
 															
-															<button type="button" id="buy" class="btn">Buy</button>
+															<button type="button" id="buy" class="btn" href="<c:url value="/shop/order"/>">Buy</button>
+											
 														</div>
 
 

@@ -17,13 +17,7 @@ public class OrderServiceImpl implements OrderService {
 		return orderDao.getOrder(orderId);
 	}
 	
-	public List<Order> getOrdersByUserId(String userId) {
-		return null;
-	}
-
-	@Override
 	public List<Order> getOrdersByUsername(String username) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
