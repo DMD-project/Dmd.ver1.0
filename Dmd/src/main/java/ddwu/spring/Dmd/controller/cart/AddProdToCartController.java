@@ -56,9 +56,7 @@ public class AddProdToCartController {
 		System.out.println("addProdToCart controller start");
 		
 		Profile profile = userSession.getProfile();
-		
-		
-		
+	
 //		model.put("cart", cart);
 		model.put("product", product);
 		model.put("profile", profile);
