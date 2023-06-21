@@ -111,15 +111,9 @@
 												data-thumb="https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-100x100.jpg"
 												data-thumb-alt="" class="woocommerce-product-gallery__image">
 												<img width="500" height="800"
-													src="https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-680x844.jpg"
+													src="<c:out value="${product.prodIMGUrl}"/>" style="width:500px; height:500px"
 													class="wp-post-image" alt="" loading="lazy"
-													title="product-classic-chair" data-caption=""
-													data-src="https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair.jpg"
-													data-large_image="https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair.jpg"
-													data-large_image_width="1280"
-													data-large_image_height="1588"
-													srcset="https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-680x844.jpg 680w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-300x372.jpg 300w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-450x558.jpg 450w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-242x300.jpg 242w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-825x1024.jpg 825w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-700x868.jpg 700w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-220x273.jpg 220w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-140x174.jpg 140w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-940x1166.jpg 940w, https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair.jpg 1280w"
-													sizes="(max-width: 680px) 100vw, 680px" />
+													title="product-classic-chair" />
 											</div>
 										</figure>
 
