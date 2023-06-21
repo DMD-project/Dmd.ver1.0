@@ -17,6 +17,7 @@ import ddwu.spring.Dmd.service.ProfileFacade;
 
 @Controller
 @RequestMapping("/shop/viewCart")
+@SessionAttributes("userSession")
 public class ViewCartController {
 	@Autowired
 	private CartFacade facade;
@@ -48,17 +49,14 @@ public class ViewCartController {
 		
 		Profile profile = pFacade.getProfile(id);
 		System.out.println("view cart controller" + profile.getName());
-//		System.out.println("usersession" + userSession.getProfile().getName());
-//		if(userSession.getProfile().getId() != null) {
-//			return new ModelAndView("/order/Cart", "profile", profile);
-//		} else {
-//			return new ModelAndView("/", "message", " ..... error msg");
-//		}
+		System.out.println("usersession" + userSession.getProfile().getName());
+		if(userSession.getProfile().getId() != null) {
+			return new ModelAndView("/order/Cart", "profile", profile);
+		} else {
+			return new ModelAndView("/", "message", " ..... error msg");
+		}
 		
-		facade.findByUserId(id);
-//		
-		return new ModelAndView("/order/Cart", "profile", profile);
-		
+//		facade.findByUserId(id);
 	}
 	
 }
