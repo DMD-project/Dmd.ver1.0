@@ -18,12 +18,11 @@ import ddwu.spring.Dmd.domain.Product;
 import ddwu.spring.Dmd.service.ProductFacade;
 import ddwu.spring.Dmd.domain.Cart;
 
-
 @Controller
 @SessionAttributes("sessionCart")
 public class AddProdToCartController {
-private ProductFacade prodFacade;
-	
+	private ProductFacade prodFacade;
+
 	@Autowired
 	public void setProductFacade(ProductFacade prodFacade) {
 		this.prodFacade = prodFacade;
@@ -33,44 +32,28 @@ private ProductFacade prodFacade;
 	public Cart createCart() {
 		return new Cart();
 	}
-	
-	@RequestMapping("/shop/addItemToCart")
+
+	@RequestMapping("/shop/addProdToCart")
 	public ModelAndView handleRequest(
-			@RequestParam("workingItemId") int workingProdId,
-			@RequestParam("productId") int productId,
-			@ModelAttribute("sessionCart") Cart cart 
-			) throws Exception {
-		if (cart.containsItemId(workingProdId)) {
-			cart.incrementQuantityByItemId(workingProdId);
+			@RequestParam(value="prodId") int id, 
+			@ModelAttribute("sessionCart") Cart cart) throws Exception {
+		if (cart.containsProductId(id)) {
+			cart.incrementQuantityByeProductId(id);
+			System.out.println("addProdToCart controller startincrement");
+
+		} else {
+			System.out.println("prodId : " + id);
+			Product product = this.prodFacade.getProduct(id);
+			cart.addProduct(product);
+			System.out.println("addProdToCart controller start");
+
+			
 		}
-//		else {
-			// isInStock is a "real-time" property that must be updated
-			// every time an item is added to the cart, even if other
-			// item details are cached.
-//			System.out.println("workingItemId : " + workingProdId);
-//			System.out.println("productId : " + productId);
-			
-//			Product prod = null;
-//			switch(productId) {
-//				case 0:
-//					prod = this.prodFacade.getGroupBuyingProd(workingItemId);
-//					break;
-//				case 1:
-//					prod = this.prodFacade.getAuctionById(workingItemId);
-//					break;
-//				case 2:
-//					prod = this.prodFacade.getSecondHandProd(workingItemId);
-//					break;
-//				case 3:
-//					prod = this.prodFacade.getHandMadeById(workingItemId);
-//					break;
-//			}
-			
-//			boolean isInStock = this.prodFacade.isItemInStock(workingProdId, prod.getProductId());
-//			cart.addItem(prod, isInStock);
-//		}
+		System.out.println("addProdToCart controller start");
+
+		
 		return new ModelAndView("order/Cart", "cart", cart);
-	}	
+	}
 //	@RequestMapping(method = RequestMethod.POST)
 //	public String addProdToCart(@RequestParam(value="prodId") int id, 
 //								@RequestParam(value="prodQty", defaultValue="1") int qty,
