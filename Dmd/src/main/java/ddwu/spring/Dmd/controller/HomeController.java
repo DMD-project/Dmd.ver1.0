@@ -12,7 +12,7 @@ public class HomeController {
     public String index() {
 		
 		System.out.println("home controller start");
-        return "/index";
+        return "redirect:/shop/shopMain";
     }
 	
 }
