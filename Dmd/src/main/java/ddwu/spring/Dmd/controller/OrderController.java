@@ -29,7 +29,7 @@ import ddwu.spring.Dmd.service.ProfileFacade;
 import ddwu.spring.Dmd.service.SecondHandFacade;
 
 @Controller
-//@RequestMapping("/shop/addOrder")
+@RequestMapping("/order/completeOrder")
 //@SessionAttributes({"sessionCart", "orderForm"})
 public class OrderController {
 
