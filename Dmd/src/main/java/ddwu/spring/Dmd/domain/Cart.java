@@ -51,7 +51,6 @@ public class Cart implements Serializable {
 			ProductMap.put(product.getId(), cartItem);
 			cartItemList.getSource().add(cartItem);
 		}
-		
 		cartItem.incrementQuantity();
 	}
 
