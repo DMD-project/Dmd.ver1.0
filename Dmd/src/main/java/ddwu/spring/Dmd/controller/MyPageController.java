@@ -97,10 +97,9 @@ public class MyPageController {
 	}
 	
 	private ArrayList<GroupPurchase> getGroupPurchase(String id) {
-		
+		System.out.println("groupPurchase");
 		ArrayList<GPBuyer> list = (ArrayList<GPBuyer>) gpFacade.findByUserId(id);
-		System.out.println("getGroupPurchase function" + list.get(0).getGroupPurchase().getName());
-		
+
 		ArrayList<GroupPurchase> gpList = new ArrayList<GroupPurchase>();
 		
 		for (int i = 0; i < list.size(); i++) {
