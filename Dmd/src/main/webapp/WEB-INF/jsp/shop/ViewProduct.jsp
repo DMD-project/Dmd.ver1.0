@@ -151,62 +151,6 @@
 													<div class="woocommerce-variation single_variation"></div>
 													<div
 														class="woocommerce-variation-add-to-cart variations_button">
-
-
-													<%-- 	<div class="nm-quantity-wrap  qty-show">
-															<label>수량 </label>
-															<div class="quantity">
-																<button type="button" id="qty-minus" class="qty-btn"
-																	onClick="qtyMinus()">-</button>
-																&nbsp;
-																<form id="qtyForm">
-																	<input type="number" id="qtyValue"
-																		class="input-text qty text" step="1" min="1" max=""
-																		name="prodQty" value="1" size="4" readonly="readonly"
-																		pattern="[0-9]*" /> <input type="hidden"
-																		name="prodId" value="${product.id}" />
-																</form>
-																&nbsp;
-
-																<button type="button" id="qty-plus" class="qty-btn"
-																	onClick="qtyPlus()">+</button>
-
-															</div>
-														</div>
-														<script>
-															function qtyMinus() {
-																
-																
-																var qty = document
-																		.getElementById("qtyValue").value;
-																var minusQty = Number(qty) - 1;
-
-																if (minusQty <= 0) {
-																	document
-																			.getElementById("qtyValue").value = qty;
-																} else {
-																	document
-																			.getElementById("qtyValue").value = minusQty;
-																}
-																
-															}
-
-															function qtyPlus() {
-																var qty = document
-																		.getElementById("qtyValue").value;
-																var plusQty = Number(qty) + 1;
-
-																//alert(plusQty);
-																document
-																		.getElementById("qtyValue").value = plusQty;
-															};
-														</script> --%>
-														
-											<!-- 			<form method="post" name="product_form" action="doService">
-															<input type="hidden" name="target_count" value= "">
-															<input type="button" name="target_name" value="submit" onClick=product_form.submit();>
-														</form>
- -->
 														<div style="padding: 10px 10px;">
 
 																<button type="button" id="cart"
@@ -215,27 +159,13 @@
 																<c:param name="prodId" value="${product.id}"/>
  																</c:url>'>  				
 																Cart</a>
-																</button><!--장바구니 -->
-															<!-- 
-															<button type="submit" formaction="/order/Cart" id="cart"
-																class="btn">Cart</button>
-																<a class="nav-link js-scroll-trigger" href="<c:url value="/shop/viewCart"/>"><font color="black">CART</font></a>
-															</button> -->
+																</button>
 															
 															<button type="button" id="buy" class="btn">
 															<a class="pl-3 inline-block no-underline hover:text-black"
 															href='<c:url value="/shop/order"><c:param name="prodId" value="${product.id}"/></c:url>'>Buy</a></button>
 															
-															
-															<%-- 
-															<a href="<c:url value="/shop/addProdToCart">
-															<c:param name="prodId" value="${product.id}"/></c:url>"> 
-																<font color="BLACK">CART</font>
-															</a>
-															<a href="<c:url value="/shop/order">
-															<c:param name="prodId" value="${product.id}"/></c:url>"> 
-																<font color="BLACK">BUY</font></a>
-															--%>
+							
 														</div>
 
 														<input type="hidden" name="add-to-cart" value="253" /> <input
@@ -246,9 +176,10 @@
 												</div>
 
 											</form>
-
 										</div>
+										
 									</span>
+									
 								</div>
 							</div>
 						</div>
@@ -271,11 +202,24 @@
 
 												<div id="review_form" style="text-align:center;">
 													<div id="respond" class="comment-respond">
+													<c:if test="${userSession.profile.id eq 'admin'}">
+														<div>
+														<a href='<c:url value="/product/update">
+																			<c:param name="id" value="${product.id}" /></c:url>'>
+																			<button type="button" id="update">수정하기</button>
+																		</a>
+																		<br><br>
+																		<a href='<c:url value="/product/delete">
+																			<c:param name="id" value="${product.id}" /></c:url>'>
+																			<button type="button" id="delete">삭제하기</button>
+																		</a>
+														</div>
+													</c:if>
 
 														<form
 															action="https://savoy.nordicmade.com/wp-comments-post.php"
 															method="post" id="commentform" class="comment-form">
-															<label for="comment">Your review&nbsp;</label>
+															<label for="comment"><br>Your review&nbsp;</label>
 															<p class="comment-form-comment">
 																
 																<textarea id="comment" name="comment" cols="45" rows="8"
