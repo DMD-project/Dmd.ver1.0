@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 import java.util.ArrayList;
 
-import ddwu.spring.Dmd.domain.CartItem;
+import ddwu.spring.Dmd.domain.Cart;
 
 @SuppressWarnings("serial")
 @Entity

@@ -1,90 +1,77 @@
 package ddwu.spring.Dmd.domain;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
-import org.springframework.beans.support.PagedListHolder;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @SuppressWarnings("serial")
+@Entity
+@IdClass(CartPK.class)
+@Table(name="cart")
 public class Cart implements Serializable {
-
-	/* Private Fields */
-
-	private final Map<Integer, CartItem> ProductMap = Collections.synchronizedMap(new HashMap<Integer, CartItem>());
-
-	private final PagedListHolder<CartItem> cartItemList = new PagedListHolder<CartItem>();
-
-	/* JavaBeans Properties */
-
-	public Cart() {
-		this.cartItemList.setPageSize(4);
+	
+	
+//	@OneToMany
+//    @JoinColumn(name = "id")
+//	private Product product;
+	
+	@Id
+	@Column(name="userid")
+	private String userId;
+	
+	@Id
+	@Column(name="prodid")
+	private int prodId;
+	
+	
+	private int qty;
+	private String ispurchase; //("n" / "y")
+	
+//	public Product getProd() {
+//		return product;
+//	}
+//
+//	public void setProd(Product product) {
+//		this.product = product;
+//	}
+	
+	public String getUserID() {
+		return userId;
 	}
-
-	public Iterator<CartItem> getAllCartProducts() {
-		return cartItemList.getSource().iterator();
+	public void setUserID(String userID) {
+		this.userId = userID;
 	}
-
-	public PagedListHolder<CartItem> getCartItemList() {
-		return cartItemList;
+	
+	public int getProdID() {
+		return prodId;
 	}
-
-	public int getNumberOfProducts() {
-		return cartItemList.getSource().size();
+	public void setProdID(int prodID) {
+		this.prodId = prodID;
 	}
-
-	/* Public Methods */
-
-	public boolean containsProductId(int productId) {
-		return ProductMap.containsKey(productId);
+	
+	public int getQty() {
+		return qty;
 	}
-
-	public void addProduct(Product product) {
-		CartItem cartItem = ProductMap.get(product.getId());
-		if (cartItem == null) {
-			cartItem = new CartItem();
-			cartItem.setProd(product);
-			cartItem.setQty(0);
-//			cartItem.setInStock(isInStock);
-			ProductMap.put(product.getId(), cartItem);
-			cartItemList.getSource().add(cartItem);
-		}
-		cartItem.incrementQuantity();
+	public void setQty(int qty) {
+		this.qty = qty;
 	}
-
-	public Product removeProductById(int productId) {
-		CartItem cartItem = ProductMap.remove(productId);
-		if (cartItem == null) {
-			return null;
-		} else {
-			cartItemList.getSource().remove(cartItem);
-			return cartItem.getProd();
-		}
+	
+	public String getIspurchase() {
+		return ispurchase;
 	}
-
-	public void incrementQuantityByeProductId(int productId) {
-		CartItem cartItem = ProductMap.get(productId);
-		cartItem.incrementQuantity();
+	public void setIspurchase(String ispurchase) {
+		this.ispurchase = ispurchase;
 	}
+	
+	/* Public methods */
 
-	public void setQuantityByProductId(int productId, int quantity) {
-		CartItem cartItem = ProductMap.get(productId);
-		cartItem.setQty(quantity);
+	public void incrementQuantity() {
+		qty++;
 	}
-
-	public double getSubTotal() {
-		double subTotal = 0;
-		Iterator<CartItem> items = getAllCartProducts();
-		while (items.hasNext()) {
-			CartItem cartItem = (CartItem) items.next();
-			Product prod = cartItem.getProd();
-			int listPrice = prod.getPrice();
-			int quantity = cartItem.getQty();
-			subTotal += listPrice * quantity;
-		}
-		return subTotal;
-	}
-
 }

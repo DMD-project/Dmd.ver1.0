@@ -13,47 +13,64 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import ddwu.spring.Dmd.domain.CartItem;
+import ddwu.spring.Dmd.controller.UserSession;
+import ddwu.spring.Dmd.domain.Cart;
 import ddwu.spring.Dmd.domain.Product;
+import ddwu.spring.Dmd.domain.Profile;
+import ddwu.spring.Dmd.service.CartFacade;
 import ddwu.spring.Dmd.service.ProductFacade;
+import ddwu.spring.Dmd.service.ProfileFacade;
 import ddwu.spring.Dmd.domain.Cart;
 
 @Controller
-@SessionAttributes("sessionCart")
+@RequestMapping("/shop/addProdToCart")
+@SessionAttributes("userSession")
 public class AddProdToCartController {
-	private ProductFacade prodFacade;
-
+	
 	@Autowired
-	public void setProductFacade(ProductFacade prodFacade) {
-		this.prodFacade = prodFacade;
+	private CartFacade cartFacade;
+	public void setCartFacade(CartFacade prodFacade) {
+		this.cartFacade = cartFacade;
 	}
-
-	@ModelAttribute("sessionCart")
-	public Cart createCart() {
-		return new Cart();
+	
+	@Autowired
+	private ProductFacade pFacade;
+	public void setPFacade(ProductFacade pFacade) {
+		this.pFacade = pFacade;
 	}
-
-	@RequestMapping("/shop/addProdToCart")
-	public ModelAndView handleRequest(
-			@RequestParam(value="prodId") int id, 
-			@ModelAttribute("sessionCart") Cart cart) throws Exception {
-		if (cart.containsProductId(id)) {
-			cart.incrementQuantityByeProductId(id);
-			System.out.println("addProdToCart controller startincrement");
-
-		} else {
-			System.out.println("prodId : " + id);
-			Product product = this.prodFacade.getProduct(id);
-			cart.addProduct(product);
-			System.out.println("addProdToCart controller start");
-
-			
-		}
-		System.out.println("addProdToCart controller start");
-
+	
+	@Autowired
+	private ProfileFacade profileFacade;
+	
+	public void setProfileFacade(ProfileFacade profileFacade) { 
+		this.profileFacade = profileFacade;
+	}
+	@RequestMapping(method = RequestMethod.GET)
+	public String viewCart(@RequestParam(value="prodId") int id, UserSession userSession,
+			@ModelAttribute("sessionCart") Cart cart, ModelMap model) throws Exception {
 		
-		return new ModelAndView("order/Cart", "cart", cart);
+//			Cart cart = this.cartFacade.getCart(id);
+		
+		Product product = pFacade.getProduct(id);
+
+		System.out.println("addProdToCart controller start");
+		
+		Profile profile = userSession.getProfile();
+	
+//		model.put("cart", cart);
+		model.put("product", product);
+		model.put("profile", profile);
+			
+		return "/order/Cart";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 //	@RequestMapping(method = RequestMethod.POST)
 //	public String addProdToCart(@RequestParam(value="prodId") int id, 
 //								@RequestParam(value="prodQty", defaultValue="1") int qty,
