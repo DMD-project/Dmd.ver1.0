@@ -68,7 +68,7 @@
 		<%@ include file="../common/includeTop.jsp" %>
 	</header>
 
-	<div style="margin: 0px 200px 200px 200px;">
+	<div style="margin: 40px 200px 200px 200px;">
 		<div class="nm-page-wrap">
 
 			<div class="nm-page-wrap-inner">

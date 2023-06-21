@@ -146,7 +146,7 @@
 				class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
 			<label for="carousel-3"
 				class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
+	
 			<!--Slide 3-->
 			<input class="carousel-open" type="radio" id="carousel-3"
 				name="carousel" aria-hidden="true" hidden="">
@@ -200,7 +200,13 @@
 					<a
 						class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
 						href="<c:url value="/shop/shopMain"></c:url>"> Store </a>
-
+					<c:if test="${userSession.profile.id eq 'admin'}">
+					<div>
+						<a href="<c:url value="/shop/addProduct"></c:url>"> 
+							<font color="BLACK">추가</font>
+						</a>
+					</div>
+					</c:if>
 
 					<!-- category -->
 					<div id="btn_group">
@@ -234,13 +240,7 @@
 					</div>
 				</div>
 			</nav>
-			<c:if test="${userSession.profile.id eq 'admin'}">
-			<div>
-				<a href="<c:url value="/shop/addProduct"></c:url>"> 
-					<font color="BLACK">추가</font>
-				</a>
-			</div>
-			</c:if>
+			
 			
 			<c:forEach var="product" items="${productList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
