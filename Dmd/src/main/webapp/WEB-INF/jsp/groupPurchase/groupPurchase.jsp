@@ -111,10 +111,10 @@
 					<span>
 						<div class="addgp">
 							<c:if test="${!empty userSession.profile}" >
-							<a href="<c:url value="/groupPurchase/add"></c:url>"> 
+							<a href='<c:url value="/groupPurchase/add"></c:url>'> 
 							<font color="BLACK">추가</font>
 							</a>
-							</c:if>
+						</c:if>
 						</div>
 					</span>
 					<div class="flex items-center" id="store-nav-content">
