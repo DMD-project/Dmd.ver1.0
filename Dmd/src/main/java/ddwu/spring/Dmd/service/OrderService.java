@@ -52,6 +52,11 @@ public class OrderService implements OrderFacade {
 		if(result.isPresent()) return result.get();
 		return null;
 	}
+
+	@Override
+	public List<Order> findByUserID(String id) {
+		return orderDao.findByUserID(id);
+	}
 	
 	
 }
