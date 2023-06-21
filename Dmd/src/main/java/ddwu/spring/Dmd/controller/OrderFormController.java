@@ -34,16 +34,17 @@ import ddwu.spring.Dmd.service.SecondHandFacade;
 public class OrderFormController {
 	
 	private ProductFacade pFacade;
+	private OrderFacade orderFacade;
 	
 	@Autowired
 	public void setPFacade(ProductFacade pFacade) {
 		this.pFacade = pFacade;
 	}
-	
-//	OrderFacade orderFacade;
-//	public void setOrderFacade(OrderFacade orderFacade) {
-//		this.orderFacade = orderFacade;
-//	}
+
+	@Autowired
+	public void setOrderFacade(OrderFacade orderFacade) {
+		this.orderFacade = orderFacade;
+	}
 	
 	@ModelAttribute("orderForm")
 	public OrderForm createOrderForm(HttpServletRequest request) {
@@ -58,6 +59,26 @@ public class OrderFormController {
 		model.put("product", product);
 
 		return "/order/AddOrder";
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String form(
+			@ModelAttribute("orderForm") OrderForm orderForm,
+			@ModelAttribute("userSession") UserSession userSession,
+			ModelMap model) throws Exception {
+		
+		
+		Product product = pFacade.getProduct(orderForm.getOrder().getProdID());
+		
+		orderForm.getOrder().setUserID(userSession.getProfile().getId());
+		orderForm.getOrder().setTotalPrice(product.getPrice());
+		orderForm.getOrder().setSelectItemNum(1);
+		System.out.println(orderForm.getOrder().toString());
+		orderFacade.addOrder(orderForm.getOrder());
+		
+		model.put("order", orderForm.getOrder());
+
+		return "/order/CompleteOrder";
 	}
 	
 	@ModelAttribute("creditCardTypes")

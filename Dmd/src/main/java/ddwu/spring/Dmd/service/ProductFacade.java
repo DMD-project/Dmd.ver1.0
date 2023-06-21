@@ -24,5 +24,7 @@ public interface ProductFacade {
 	
 //	Category getCategory(int cateCode);
 	
+	void deleteById(int id);
+	
 
 }
