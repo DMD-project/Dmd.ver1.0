@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndViewDefiningException;
 import org.springframework.web.util.WebUtils;
 
 import ddwu.spring.Dmd.domain.Cart;
+import ddwu.spring.Dmd.domain.Product;
 import ddwu.spring.Dmd.domain.Profile;
 import ddwu.spring.Dmd.domain.SecondHand;
 import ddwu.spring.Dmd.service.OrderFacade;
@@ -29,10 +30,32 @@ import ddwu.spring.Dmd.service.ProfileFacade;
 import ddwu.spring.Dmd.service.SecondHandFacade;
 
 @Controller
-@RequestMapping("/order/completeOrder")
+@RequestMapping("/order/confirmOrder")
 //@SessionAttributes({"sessionCart", "orderForm"})
 public class OrderController {
+	
+	private ProductFacade productFacade;
+	private OrderFacade orderFacade;
+	
+	@Autowired
+	public void setProductFacade(ProductFacade productFacade) {
+		this.productFacade = productFacade;
+	}
+	
+	@Autowired
+	public void setOrderFacade(OrderFacade orderFacade) {
+		this.orderFacade = orderFacade;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public String form(@ModelAttribute("orderId") int id,
+			ModelMap model) throws Exception {
+		System.out.println(id);
+		Product product = productFacade.getProduct(id);
+		model.put("order", product);
 
+		return "/order/comfirmOrder";
+	}
 	
 	
 	
