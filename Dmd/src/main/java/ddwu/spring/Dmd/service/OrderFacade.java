@@ -15,4 +15,5 @@ public interface OrderFacade {
 
 	Order getOrder(int id);
 	
+	List<Order> findByUserID(String id);	
 }

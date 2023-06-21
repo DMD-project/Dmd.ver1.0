@@ -15,6 +15,8 @@ public interface OrderDao extends CrudRepository<Order, String> {
 	
 	Optional<Order> findById(int id);
 	
+	List<Order> findByUserID(String id);
+	
 //	void addOrder(Order order);
 //	Order getOrder(int orderId);
 	

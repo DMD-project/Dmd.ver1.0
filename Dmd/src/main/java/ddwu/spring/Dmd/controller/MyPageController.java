@@ -1,6 +1,7 @@
 package ddwu.spring.Dmd.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,9 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ddwu.spring.Dmd.domain.GPBuyer;
 import ddwu.spring.Dmd.domain.GroupPurchase;
+import ddwu.spring.Dmd.domain.Order;
 import ddwu.spring.Dmd.domain.Profile;
 import ddwu.spring.Dmd.domain.SecondHand;
 import ddwu.spring.Dmd.service.GroupPurchaseFacade;
+import ddwu.spring.Dmd.service.OrderFacade;
+import ddwu.spring.Dmd.service.ProductFacade;
 import ddwu.spring.Dmd.service.ProfileFacade;
 import ddwu.spring.Dmd.service.SecondHandFacade;
 
@@ -28,6 +32,8 @@ public class MyPageController {
 	private ProfileFacade facade;
 	private SecondHandFacade shFacade;
 	private GroupPurchaseFacade gpFacade;
+	private OrderFacade odFacade;
+	private ProductFacade pFacade;
 	
 	@Autowired
 	public void setFacade(ProfileFacade facade) {
@@ -42,6 +48,16 @@ public class MyPageController {
 	@Autowired
 	public void setGpFacade(GroupPurchaseFacade gpFacade) {
 		this.gpFacade = gpFacade;
+	}
+	
+	@Autowired
+	public void setOdFacade(OrderFacade odFacade) {
+		this.odFacade = odFacade;
+	}
+	
+	@Autowired
+	public void setPFacade(ProductFacade pFacade) {
+		this.pFacade = pFacade;
 	}
 	
 	@ModelAttribute("profile")
@@ -110,8 +126,43 @@ public class MyPageController {
 		return gpList;
 	}
 	
-
+	@RequestMapping("/profile/mypage/orderList")
+	public String orderRequest(
+			@ModelAttribute("userSession") UserSession userSession,
+			@RequestParam(value="id") String id,
+			ModelMap model) throws Exception {
+		
+		HashMap<Order, String> odMap = getOrder(id);
+//		ArrayList<String> pnList = getProdName(id);
+		
+//		System.out.println(shList.get(0).getName());
+		model.put("odMap", odMap);
+//		model.put("pnList", pnList);
+		return "/profile/orderList";
+	}
 	
-	
+	private HashMap<Order, String> getOrder(String id) throws Exception {
+		
+		HashMap<Order, String> map = new HashMap<Order, String>();
+		
+		ArrayList<Order> list = (ArrayList<Order>) odFacade.findByUserID(id);
+		for(int i = 0; i < list.size(); i++) {
+			String prodName = pFacade.getProduct(list.get(i).getProdID()).getName();
+			map.put(list.get(i), prodName);
+		}
+		
+		return map;
+	}
+	private ArrayList<String> getProdName(String id) throws Exception {
+		
+		ArrayList<String> odList = new ArrayList<String>();
+		ArrayList<Order> list = (ArrayList<Order>) odFacade.findByUserID(id);
+		for(int i = 0; i < list.size(); i++) {
+			
+			String prodName = pFacade.getProduct(list.get(i).getProdID()).getName();
+			odList.add(prodName);
+		}
+		return odList;
+	}
 
 }

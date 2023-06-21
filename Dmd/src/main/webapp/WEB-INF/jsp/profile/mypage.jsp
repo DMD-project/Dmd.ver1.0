@@ -70,11 +70,11 @@
 
 		</div>
 		<div class="listContainer">
-			<a href="#" class="item">
-				<div class="text">
-					주문목록<span class="circle"></span>
+			<a class="item" href='<c:url value="/profile/mypage/orderList"> 
+			<c:param name="id" value="${profile.id}" /></c:url>'>
+				<div class="text">주문 목록</div>
+				<div class="right">>
 				</div>
-				<div class="right">></div>
 			</a> <a class="item" href='<c:url value="/profile/mypage/secondHandList"> 
 			<c:param name="id" value="${profile.id}" /></c:url>'>
 				<div class="text">중고거래 목록 조회</div>
