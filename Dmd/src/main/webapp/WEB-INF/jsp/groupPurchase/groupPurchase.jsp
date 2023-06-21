@@ -82,6 +82,11 @@
 	color: white;
 	background-color: #FFDEAD;
 }
+
+.addgp {
+	margin-right:1200px;
+}
+
 </style>
 
 
@@ -99,10 +104,19 @@
 			<nav id="store" class="w-full z-30 top-0 px-6 py-1">
 				<div
 					class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-
-					
-					<p class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl ">공동구매 </p>
-						
+	
+					<span>
+						<p class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl ">공동구매 </p>
+					</span>
+					<span>
+						<div class="addgp">
+							<c:if test="${!empty userSession.profile}" >
+							<a href="<c:url value="/groupPurchase/add"></c:url>"> 
+							<font color="BLACK">추가</font>
+							</a>
+							</c:if>
+						</div>
+					</span>
 					<div class="flex items-center" id="store-nav-content">
 
 						<a class="pl-3 inline-block no-underline hover:text-black"
@@ -124,15 +138,7 @@
 					</div>
 				</div>
 			</nav>
-			
-			<div>
-				<c:if test="${!empty userSession.profile}" >
-					<a href="<c:url value="/groupPurchase/add"></c:url>"> 
-						<font color="BLACK">추가</font>
-					</a>
-				</c:if>
-			</div>
-
+		
 			<c:forEach var="gp" items="${groupPurchaseList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="groupPurchase/viewGP" > <c:param name="gpId" value="${gp.id}"/></c:url>"> 
