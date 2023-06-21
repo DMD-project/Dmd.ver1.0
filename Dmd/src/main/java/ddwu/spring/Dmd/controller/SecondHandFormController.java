@@ -53,7 +53,7 @@ public class SecondHandFormController {
 	            shForm.getSecondHand().setSellerID(sellerID);
 	            shForm.getSecondHand().setWantFlag('n');
 	            shForm.getSecondHand().setSellerFlag('y');
-	            shForm.getSecondHand().setProdIMGUrl("../../../../images/light.png");
+	            shForm.getSecondHand().setProdIMGUrl("../../../../images/coffee.png");
 	         }
 		}
 		
