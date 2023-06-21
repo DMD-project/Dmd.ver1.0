@@ -12,7 +12,7 @@ public class LogoutController {
 	public String handleRequest(HttpSession session) throws Exception {
 		session.removeAttribute("userSession");
 		session.invalidate();
-		return "/shop/shopMain";
+		return "redirect:/shop/shopMain";
 	}
 
 }
