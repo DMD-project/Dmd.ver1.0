@@ -112,12 +112,6 @@
 						</c:if>
 					</span>
 					
-					<span></span><span></span><span></span><span></span><span></span><span></span>
-					<span></span><span></span><span></span><span></span><span></span><span></span>
-					<span></span><span></span><span></span><span></span><span></span><span></span>
-					<span></span><span></span><span></span><span></span><span></span><span></span>
-					<span></span><span></span><span></span><span></span><span></span><span></span>
-					
 					
 					<div class="flex items-center" id="store-nav-content">
 

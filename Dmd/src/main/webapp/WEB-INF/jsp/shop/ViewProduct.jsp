@@ -214,6 +214,7 @@
 														</form>
  -->
 														<div style="padding: 10px 10px;">
+<<<<<<< HEAD
 															<button type="button" id="cart"
 																class="btn" >
 																<a class="pl-3 inline-block no-underline hover:text-black" href='<c:url value="/shop/addProdToCart">
@@ -222,6 +223,16 @@
 																Cart</a>
 																</button><!--장바구니 -->
 															<button type="button" id="buy" class="btn">Buy</button>			
+=======
+															<button type="submit" formaction="/order/Cart" id="cart"
+																class="btn">Cart</button><!--장바구니 -->
+																<a class="nav-link js-scroll-trigger" href="<c:url value="/shop/viewCart"/>"><font color="black">CART</font></a>
+															</button>
+															
+															<button type="button" id="buy" class="btn" href="<c:url value="/shop/order"/>">Buy</button>
+															<a href="<c:url value="/shop/order"></c:url>"> <font color="BLACK"> Buy </font>
+											
+>>>>>>> branch 'main' of https://github.com/lakedata/Dmd.git
 														</div>
 
 

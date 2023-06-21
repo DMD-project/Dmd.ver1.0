@@ -39,8 +39,7 @@ public class ProductService implements ProductFacade{
 	}
 	@Override
 	public List<Product> searchProductList(String keywords) {
-		// TODO Auto-generated method stub
-		return null;
+		return prodDao.findByNameContaining(keywords);
 	}
 
 

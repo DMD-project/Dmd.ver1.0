@@ -10,8 +10,11 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ddwu.spring.Dmd.dao.GPBuyerDao;
 import ddwu.spring.Dmd.dao.GroupPurchaseDao;
+import ddwu.spring.Dmd.domain.GPBuyer;
 import ddwu.spring.Dmd.domain.GroupPurchase;
+import ddwu.spring.Dmd.domain.Profile;
 @Service
 @Transactional
 public class GroupPurchaseService implements GroupPurchaseFacade{
@@ -23,8 +26,14 @@ public class GroupPurchaseService implements GroupPurchaseFacade{
 	@Autowired
 	private GroupPurchaseDao gpDao;
 	
+	@Autowired
+	private GPBuyerDao gpbDao;
+	
 	public void setGpDao(GroupPurchaseDao gpDao) {
 		this.gpDao = gpDao;
+	}
+	public void setGpbDao(GPBuyerDao gpbDao) {
+		this.gpbDao = gpbDao;
 	}
 	
 	@Override
@@ -53,6 +62,29 @@ public class GroupPurchaseService implements GroupPurchaseFacade{
 
 	@Override
 	public void updateBuyRequest(GroupPurchase gp) {
+		// TODO Auto-generated method stub
+		em.merge(gp);
+	}
+
+	@Override
+	public List<GPBuyer> findByGroupPurchase(int id) {
+		// TODO Auto-generated method stub
+		return gpbDao.findByGroupPurchase(id);
+	}
+
+	@Override
+	public List<GPBuyer> findByUserId(String id) {
+		// TODO Auto-generated method stub
+		return gpbDao.findByUserId(id);
+	}
+	
+	@Override
+	public void addGPBuyer(GPBuyer gpb) {
+		// TODO Auto-generated method stub
+		gpbDao.save(gpb);
+	}
+	@Override
+	public void changeGPState(GroupPurchase gp) {
 		// TODO Auto-generated method stub
 		em.merge(gp);
 	}

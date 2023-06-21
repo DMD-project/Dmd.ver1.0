@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <!DOCTYPE html>
 <html lang="en-US" class="footer-sticky-1">
@@ -17,10 +17,8 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap"
 	rel="stylesheet">
-<link
-	href="/css/ViewProduct.css"
-	rel="stylesheet">
-	
+<link href="/css/ViewProduct.css" rel="stylesheet">
+
 <style type="text/css" class="nm-custom-styles">
 @media all and (max-width:1080px) {
 	.woocommerce-product-gallery__wrapper {
@@ -33,7 +31,7 @@
 </style>
 
 <style>
- .woocommerce form .form-row .required {
+.woocommerce form .form-row .required {
 	visibility: visible;
 }
 
@@ -55,13 +53,13 @@
 	font-size: 25px;
 	font-weigth: bold;
 	color: #777777;
-} 
+}
 </style>
 </head>
 <body data-rsssl=1
 	class="product-template-default single single-product postid-253 theme-savoy woocommerce woocommerce-page woocommerce-no-js nm-page-load-transition-0 nm-preload header-fixed header-mobile-default header-border-1 widget-panel-dark wpb-js-composer js-comp-ver-6.9.0 vc_responsive">
 
-	<%@ include file="../common/includeTop.jsp" %>
+	<%@ include file="../common/includeTop.jsp"%>
 	<div style="margin: 0px 200px 200px 200px;">
 		<div class="nm-page-wrap">
 
@@ -78,7 +76,8 @@
 						<div id="nm-shop-notices-wrap"></div>
 						<div class="nm-single-product-showcase">
 							<div class="nm-single-product-summary-row nm-row">
-								<div class="nm-single-product-summary-col col-xs-12" style="text-align:center;">
+								<div class="nm-single-product-summary-col col-xs-12"
+									style="text-align: center;">
 									<span style="float: left;"
 										class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images lightbox-enabled pagination-enabled"
 										data-columns="4"
@@ -101,14 +100,15 @@
 											</div>
 										</figure>
 
-									</span> 
-										<span style="padding: 100px;" class="summary entry-summary">
-										<div 
+									</span> <span style="padding: 100px;" class="summary entry-summary">
+										<div
 											class="nm-product-summary-inner-col nm-product-summary-inner-col-1">
 											<font size=5 class="product_title entry-title">${groupPurchase.name}</font>
 											<p class="price has-sale-flash">
 
-												<i> <span class="woocommerce-Price-amount amount">${groupPurchase.price} 원</span>
+												<i> <span class="woocommerce-Price-amount amount">${groupPurchase.price}
+														원</span><br>
+														<font size=2 class="woocommerce-Price-amount amount">discount : ${groupPurchase.discountRate}%</font>
 												</i>
 
 											</p>
@@ -125,49 +125,50 @@
 										<div
 											class="nm-product-summary-inner-col nm-product-summary-inner-col-2">
 
-								
-												<div class="single_variation_wrap">
-													<div class="woocommerce-variation single_variation"></div>
-													<div
-														class="woocommerce-variation-add-to-cart variations_button">
+
+											<div class="single_variation_wrap">
+												<div class="woocommerce-variation single_variation"></div>
+												<div
+													class="woocommerce-variation-add-to-cart variations_button">
 
 
-														<div class="nm-quantity-wrap  qty-show">
-									
-															<div class="quantity">
-																<c:choose>
+													<div class="nm-quantity-wrap  qty-show">
+
+														<div class="quantity">
+															<c:choose>
 																<c:when test="${groupPurchase.salesQty <= '0'}">
 																	목표 달성 ! 구매 가능합니다 . <br>
-																	<a href='<c:url value='/groupPurchase/buy'>
+																	<a
+																		href='<c:url value='/groupPurchase/buy'>
 																			<c:param name='gpId' value="${groupPurchase.id}"/>
 																			<c:param name='userId' value="${userSession.profile.id}"/>
-																			</c:url>'><button type="button" id="update" class="btn">구매하기</button>
-																			</a>
+																			</c:url>'><button
+																			type="button" id="update" class="btn">구매하기</button> </a>
 																</c:when>
 																<c:otherwise>
 																	<c:if test="${userSession.profile.id != null }">
 																		구매 성공 까지 ! <c:out value="${groupPurchase.salesQty}" /> 개<br>
-																		<a href='<c:url value='/groupPurchase/buy'>
+																		<a
+																			href='<c:url value='/groupPurchase/buy'>
 																			<c:param name='gpId' value="${groupPurchase.id}"/>
 																			<c:param name='userId' value="${userSession.profile.id}"/>
-																			</c:url>'><button type="button" id="update" class="btn">구매하기</button>
-																			</a>
+																			</c:url>'><button
+																				type="button" id="update" class="btn">구매하기</button>
+																		</a>
 																	</c:if>
 																</c:otherwise>
-																</c:choose>
-															</div>
+															</c:choose>
 														</div>
-														
-														
-
-
-														
 													</div>
+													<br><br><br>
+													<font size=3 > 공동구매 기간</font><br>
+													<font size=2><c:out value="${groupPurchase.fromDate}" /> ~ <c:out value="${groupPurchase.toDate}" /></font>
+													
 												</div>
-
+											</div>
 										</div>
 									</span>
-								
+								</div>
 							</div>
 						</div>
 					</div>
@@ -175,7 +176,6 @@
 			</div>
 		</div>
 	</div>
-	</div>
 
-	<%@ include file="../common/footer.jsp" %>
+	<%@ include file="../common/footer.jsp"%>
 </body>

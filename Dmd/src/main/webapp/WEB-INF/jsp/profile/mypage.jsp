@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,6 @@
 					<img class="profile"
 						src="https://i.ibb.co/Wv22GXY/2023-05-16-12-35-39.png">
 				</div>
-				<div class="grade">GOLD</div>
 				<div class="name">${profile.name}</div>
 			</div>
 			<div class="modify">i</div>
@@ -75,13 +75,19 @@
 					주문목록<span class="circle"></span>
 				</div>
 				<div class="right">></div>
-			</a> <a href="#" class="item">
-				<div class="text">상품후기</div>
-				<div class="right">></div>
-			</a> <a href="#" class="item">
-				<div class="text">상품문의</div>
-				<div class="right">></div>
-			</a> <a href="#" class="item">
+			</a> <a class="item" href='<c:url value="/profile/mypage/secondHandList"> 
+			<c:param name="id" value="${profile.id}" /></c:url>'>
+				<div class="text">중고거래 목록 조회</div>
+				<div class="right">>
+				</div>
+			</a> 
+			<a class="item" href='<c:url value="/profile/mypage/groupPurchaseList"> 
+			<c:param name="id" value="${profile.id}" /></c:url>'>
+				<div class="text">공동구매 목록 조회</div>
+				<div class="right">>
+				</div>
+			</a> 
+			<a href="#" class="item">
 				<div class="text">단골상점</div>
 				<div class="right">></div>
 			</a> <a href="#" class="item">

@@ -132,18 +132,23 @@
 					</a>
 				</c:if>
 			</div>
-			
-			<!-- 수정 -->
+
 			<c:forEach var="gp" items="${groupPurchaseList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
 					<a href="<c:url value="groupPurchase/viewGP" > <c:param name="gpId" value="${gp.id}"/></c:url>"> 
-						<font color="BLACK"><c:out value="${gp.name}"></c:out></font>
+						<font color="BLACK"><c:out value="${gp.name}"></c:out></font><br>
+						<c:if test="${ gp.state eq 'N' }">
+							<i><font size=2 >모집 중</font></i>
+						</c:if>
+						<c:if test="${ gp.state eq 'Y' }">
+							<i><font size=2 >진행 확정	</font></i>
+						</c:if>
+						
 					</a>
 				</div>		
 			</c:forEach>
 		</div>
 	</section>
-
 	<%@ include file="../common/footer.jsp" %>
 </body>
 </html>
