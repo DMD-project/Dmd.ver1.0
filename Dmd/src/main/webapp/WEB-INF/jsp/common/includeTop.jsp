@@ -24,7 +24,7 @@
 						class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-							href="<c:url value="/shop/shopMain"></c:url>">Shop</a></li>
+							href="<c:url value="/shop/shopMain"></c:url>">store</a></li>
 						<li><a
 							class="inline-block no-underline hover:text-black hover:underline py-2 px-4"
 							href="/secondHand/list">secondhand</a></li>
