@@ -19,7 +19,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndViewDefiningException;
 import org.springframework.web.util.WebUtils;
 
-import ddwu.spring.Dmd.domain.Cart;
 import ddwu.spring.Dmd.domain.Profile;
 import ddwu.spring.Dmd.domain.SecondHand;
 import ddwu.spring.Dmd.service.OrderFacade;

@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 import java.util.ArrayList;
 
-import ddwu.spring.Dmd.domain.CartItem;
+import ddwu.spring.Dmd.domain.Cart;
 
 @SuppressWarnings("serial")
 @Entity
@@ -111,7 +111,7 @@ public class Order implements Serializable {
   		addr = profile.getAddr();
   		zipcode = profile.getZipcode();
 
-  		totalPrice = cart.getSubTotal();
+//  		totalPrice = cart.getSubTotal();
 
   		creditCard = "999 9999 9999 9999";
   		expiryDate = "12/03";

@@ -24,6 +24,7 @@ img {
 					바랍니다.${product.name}</li>
 			</ul>
 		</div>
+		<p>${profile.name}님의 장바구니</p>
 		<table class="cart__list">
 			<form action='<c:url value="/shop/updateCartQuantities"/>'
 				method="post">
@@ -61,9 +62,6 @@ img {
 									
 							</p>
 
-						</td>
-
-						<button class="cart__list__optionbtn">주문조건 추가/변경</button>
 						</td>
 
 						<td style="width: 15%;"><span class="price">88,900원</span><br>
