@@ -173,10 +173,7 @@ select {
 		  <table class="n13">
 		  
 		  	<th colspan = "2" style = 'border: none; font-size: 20px'>결제 정보</th>
-		    <tr>
-		      <td colspan="2">
-		        <font color="green" size="4"><b>Payment Details</b></font></td>
-		    </tr>
+		    
 		    <tr>
 		      <td>Card Type:</td>
 		      <td><form:select path="order.cardType" items="${creditCardTypes}" />
@@ -193,13 +190,10 @@ select {
 		      <td><form:input path="order.expiryDate" /> 
 		        <form:errors path="order.expiryDate" /></td>
 		    </tr>
-		     <th colspan = "2" style = 'border: none; font-size: 20px'>배송 정보</th>
+		    <th colspan = "2" style = 'border: none; font-size: 20px'>배송 정보</th>
+		    
 		    <tr>
-		      <td colspan="2">
-		        <font color="green" size="4"><b>Billing Address</b></font></td>
-		    </tr>
-		    <tr>
-		      <td>First name:</td>
+		      <td>Name:</td>
 		      <td><form:input path="order.username" /> 
 		        <form:errors path="order.username" /></td>
 		    </tr>
@@ -215,9 +209,7 @@ select {
 		    </tr>
 		   
 		  </table>
-		  <p>
-		    <input type="image" src="../images/button_submit.gif">
-		  </p>
+		 
 		</form:form>
 	</div>
 	
@@ -264,7 +256,10 @@ select {
 			</tr>
 			<tr>
 				<td colspan = "2" align = "center">		
-					<button type="submit" name = "submit" id = "checkout">결제하기</button>
+					<button type="submit" name = "submit" id = "checkout">
+						<a style='color: white; text-decoration: none;' href="/order/orderComplete">결제하기</a>
+					</button>
+
 				</td>
 			</tr>
 
