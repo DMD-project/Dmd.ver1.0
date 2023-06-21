@@ -1,17 +1,30 @@
 package ddwu.spring.Dmd.domain;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @SuppressWarnings("serial")
+@Entity
+@Table(name="cart")
 public class CartItem implements Serializable {
+	
+	
+	@Id
+	@ManyToOne
+    @JoinColumn(name = "id", referencedColumnName = "id")
 	private Product product;
+	
+	@Column(name="userid")
 	private String userID;
+	
 	private int prodID;
 	private int qty;
-//	private boolean inStock;
 	private String ispurchase; //("n" / "y")
-	
-
 	
 	public Product getProd() {
 		return product;
@@ -41,23 +54,6 @@ public class CartItem implements Serializable {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
-	
-//	public double getTotalPrice() {
-//		if (prod != null) {
-//			return prod.getListPrice() * qty;
-//		}
-//		else {
-//			return 0;
-//		}
-//	}
-//	
-//	public boolean isInStock() {
-//		return inStock;
-//	}
-//
-//	public void setInStock(boolean inStock) {
-//		this.inStock = inStock;
-//	}
 	
 	public String getIspurchase() {
 		return ispurchase;

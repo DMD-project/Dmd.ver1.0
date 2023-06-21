@@ -21,7 +21,7 @@ img {
 				<li>장바구니 상품은 최대 30일간 저장됩니다.</li>
 				<li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
 				<li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기
-					바랍니다.</li>
+					바랍니다.${product.name}</li>
 			</ul>
 		</div>
 		<table class="cart__list">
@@ -50,13 +50,15 @@ img {
                   <c:param name="prodId" value="${cartItem.product.id}"/></c:url>'>
 								<c:out value="${cartItem.product.id}" />
 						</a> <span class="cart__list__smartstore"> 스마트스토어</span>
-							<p>[애플] Magic Mouse [MK2E3KH/A]</p> <span class=" price">88,900원</span>
+							<p>[애플] Magic Mouse [MK2E3KH/A]</p> <span class=" price">88,900원 /span>
 						</td>
 						<td class="cart__list__option" style="width: 27%;">
 							<p>
-								상품 주문 수량: <input type="text" size="3"
+								<%-- 상품 주문 수량: <input type="text" size="3"
 									name='<c:out value="${cartItem.product.id}"/>'
-									value='<c:out value="${cartItem.qty}"/>' /> 개
+									value='<c:out value="${cartItem.qty}"/>' /> 개 --%>
+									
+									
 							</p>
 
 						</td>
