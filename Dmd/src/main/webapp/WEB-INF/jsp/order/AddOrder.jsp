@@ -23,11 +23,13 @@ div {
 #left {
 	background-color: rgb(246, 240, 231);
 	width: 55%;
+	height: 800px;
 	float: left;
 }
 #right{
 	background-color: rgb(251, 248, 243);
 	width: 45%;
+	height: 800px;
 	float: left;
 }
 
@@ -181,36 +183,44 @@ select {
 		    </tr>
 		    <tr>
 		      <td>Card Number:</td>
-		      <td><form:input path="order.creditCard" /> 
+		      <td><form:input path="order.creditCard" size="60" /> 
 		        <font color="red" size="2">* Use a fake number!</font>
 		        <form:errors path="order.creditCard" /></td>
 		    </tr>
 		    <tr>
 		      <td>Expiry Date (MM/YYYY):</td>
-		      <td><form:input path="order.expiryDate" /> 
+		      <td><form:input path="order.expiryDate" size="20" /> 
 		        <form:errors path="order.expiryDate" /></td>
 		    </tr>
-		    <th colspan = "2" style = 'border: none; font-size: 20px'>배송 정보</th>
+		    <th colspan="2" style='border:none; font-size:20px'>배송 정보</th>
 		    
 		    <tr>
 		      <td>Name:</td>
-		      <td><form:input path="order.username" /> 
-		        <form:errors path="order.username" /></td>
+		      <td><form:input path="order.receiverName" size="20" /> 
+		        <form:errors path="order.receiverName" />
+		        <form:input type="hidden" value="${product.id}" path="order.prodID"/>
+		        </td>
+		    </tr>
+		    <tr>
+		      <td>Phone:</td>
+		      <td><form:input path="order.phone" size="30"/>
+		        <form:errors path="order.phone" /></td>
 		    </tr>
 		    <tr>
 		      <td>Address:</td>
-		      <td><form:input path="order.addr" />
+		      <td><form:input path="order.addr" size="30"/>
 		        <form:errors path="order.addr" /></td>
 		    </tr>
 		    <tr>
 		      <td>Zipcode:</td>
-		      <td><form:input path="order.zipcode" /> 
+		      <td><form:input path="order.zipcode" size="20" /> 
 		        <form:errors path="order.zipcode" /></td>
 		    </tr>
-		   
+		   	
 		  </table>
-		 
-		</form:form>
+		  
+			<button type="submit" name="submit" id="checkout">결제하기</button>
+		</form:form> 
 	</div>
 	
 	<div id = "right" align = "center">
@@ -256,16 +266,12 @@ select {
 			</tr>
 			<tr>
 				<td colspan = "2" align = "center">		
-					<button type="submit" name = "submit" id = "checkout">
-						<a style='color: white; text-decoration: none;' href="/order/orderComplete">결제하기</a>
-					</button>
-
+					
 				</td>
 			</tr>
 
 		</table>
 		<br>
 	</div>
-	
 </body>
 </html>

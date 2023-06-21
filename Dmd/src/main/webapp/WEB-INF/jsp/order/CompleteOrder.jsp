@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+
 div {
 	width:800px;
 	height: 300px; /* div의 높이를 지정해주세요 */
@@ -33,15 +34,19 @@ div {
 	font-size: 20px;
 }
 
+table {
+	margin-top: 60px;
+}
+
 </style>
 </head>
 <body>
-	<div>
+	
 	<div>
 		<!--  	<img class="check-image" src="images/or-check.png" alt="체크 표시">
  -->
 		
-		<table>
+		<table align="center">
 			<tr>
 				<td colspan=2>
 					<img class="check-image" src="https://i.ibb.co/DYhhg9t/or-check.png"
@@ -55,7 +60,7 @@ div {
 			</tr>
 			<tr>
 				<td>주문번호:</td>
-				<td>00000000-00000000</td>
+				<td>${order.id}</td>
 			</tr>
 			<tr>
 				<td>주문일자:</td>

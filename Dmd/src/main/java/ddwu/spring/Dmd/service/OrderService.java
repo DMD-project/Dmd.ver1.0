@@ -44,7 +44,6 @@ public class OrderService implements OrderFacade {
 	@Override
 	public void addOrder(Order order) {
 		orderDao.save(order);
-		
 	}
 
 	@Override

@@ -17,7 +17,7 @@ button {
 }
 </style>
 </head>
-<body>
+<body align="center">
 	<h2>환영합니다.</h2>
 	<div>
 		<button type="button" onclick="location.href='http://localhost:8088/'"/>홈 화면으로 이동</button>

@@ -19,15 +19,15 @@ import ddwu.spring.Dmd.domain.CartItem;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="ORDER")
+@Table(name="ORDERPROD")
 public class Order implements Serializable {
 
 	@Id
-	@Column(name="ORDERID")
+//	@Column(name="ORDERID")
 	@SequenceGenerator(
 			name = "order_seq_generator",
 			sequenceName = "order_seq",
-			initialValue = 1000,
+			initialValue = 4000,
 			allocationSize = 1
 			)
 	@GeneratedValue(
@@ -35,46 +35,60 @@ public class Order implements Serializable {
 			generator = "order_seq_generator"
 			)
 	private int id;
-  
-	private String username;
+	private String userID;
+	
+	@Column(name="SELECTITEMNUM")
+	private int selectItemNum;
+	
+	@Column(name="RECEIVERNAME")
+	private String receiverName;
+	
+	@Column(name="ORDERDATE", nullable=true)
 	private Date orderDate;
 	private String addr;
 	private int zipcode;
+	private String phone;
+	
+	@Column(name="TOTALPRICE")
+	private int totalPrice;
+	
+	@Column(name="PRODID")
+  	private int prodID;
   
-	private double totalPrice;
-  
+	@Column(name="CREDITCARD")
 	private String creditCard;
+	
+	@Column(name="EXPIRYDATE")
 	private String expiryDate;
+	
+	@Column(name="CARDTYPE")
   	private String cardType;
-  	private String locale;
-  	private String status;
-  
+  	
   	public Order() {	
 	  
   	}
-  
-  	public Order(int id, String username, Date orderDate, String addr, int zipcode, double totalPrice,
-  			String creditCard, String expiryDate, String cardType, String locale, String staus) {
-	  
-  		this.id = id;
-  		this.username = username;
-  		this.orderDate = orderDate;
-  		this.addr = addr;
-  		this.zipcode = zipcode;
-  		this.totalPrice = totalPrice;
-	  
-  		this.creditCard = creditCard;
-  		this.expiryDate = expiryDate;
-  		this.cardType = cardType;
-  		this.locale = locale;
-  		this.status = status;
-  	}
 
-  	public int getOrderId() { return id; }
+  	public Order(int id, String userID, int selectItemNum, String receiverName, Date orderDate, String addr,
+			int zipcode, String phone, int totalPrice, int prodID, String creditCard, String expiryDate,
+			String cardType) {
+		super();
+		this.id = id;
+		this.userID = userID;
+		this.selectItemNum = selectItemNum;
+		this.receiverName = receiverName;
+		this.orderDate = orderDate;
+		this.addr = addr;
+		this.zipcode = zipcode;
+		this.phone = phone;
+		this.totalPrice = totalPrice;
+		this.prodID = prodID;
+		this.creditCard = creditCard;
+		this.expiryDate = expiryDate;
+		this.cardType = cardType;
+	}
+
+	public int getOrderId() { return id; }
   	public void setOrderId(int orderId) { this.id = id; }
-
-  	public String getUsername() { return username; }
-  	public void setUsername(String username) { this.username = username; }
 
   	public Date getOrderDate() { return orderDate; }
   	public void setOrderDate(Date orderDate) { this.orderDate = orderDate; }
@@ -85,8 +99,8 @@ public class Order implements Serializable {
   	public int getZipcode() { return zipcode; }
   	public void setZipcode(int zipcode) { this.zipcode = zipcode; }
 
-  	public double getTotalPrice() { return totalPrice; }
-  	public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
+  	public int getTotalPrice() { return totalPrice; }
+  	public void setTotalPrice(int totalPrice) { this.totalPrice = totalPrice; }
   	
   	public String getCreditCard() { return creditCard; }
   	public void setCreditCard(String creditCard) { this.creditCard = creditCard; }
@@ -96,37 +110,45 @@ public class Order implements Serializable {
 
   	public String getCardType() { return cardType; }
   	public void setCardType(String cardType) { this.cardType = cardType; }
-
-  	public String getLocale() { return locale; }
-  	public void setLocale(String locale) { this.locale = locale; }
-
-  	public String getStatus() { return status; }
-  	public void setStatus(String status) { this.status = status; }
-
   	
-  	public void initOrder(Profile profile, Cart cart) {
-  		username = profile.getName();
+  	public int getId() {return id;}
+	public void setId(int id) {this.id = id;}
+
+	public String getUserID() {return userID;}
+	public void setUserID(String userID) {this.userID = userID;}
+
+	public int getSelectItemNum() {return selectItemNum;}
+	public void setSelectItemNum(int selectItemNum) {this.selectItemNum = selectItemNum;}
+
+	public String getReceiverName() {return receiverName;}
+	public void setReceiverName(String receiverName) {this.receiverName = receiverName;}
+
+	public String getPhone() {return phone;}
+	public void setPhone(String phone) {this.phone = phone;}
+
+	public int getProdID() {return prodID;}
+	public void setProdID(int prodID) {this.prodID = prodID;}
+
+	public void initOrder(Profile profile, Cart cart) {
+  		receiverName = profile.getName();
   		orderDate = new Date();
 
   		addr = profile.getAddr();
   		zipcode = profile.getZipcode();
 
-  		totalPrice = cart.getSubTotal();
+//  		totalPrice = cart.getSubTotal();
 
   		creditCard = "999 9999 9999 9999";
   		expiryDate = "12/03";
     	cardType = "Visa";
-    	locale = "CA";
-    	status = "P";
-
   	}
-  	
-  	@Override
-	public String toString() {
-		return "Order [id=" + id + ", name=" + username + ", orderDate=" + orderDate + ", address=" + addr 
-				+ ", zipcode=" + zipcode + ", totalPrice=" + totalPrice + ", creditCard=" + creditCard + ", expiryDate=" + expiryDate
-				+ ", cardType=" + cardType + ", locale=" + locale + ", status=" + status + "]";
-	}
-  
 
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", userID=" + userID + ", selectItemNum=" + selectItemNum + ", receiverName="
+				+ receiverName + ", orderDate=" + orderDate + ", addr=" + addr + ", zipcode=" + zipcode + ", phone="
+				+ phone + ", totalPrice=" + totalPrice + ", prodID=" + prodID + ", creditCard=" + creditCard
+				+ ", expiryDate=" + expiryDate + ", cardType=" + cardType + "]";
+	}
+  	
 }

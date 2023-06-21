@@ -36,7 +36,7 @@ public class LoginController {
 		Profile profile = facade.getProfile(id, pw);
 		
 		if(profile == null) {
-			return new ModelAndView("Error", "message", 
+			return new ModelAndView("/profile/LoginError", "message", 
 					"Invalid id or password.  login failed.");
 		} else {
 			UserSession userSession = new UserSession(profile);
@@ -53,5 +53,10 @@ public class LoginController {
 			else 
 				return new ModelAndView("/index");
 		}
+	}
+	
+	@RequestMapping("/profile/relogin")
+	public String reLoginForm() {
+		return "/profile/LoginForm";
 	}
 }
