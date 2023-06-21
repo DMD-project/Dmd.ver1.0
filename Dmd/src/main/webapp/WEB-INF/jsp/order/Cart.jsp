@@ -24,59 +24,98 @@ img {
 					바랍니다.${product.name}</li>
 			</ul>
 		</div>
-		<p>${profile.name}님의 장바구니</p>
+		<p>${profile.name}님의장바구니</p>
 		<table class="cart__list">
 			<form action='<c:url value="/shop/updateCartQuantities"/>'
 				method="post">
-			<thead>
-				<tr>
-					<td><input type="checkbox"></td>
-					<td colspan="2">상품정보</td>
-					<td>옵션</td>
-					<td>상품금액</td>
-					<td>배송비</td>
-				</tr>
-			</thead>
-			<tbody>
+				<thead>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td colspan="2">상품정보</td>
+						<td>옵션</td>
+						<td>상품금액</td>
+						<td>배송비</td>
+					</tr>
+				</thead>
+				<tbody>
 
-				<%-- <c:forEach var="cartItem" items="${cart.cartItemList.pageList}"> --%>
+					<%-- <c:forEach var="cartItem" items="${cart.cartItemList.pageList}"> --%>
 					<tr class="cart__list__detail">
 						<td style="width: 2%;"><input type="checkbox"></td>
-						<td style="width: 13%;"><img
-							src="https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80"
-							<%-- src="<c:out ${product.IMGUrl }/>" --%>
+						<td style="width: 13%;"><img src="${product.prodIMGUrl}"
 							alt="magic mouse"></td>
-						<td style="width: 27%;"><a href="#">${product.name}</a>
-							<a
-							href='<c:url value="/shop/product">
-                  <c:param name="prodId" value="${product.id}"/></c:url>'>
-								<c:out value="${product.id}" />
-						</a> 
-						<span class="cart__list__smartstore"></span>
-							<p><c:out value="${product.name}" /></p> <span class=" price"> <c:out value="${product.price}" /></span>
+						<td style="width: 27%;"><br> <br> <span
+							class="cart__list__smartstore"></span>
+							<p>${product.name}</p> <span class=" price">${product.price}원</span>
 						</td>
-						<td class="cart__list__option" style="width: 27%;">
+						<td style="width: 27%; text-align: center;">
 							<p>
-								<%-- 상품 주문 수량: <input type="text" size="3"
-									name='<c:out value="${cartItem.product.id}"/>'
-									value='<c:out value="${cartItem.qty}"/>' /> 개 --%>
-									
-									
-							</p>
+
+								<button type="button" id="qty-minus" class="qty-btn"
+									onClick="qtyMinus()">-</button>
+								&nbsp;
+							<form id="qtyForm">
+								<input type="number" id="qtyValue" class="input-text qty text"
+									step="1" min="1" max="" name="prodQty" value="1" size="4"
+									readonly="readonly" pattern="[0-9]*" /> <input type="hidden"
+									name="prodId" value="${product.id}" />
+							</form> &nbsp;
+							<button type="button" id="qty-plus" class="qty-btn"
+								onClick="qtyPlus()">+</button>
+
 
 						</td>
-
-						<td style="width: 15%;"><span class="price">${product.price}원</span><br>
+						<!-- <td style="width: 15%;"><span class="price"></span><br></td> -->
+						<td>
+						<form id="totalForm">
+							<input type="text" value="${product.price}" readonly="readonly" id="totalValue"/>
+						</form>
+						</td>
+						<%-- <td style="width: 15%;"><span class="price">${product.price}원</span><br> --%>
 						<td style="width: 15%;">무료</td>
 					</tr>
-				<!-- </c:forEach> -->
 
-			</tbody>
-			
+					<script>
+					
+															function qtyMinus() {
+																
+																var qty = document
+																		.getElementById("qtyValue").value;
+																let price = document
+																.getElementById("totalValue").value;
+																var minusQty = Number(qty) - 1;
+																if (minusQty <= 0) {
+																	document
+																			.getElementById("qtyValue").value = qty;
+																} else {
+																	document
+																			.getElementById("qtyValue").value = minusQty;
+																	document
+																	.getElementById("totalValue").value = minusQty * price;
+																	
+													
+																}
+															}
+															function qtyPlus() {
+																var qty = document
+																		.getElementById("qtyValue").value;
+																let price = document
+																.getElementById("totalValue").value;	
+																var plusQty = Number(qty) + 1;
+																//alert(plusQty);
+																document
+																		.getElementById("qtyValue").value = plusQty;
+																document
+																.getElementById("totalValue").value = plusQty * price;
+															};
+														</script>
+					<!-- </c:forEach> -->
 
+				</tbody>
 		</table>
 		<div class="cart__mainbtns">
-			<button class="cart__bigorderbtn left" onclick="location.href='/shop/shopMain'" >쇼핑 계속하기</button>
+			<button class="cart__bigorderbtn left"
+				onclick="location.href='/shop/shopMain'">쇼핑 계속하기</button>
 			<button class="cart__bigorderbtn right">주문하기</button>
 		</div>
 	</section>
