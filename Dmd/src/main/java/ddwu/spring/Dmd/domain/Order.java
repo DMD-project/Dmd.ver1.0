@@ -6,8 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 
-import ddwu.spring.Dmd.domain.CartItem;
-
 @SuppressWarnings("serial")
 public class Order implements Serializable {
 
