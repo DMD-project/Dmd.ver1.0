@@ -1,14 +1,18 @@
 package ddwu.spring.Dmd.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import ddwu.spring.Dmd.domain.Order;
 
 public interface OrderFacade {
 	
-	void insertOrder(Order order);
+	List<Order> findAll();
 
-	Order getOrder(int orderId);
+	Optional<Order> findById(int orderId);
+	
+	void addOrder(Order order);
 
-	List<Order> getOrdersByUsername(String username);
+	Order getOrder(int id);
+	
 }

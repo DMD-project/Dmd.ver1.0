@@ -1,17 +1,21 @@
 package ddwu.spring.Dmd.dao;
 
 import java.util.List;
+import java.util.Optional;
 
-import org.springframework.dao.DataAccessException;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import ddwu.spring.Dmd.domain.Order;
 
-public interface OrderDao {
-
-	List<Order> getOrdersByUsername(String username) throws DataAccessException;
+@Repository
+public interface OrderDao extends CrudRepository<Order, String> {
 	
-	Order getOrder(int orderId) throws DataAccessException;
+	List<Order> findAll();
 	
-	void insertOrder(Order order) throws DataAccessException;
+	Optional<Order> findById(int id);
+	
+//	void addOrder(Order order);
+//	Order getOrder(int orderId);
 	
 }
