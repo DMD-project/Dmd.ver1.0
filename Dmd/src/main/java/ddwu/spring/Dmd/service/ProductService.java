@@ -81,6 +81,16 @@ public class ProductService implements ProductFacade{
 		return prodDao.findByCateID(cateCode);
 	}
 
+
+	@Override
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		Optional<Product> result = prodDao.findById(id);
+		if(result.isPresent()) {
+			prodDao.delete(result.get());
+		}
+	}
+
 	
 	
 }
