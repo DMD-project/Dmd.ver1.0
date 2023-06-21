@@ -83,6 +83,11 @@
 	color: white;
 	background-color: #FFDEAD;
 }
+
+.addsh {
+	margin-right:1200px;
+}
+
 </style>
 
 
@@ -104,7 +109,7 @@
 						class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
 						href="<c:url value="/secondHand/list"></c:url>"> 중고거래 </a>
 					</span>
-					<span>
+					<span class="addsh">
 						<c:if test="${!empty userSession.profile}" >
 						<a href="<c:url value="/secondHand/add"></c:url>"> 
 							<font color="BLACK">등록하기</font>
@@ -141,10 +146,13 @@
 			<br>
 			<c:forEach var="sh" items="${secondHandList.pageList}">
 				<div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-					<a href="<c:url value="/secondHand/viewSH" > <c:param name="id" value="${sh.id}"/></c:url>"> 
+					<a href="<c:url value="/secondHand/viewSH" > <c:param name="id" value="${sh.id}"/></c:url>">
+					<img class="hover:grow hover:shadow-lg"
+						src="<c:out value="${sh.prodIMGUrl}"></c:out>" style="width:300px; height:300px;"> 
+						<br>
 						<font color="BLACK"><c:out value="${sh.name}"></c:out></font><br>
 						<c:if test="${fn:contains(sh.sellerFlag, 'y')}">
-							<font color="BLACK"><c:out value="${sh.price}"></c:out></font>
+							<font color="BLACK"><c:out value="${sh.price} 원"></c:out></font>
 						</c:if>
 						<c:if test="${fn:contains(sh.sellerFlag, 'n')}">
 							<font color="BLACK"><c:out value="판매완료"></c:out></font>
