@@ -17,6 +17,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import ddwu.spring.Dmd.domain.Brand;
 import ddwu.spring.Dmd.domain.Category;
+import ddwu.spring.Dmd.domain.Product;
 import ddwu.spring.Dmd.service.ProductFacade;
 import ddwu.spring.Dmd.service.ProductFormValidator;
 
@@ -92,8 +93,11 @@ public class ProductFormController {
 //		}
 //		
 		System.out.println(productForm.getProduct().toString());
+		
+		Product newProduct = productForm.getProduct();
+		newProduct.setProdIMGUrl("../../../../images/light.png");
 		//save
-		facade.addProduct(productForm.getProduct());
+		facade.addProduct(newProduct);
 		
 		status.setComplete();
 		

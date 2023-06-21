@@ -83,7 +83,7 @@
 										data-columns="4"
 										style="opacity: 0; transition: opacity .25s ease-in-out;">
 
-										<figure class="woocommerce-product-gallery__wrapper">
+										<!-- <figure class="woocommerce-product-gallery__wrapper">
 											<div
 												data-thumb="https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-100x100.jpg"
 												data-thumb-alt="" class="woocommerce-product-gallery__image">
@@ -99,7 +99,7 @@
 													sizes="(max-width: 680px) 100vw, 680px" />
 											</div>
 										</figure>
-
+ -->
 									</span> <span style="padding: 100px;" class="summary entry-summary">
 										<div
 											class="nm-product-summary-inner-col nm-product-summary-inner-col-1">
