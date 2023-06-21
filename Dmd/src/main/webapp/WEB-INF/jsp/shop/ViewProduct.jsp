@@ -215,34 +215,34 @@
  -->
 														<div style="padding: 10px 10px;">
 
-															<%-- <button type="button" id="cart"
+																<button type="button" id="cart"
 																class="btn" >
 																<a class="pl-3 inline-block no-underline hover:text-black" href='<c:url value="/shop/addProdToCart">
 																<c:param name="prodId" value="${product.id}"/>
  																</c:url>'>  				
 																Cart</a>
 																</button><!--장바구니 -->
-												
-
+															<!-- 
 															<button type="submit" formaction="/order/Cart" id="cart"
 																class="btn">Cart</button>
 																<a class="nav-link js-scroll-trigger" href="<c:url value="/shop/viewCart"/>"><font color="black">CART</font></a>
-															</button>
+															</button> -->
 															
-															<button type="button" id="buy" class="btn" href="<c:url value="/shop/order"/>">Buy</button>
-															<a href="<c:url value="/shop/order"></c:url>"> <font color="BLACK"> Buy </font></a> --%>
+															<button type="button" id="buy" class="btn">
+															<a class="pl-3 inline-block no-underline hover:text-black"
+															href='<c:url value="/shop/order"><c:param name="prodId" value="${product.id}"/></c:url>'>Buy</a></button>
 															
+															
+															<%-- 
 															<a href="<c:url value="/shop/addProdToCart">
 															<c:param name="prodId" value="${product.id}"/></c:url>"> 
 																<font color="BLACK">CART</font>
 															</a>
 															<a href="<c:url value="/shop/order">
 															<c:param name="prodId" value="${product.id}"/></c:url>"> 
-																<font color="BLACK">BUY</font>
-															</a>
-															
+																<font color="BLACK">BUY</font></a>
+															--%>
 														</div>
-
 
 														<input type="hidden" name="add-to-cart" value="253" /> <input
 															type="hidden" name="product_id" value="253" /> <input

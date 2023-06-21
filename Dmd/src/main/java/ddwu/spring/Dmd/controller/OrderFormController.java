@@ -35,6 +35,7 @@ public class OrderFormController {
 	
 	private ProductFacade pFacade;
 	
+	@Autowired
 	public void setPFacade(ProductFacade pFacade) {
 		this.pFacade = pFacade;
 	}
@@ -50,9 +51,9 @@ public class OrderFormController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String form(@ModelAttribute("id") int id,
+	public String form(@ModelAttribute("prodId") int id,
 			ModelMap model) throws Exception {
-		
+		System.out.println(id);
 		Product product = pFacade.getProduct(id);
 		model.put("product", product);
 

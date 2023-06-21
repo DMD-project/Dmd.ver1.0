@@ -17,7 +17,6 @@ body {
 }
 
 div {
-	
 	overflow: scroll;
 }
 
@@ -227,7 +226,7 @@ select {
 			<th></th>
 		</table>
 		
-		<table id = "table4">
+		<table id="table4">
 			<tr>
 				<td colspan = "2" align = "center">
 					<b>상품 정보
@@ -240,7 +239,7 @@ select {
 				</tr>
 			<tr>
 				<td colspan = "2" align = "center">
-					<b>[애플] Magic Mouse [MK2E3KH/A]
+					<b>${product.name}
 					<br><br><br>
 				</td>
 			</tr>
@@ -250,7 +249,7 @@ select {
 				</tr>
 			<tr>
 				<td>상품 금액</td>
-				<td align = "right">88,900 원</td>
+				<td align = "right">${product.price} 원</td>
 			</tr>
 			<tr>
 				<td>할인 금액</td>
@@ -258,7 +257,7 @@ select {
 			</tr>
 			<tr style ='height: 150px; font-size: 20px'>
 				<td><b>결제 금액</td>
-				<td align = "right"><b>88,900 원</td>
+				<td align = "right"><b>${product.price} 원</td>
 			</tr>
 			<tr>
 				<td></td>
