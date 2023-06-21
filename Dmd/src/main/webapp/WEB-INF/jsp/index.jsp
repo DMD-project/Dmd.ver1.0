@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,8 @@
 
 <body
 	class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
+
 
 	<!--Nav-->
 	<nav id="header" class="w-full z-30 top-0 py-1">

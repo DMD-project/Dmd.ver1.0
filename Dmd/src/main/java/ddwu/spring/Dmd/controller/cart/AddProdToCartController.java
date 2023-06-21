@@ -33,37 +33,25 @@ public class AddProdToCartController {
 		return new Cart();
 	}
 
-	@RequestMapping("/shop/addItemToCart")
-	public ModelAndView handleRequest(@RequestParam("workingProdId") int workingProdId,
-			@RequestParam("prodQty") int prodQty, @ModelAttribute("sessionCart") Cart cart) throws Exception {
-		if (cart.containsItemId(workingProdId)) {
-			cart.incrementQuantityByItemId(workingProdId);
+	@RequestMapping("/shop/addProdToCart")
+	public ModelAndView handleRequest(
+			@RequestParam(value="prodId") int id, 
+			@ModelAttribute("sessionCart") Cart cart) throws Exception {
+		if (cart.containsProductId(id)) {
+			cart.incrementQuantityByeProductId(id);
+			System.out.println("addProdToCart controller startincrement");
+
 		} else {
-			// isInStock is a "real-time" property that must be updated
-			// every time an item is added to the cart, even if other
-			// item details are cached.
-			System.out.println("workingItemId : " + workingProdId);
-			System.out.println("prodQty : " + prodQty);
+			System.out.println("prodId : " + id);
+			Product product = this.prodFacade.getProduct(id);
+			cart.addProduct(product);
+			System.out.println("addProdToCart controller start");
 
-//			Product prod = null;
-//			switch (prodID) {
-//			case 0:
-//				prod = this.prodFacade.getGroupBuyingProd(workingProdId);
-//				break;
-//			case 1:
-//				prod = this.prodFacade.getAuctionById(workingProdId);
-//				break;
-//			case 2:
-//				prod = this.prodFacade.getSecondHandProd(workingProdId);
-//				break;
-//			case 3:
-//				prod = this.prodFacade.getHandMadeById(workingProdId);
-//				break;
-//			}
-
-//			boolean isInStock = this.prodFacade.isItemInStock(workingProdId, prod.getId());
-//			cart.addItem(prod);
+			
 		}
+		System.out.println("addProdToCart controller start");
+
+		
 		return new ModelAndView("order/Cart", "cart", cart);
 	}
 //	@RequestMapping(method = RequestMethod.POST)

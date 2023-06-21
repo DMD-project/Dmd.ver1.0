@@ -19,13 +19,13 @@ public class UpdateCartQuantitiesController {
 	public ModelAndView handleRequest(
 			HttpServletRequest request,	
 			@ModelAttribute("sessionCart") Cart cart) throws Exception {
-		Iterator<CartItem> cartItems = cart.getAllCartItems();
+		Iterator<CartItem> cartItems = cart.getAllCartProducts();
 		while (cartItems.hasNext()) {
 			CartItem cartItem = (CartItem) cartItems.next();
-			int itemId = cartItem.getProd().getId();
+			int ProductId = cartItem.getProd().getId();
 			try {
-				int quantity = Integer.parseInt(request.getParameter(String.valueOf(itemId)));
-				cart.setQuantityByItemId(itemId, quantity);
+				int quantity = Integer.parseInt(request.getParameter(String.valueOf(ProductId)));
+				cart.setQuantityByProductId(ProductId, quantity);
 				if (quantity < 1) {
 					cartItems.remove();
 				}

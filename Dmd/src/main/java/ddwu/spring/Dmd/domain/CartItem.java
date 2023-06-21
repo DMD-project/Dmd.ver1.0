@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class CartItem implements Serializable {
-	private Product prod;
+	private Product product;
 	private String userID;
 	private int prodID;
 	private int qty;
@@ -14,11 +14,11 @@ public class CartItem implements Serializable {
 
 	
 	public Product getProd() {
-		return prod;
+		return product;
 	}
 
-	public void setProd(Product prod) {
-		this.prod = prod;
+	public void setProd(Product product) {
+		this.product = product;
 	}
 	
 	public String getUserID() {
@@ -42,6 +42,15 @@ public class CartItem implements Serializable {
 		this.qty = qty;
 	}
 	
+//	public double getTotalPrice() {
+//		if (prod != null) {
+//			return prod.getListPrice() * qty;
+//		}
+//		else {
+//			return 0;
+//		}
+//	}
+//	
 //	public boolean isInStock() {
 //		return inStock;
 //	}

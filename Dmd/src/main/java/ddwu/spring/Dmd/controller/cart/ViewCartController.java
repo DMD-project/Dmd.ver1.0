@@ -24,13 +24,15 @@ public class ViewCartController {
 	public ModelAndView viewCart(
 			HttpServletRequest request,
 			@RequestParam(value="page", required=false) String page,
-			@ModelAttribute("sessionCart") Cart cart) 
+			@ModelAttribute("sessionCart") Cart cartItem) 
 			throws Exception {
 		UserSession userSession = 
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		handleRequest(page, cart, userSession);
-//		System.out.print(cart);
-		return new ModelAndView("order/Cart", "cart", cart);
+		handleRequest(page, cartItem, userSession);
+		
+		System.out.print("viewCart controller start");
+		
+		return new ModelAndView("order/Cart", "cart", cartItem);
 	}
 
 	@RequestMapping("/shop/checkout")

@@ -10,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 import ddwu.spring.Dmd.domain.Cart;
 
 public class RemoveProdFromCartController {
-	@RequestMapping("/shop/removeItemFromCart")
-	public ModelAndView handleRequest(@RequestParam("workingItemId") int workingItemId,
+	@RequestMapping("/shop/removeProdFromCart")
+	public ModelAndView handleRequest(@RequestParam("prodId") int id,
 			@ModelAttribute("sessionCart") Cart cart) throws Exception {
-		cart.removeItemById(workingItemId);
+		cart.removeProductById(id);
 		return new ModelAndView("order/Cart", "cart", cart);
 	}
 }

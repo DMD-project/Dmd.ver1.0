@@ -159,7 +159,7 @@
 														class="woocommerce-variation-add-to-cart variations_button">
 
 
-														<div class="nm-quantity-wrap  qty-show">
+													<%-- 	<div class="nm-quantity-wrap  qty-show">
 															<label>수량 </label>
 															<div class="quantity">
 																<button type="button" id="qty-minus" class="qty-btn"
@@ -181,6 +181,8 @@
 														</div>
 														<script>
 															function qtyMinus() {
+																
+																
 																var qty = document
 																		.getElementById("qtyValue").value;
 																var minusQty = Number(qty) - 1;
@@ -192,6 +194,7 @@
 																	document
 																			.getElementById("qtyValue").value = minusQty;
 																}
+																
 															}
 
 															function qtyPlus() {
@@ -203,11 +206,21 @@
 																document
 																		.getElementById("qtyValue").value = plusQty;
 															};
-														</script>
-
+														</script> --%>
+														
+											<!-- 			<form method="post" name="product_form" action="doService">
+															<input type="hidden" name="target_count" value= "">
+															<input type="button" name="target_name" value="submit" onClick=product_form.submit();>
+														</form>
+ -->
 														<div style="padding: 10px 10px;">
-															<button type="button" formaction="/order/Cart" id="cart"
-																class="btn" onclick="location.href='/shop/viewCart'">Cart</button><!--장바구니 -->
+															<button type="button" id="cart"
+																class="btn" >
+																<a class="pl-3 inline-block no-underline hover:text-black" href='<c:url value="/shop/addProdToCart">
+																<c:param name="prodId" value="${product.id}"/>
+ 																</c:url>'>  				
+																Cart</a>
+																</button><!--장바구니 -->
 															<button type="button" id="buy" class="btn">Buy</button>			
 														</div>
 
