@@ -69,6 +69,7 @@ img {
 						<td>
 						<form id="totalForm">
 							<input type="text" value="${product.price}" readonly="readonly" id="totalValue"/>
+							<input type="hidden" value="${product.price}" id="price"/>
 						</form>
 						</td>
 						<%-- <td style="width: 15%;"><span class="price">${product.price}원</span><br> --%>
@@ -81,8 +82,8 @@ img {
 																
 																var qty = document
 																		.getElementById("qtyValue").value;
-																let price = document
-																.getElementById("totalValue").value;
+																var price = document
+																.getElementById("price").value;
 																var minusQty = Number(qty) - 1;
 																if (minusQty <= 0) {
 																	document
@@ -99,8 +100,8 @@ img {
 															function qtyPlus() {
 																var qty = document
 																		.getElementById("qtyValue").value;
-																let price = document
-																.getElementById("totalValue").value;	
+																var price = document
+																.getElementById("price").value;	
 																var plusQty = Number(qty) + 1;
 																//alert(plusQty);
 																document
