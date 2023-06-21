@@ -95,7 +95,7 @@ public class ProductFormController {
 		System.out.println(productForm.getProduct().toString());
 		
 		Product newProduct = productForm.getProduct();
-		newProduct.setProdIMGUrl("../../../../images/light.png");
+		newProduct.setProdIMGUrl("../../../../images/cup.png");
 		//save
 		facade.addProduct(newProduct);
 		
