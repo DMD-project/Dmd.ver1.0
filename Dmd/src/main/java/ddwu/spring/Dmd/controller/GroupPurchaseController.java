@@ -77,7 +77,7 @@ public class GroupPurchaseController {
 		
 		System.out.println(gp.getState());
 		
-		if (gp.getState().equals("N") && gp.getSalesQty() < 0) {
+		if (gp.getState().equals("N") && gp.getSalesQty() <= 0) {
 			System.out.println("change state");
 			gp.setState("Y");
 			facade.changeGPState(gp);
