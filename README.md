@@ -1,10 +1,10 @@
 # Dmd
 인테리어 소품 쇼핑몰 
+</br>
 
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white)
-![Eclipse IDE](https://img.shields.io/badge/Eclipse%20IDE-2C2255?style=for-the-badge&logo=Eclipse%20IDE&logoColor=white) 
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white)       
-
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=Spring%20Boot&logoColor=white)
+![Eclipse IDE](https://img.shields.io/badge/Eclipse%20IDE-2C2255?flat&logo=Eclipse%20IDE&logoColor=white) 
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat&logo=Oracle&logoColor=white)       
 
 <img width="1100" alt="스크린샷 2023-07-03 오후 11 54 47" src="https://github.com/juri123123/Dmd/assets/80569323/90415e49-3f59-4590-a7eb-e9c05f50dcdb">
 
