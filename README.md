@@ -6,12 +6,5 @@
 ![Eclipse IDE](https://img.shields.io/badge/Eclipse%20IDE-2C2255?flat&logo=Eclipse%20IDE&logoColor=white) 
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat&logo=Oracle&logoColor=white)       
 
-<img width="1100" alt="스크린샷 2023-07-03 오후 11 54 47" src="https://github.com/juri123123/Dmd/assets/80569323/90415e49-3f59-4590-a7eb-e9c05f50dcdb">
 
-<img width="1100" alt="스크린샷 2023-07-03 오후 11 54 50" src="https://github.com/juri123123/Dmd/assets/80569323/73738343-eff1-4827-b181-4505d146dfec">
-
-<img width="1100" alt="스크린샷 2023-07-03 오후 11 55 04" src="https://github.com/juri123123/Dmd/assets/80569323/b9a7591a-66a2-472d-9c62-269737c88551">
-
-<img width="1244" alt="스크린샷 2023-06-22 오후 4 11 12" src="https://github.com/juri123123/Dmd/assets/80569323/7b564a7e-87e5-4bcd-b3ee-244e82d178fd">
-<img width="1244" alt="스크린샷 2023-06-22 오후 4 12 16" src="https://github.com/juri123123/Dmd/assets/80569323/c8156d73-40cb-4792-9971-fb7b6f2fbdff">
-
+![fjjn28pnq62k0xqA4sgtb60zz35zqgtxp0l264rpAcx94p4hlz7fkm179thk6k4k00kc4tt8xnA83v9vqApgv6w2bjwdd0cmq5g0g06n48bjc4j0xvby4qwk9A807ygfmq19mr72lnptlbwsvfvtxx5z9xsms9zv5y77ffdg67q3764pvsyq](https://github.com/lakedata/Dmd/assets/94455716/a6170f39-9157-4479-99dd-05dbaae022dd)
